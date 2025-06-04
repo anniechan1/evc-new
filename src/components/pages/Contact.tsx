@@ -12,7 +12,7 @@ export default function Contact({ onNavigate }: ContactProps) {
   return (
     <div className="min-h-screen bg-[#E5E0D8]">
       {/* Hero Section */}
-      <section className="py-16 px-8">
+      <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
         <div className="container mx-auto max-w-4xl text-center">
           <h1
             className="text-4xl text-[#725C3A] mb-8"
@@ -24,8 +24,14 @@ export default function Contact({ onNavigate }: ContactProps) {
           >
             Get in Touch
           </h1>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-20 px-8 bg-white">
+        <div className="container mx-auto max-w-3xl">
           <p
-            className="text-xl text-[#725C3A] leading-relaxed max-w-3xl mx-auto"
+            className="text-xl text-[#725C3A] leading-relaxed max-w-3xl mx-auto text-center mb-8"
             style={{
               fontFamily: "Source Sans Pro, sans-serif",
               fontWeight: "300",
@@ -33,23 +39,18 @@ export default function Contact({ onNavigate }: ContactProps) {
             }}
           >
             Ready to transform your agricultural operations? Contact us directly via email at{" "}
-            <span
-              className="font-medium text-[#809671]"
+            <a
+              href="mailto:admin@ecopiavaluechain.com"
+              className="font-medium text-[#809671] hover:text-[#725C3A] transition-colors underline"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "500",
               }}
             >
               admin@ecopiavaluechain.com
-            </span>{" "}
+            </a>{" "}
             or use our contact form below.
           </p>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section className="py-20 px-8 bg-white">
-        <div className="container mx-auto max-w-3xl">
           <div className="bg-[#E5E0D8] rounded-3xl p-8">
             <div className="text-center mb-8">
               <h2
@@ -120,15 +121,17 @@ export default function Contact({ onNavigate }: ContactProps) {
                 style={{ fontFamily: "Source Sans Pro, sans-serif" }}
               />
 
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full bg-[#725C3A] hover:bg-[#809671] text-white rounded-xl py-4 group"
-                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-              >
-                Send Message
-                <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <div className="flex justify-center">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-xl py-4 group px-8"
+                  style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                >
+                  Send Message
+                  <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
             </form>
           </div>
         </div>
@@ -156,7 +159,11 @@ export default function Contact({ onNavigate }: ContactProps) {
                 title: "For Producers",
                 description: "Ready to digitize your operations?",
                 buttonText: "Get Started",
-                buttonAction: () => onNavigate("for-producers"),
+                buttonAction: () =>
+                  window.open(
+                    "https://docs.google.com/forms/d/e/1FAIpQLSeQPRZV4bcFpwxNbqPvhnTJV_dv-wYzPKAY5uQ4UQOECT8RoA/viewform",
+                    "_blank",
+                  ),
               },
               {
                 title: "For DLMs",

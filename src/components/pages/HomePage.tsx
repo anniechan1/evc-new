@@ -1,19 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import {
-  Users,
-  Package,
-  ShoppingCart,
-  FileText,
-  GitBranch,
-  Puzzle,
-  Globe,
-  ArrowRight,
-  Play,
-  Smartphone,
-  CheckCircle,
-} from "lucide-react"
+import { Users, Package, ShoppingCart, FileText, GitBranch, Puzzle, ArrowRight, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface HomePageProps {
@@ -53,6 +41,22 @@ export default function HomePage({ onNavigate }: HomePageProps) {
     }
   }
 
+  const handleEUDRClick = () => {
+    onNavigate("compliance")
+    setTimeout(() => {
+      const element = document.getElementById("eudr-section")
+      if (element) {
+        const headerHeight = 80 // Approximate header height
+        const elementPosition = element.offsetTop - headerHeight
+        window.scrollTo({
+          top: elementPosition,
+          behavior: "smooth",
+        })
+      }
+    }, 100)
+  }
+
+
   return (
     <div className="min-h-screen bg-[#E5E0D8]">
       {/* Hero Slider */}
@@ -61,47 +65,37 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           className="absolute inset-0 flex transition-transform duration-1000 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {/* First Hero - Original */}
+          {/* First Hero - With 15% Black Overlay */}
           <div className="w-full h-full flex-shrink-0 relative">
             <div className="absolute inset-0">
               <img
-                src="/images/farmers-community.jpeg"
+                src="/images/mockup1.png"
                 alt="African farming community"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/40"></div>
+              <div className="absolute inset-0 bg-black/15"></div>
             </div>
 
             <div className="container mx-auto relative z-10 flex items-center h-full px-8">
               <div className="max-w-3xl space-y-8">
                 <div className="space-y-6">
                   <h1
-                    className="text-4xl text-white mb-8"
+                    className="text-4xl text-white mb-8 whitespace-nowrap"
                     style={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: "500",
                       letterSpacing: "0.01em",
                     }}
                   >
-                    Empowering African Farmers with{" "}
-                    <span
-                      style={{
-                        fontFamily: "Dancing Script, cursive",
-                        fontWeight: "600",
-                        fontSize: "1.1em",
-                        color: "#E5D2B8",
-                        fontStyle: "italic",
-                      }}
-                    >
-                      Digital Solutions
-                    </span>
+                    Empowering African Farmers with<br /> Digital Solutions
+
                   </h1>
                 </div>
                 <p
-                  className="text-xl text-white/90 leading-relaxed max-w-2xl"
+                  className="text-2xl text-white/90 leading-relaxed max-w-2xl"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
-                    fontWeight: "300",
+                    fontWeight: "400",
                     lineHeight: "1.7",
                   }}
                 >
@@ -135,7 +129,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
           </div>
 
-          {/* Second Hero - Simplified Compliance */}
+          {/* Second Hero - Simplified Compliance (KEEPS BLACK OVERLAY) */}
           <div className="w-full h-full flex-shrink-0 relative">
             <div className="absolute inset-0">
               <img src="/images/beekeeper.webp" alt="Beekeeper working" className="w-full h-full object-cover" />
@@ -146,32 +140,22 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <div className="max-w-3xl space-y-8">
                 <div className="space-y-6">
                   <h1
-                    className="text-4xl text-white mb-8"
+                    className="text-4xl text-white mb-8 whitespace-nowrap"
                     style={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: "500",
                       letterSpacing: "0.01em",
                     }}
                   >
-                    <span
-                      style={{
-                        fontFamily: "Dancing Script, cursive",
-                        fontWeight: "600",
-                        fontSize: "1.1em",
-                        color: "#E5D2B8",
-                        fontStyle: "italic",
-                      }}
-                    >
-                      Simplified Compliance
-                    </span>{" "}
-                    for Global Markets
+
+                    Simplified Compliance for Global Markets
                   </h1>
                 </div>
                 <p
-                  className="text-xl text-white/90 leading-relaxed max-w-2xl"
+                  className="text-2xl text-white/90 leading-relaxed max-w-2xl"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
-                    fontWeight: "300",
+                    fontWeight: "400",
                     lineHeight: "1.7",
                   }}
                 >
@@ -182,7 +166,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   <Button
                     className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-full px-8 py-3 shadow-xl"
                     style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-                    onClick={() => onNavigate("compliance")}
+                    onClick={handleEUDRClick}
+
                   >
                     Learn About EUDR
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -192,7 +177,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
           </div>
 
-          {/* Third Hero - Unlocking Market Borders */}
+          {/* Third Hero - Unlocking Market Borders (KEEPS BLACK OVERLAY) */}
           <div className="w-full h-full flex-shrink-0 relative">
             <div className="absolute inset-0">
               <img
@@ -207,32 +192,22 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <div className="max-w-3xl space-y-8">
                 <div className="space-y-6">
                   <h1
-                    className="text-4xl text-white mb-8"
+                    className="text-4xl text-white mb-8 whitespace-nowrap"
                     style={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: "500",
                       letterSpacing: "0.01em",
                     }}
                   >
-                    <span
-                      style={{
-                        fontFamily: "Dancing Script, cursive",
-                        fontWeight: "600",
-                        fontSize: "1.1em",
-                        color: "#E5D2B8",
-                        fontStyle: "italic",
-                      }}
-                    >
-                      Unlocking Market Borders
-                    </span>{" "}
-                    Ensuring Global Presence
+
+                    Unlocking Market Border, Ensuring Global Presence
                   </h1>
                 </div>
                 <p
-                  className="text-xl text-white/90 leading-relaxed max-w-2xl"
+                  className="text-2xl text-white/90 leading-relaxed max-w-2xl"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
-                    fontWeight: "300",
+                    fontWeight: "400",
                     lineHeight: "1.7",
                   }}
                 >
@@ -265,10 +240,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             />
           ))}
         </div>
-      </section>
+      </section >
 
       {/* Welcome Section */}
-      <section id="welcome-section" className="py-20 px-8 bg-white">
+      < section id="welcome-section" className="py-20 px-8 bg-white" >
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2
@@ -296,7 +271,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
           <div className="space-y-8">
             <p
-              className="text-lg text-[#725C3A] leading-relaxed"
+              className="text-xl text-[#725C3A] leading-relaxed"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -310,7 +285,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </p>
 
             <p
-              className="text-lg text-[#725C3A] leading-relaxed"
+              className="text-xl text-[#725C3A] leading-relaxed"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -325,7 +300,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               devices.
             </p>
 
-            <div className="bg-[#E5E0D8] rounded-2xl p-8">
+            <div className="bg-[#E5E0D8] rounded-2xl p-10">
               <h3
                 className="text-2xl text-[#725C3A] mb-6"
                 style={{
@@ -336,7 +311,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 EVC empowers a wide range of stakeholders:
               </h3>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-8">
                 {[
                   {
                     title: "Smallholder farmers",
@@ -377,13 +352,13 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 ].map((stakeholder, index) => (
                   <div
                     key={index}
-                    className={`flex space-x-3 ${stakeholder.clickable ? "cursor-pointer hover:bg-white/50 p-3 rounded-lg transition-colors" : ""}`}
+                    className={`flex space-x-4 ${stakeholder.clickable ? "cursor-pointer hover:bg-white/50 p-4 rounded-lg transition-colors" : ""}`}
                     onClick={() => stakeholder.clickable && handleStakeholderClick(stakeholder.title)}
                   >
-                    <div className="w-2 h-2 bg-[#809671] rounded-full mt-3 flex-shrink-0"></div>
+                    <div className="w-2.5 h-2.5 bg-[#809671] rounded-full mt-3 flex-shrink-0"></div>
                     <div>
                       <span
-                        className={`font-medium text-[#725C3A] ${stakeholder.clickable ? "hover:text-[#809671] underline" : ""}`}
+                        className={`font-medium text-lg text-[#725C3A] ${stakeholder.clickable ? "hover:text-[#809671] underline" : ""}`}
                         style={{
                           fontFamily: "Poppins, sans-serif",
                           fontWeight: "500",
@@ -392,7 +367,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                         {stakeholder.title}
                       </span>
                       <span
-                        className="text-[#725C3A]"
+                        className="text-xl text-[#725C3A]"
                         style={{
                           fontFamily: "Source Sans Pro, sans-serif",
                           fontWeight: "300",
@@ -408,7 +383,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
 
             <p
-              className="text-lg text-[#725C3A] leading-relaxed text-center"
+              className="text-xl text-[#725C3A] leading-relaxed text-center"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -421,10 +396,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </p>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Stakeholders Showcase Section */}
-      <section className="py-20 px-8 bg-gradient-to-br from-[#809671]/10 to-[#B3B792]/10">
+      < section className="py-20 px-8 bg-gradient-to-br from-[#809671]/10 to-[#B3B792]/10" >
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2
@@ -438,7 +413,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               Empowering Every Stakeholder
             </h2>
             <p
-              className="text-lg text-[#725C3A]/80 max-w-2xl mx-auto text-left whitespace-nowrap"
+              className="text-2xl text-[#725C3A]/90 max-w-2x "
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -473,10 +448,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     Smallholder Farmers
                   </h3>
                   <p
-                    className="text-sm opacity-90"
+                    className="text-lg opacity-90"
                     style={{
                       fontFamily: "Source Sans Pro, sans-serif",
-                      fontWeight: "300",
+                      fontWeight: "400",
                     }}
                   >
                     Access to fairer markets and transparent payment records
@@ -486,7 +461,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
 
             {/* Youth Card */}
-            <div className="group">
+            <div className="group cursor-pointer" onClick={() => onNavigate("data-logistic-manager")}>
               <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="h-64 overflow-hidden">
                   <img
@@ -508,10 +483,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     Data Logistic Managers
                   </h3>
                   <p
-                    className="text-sm opacity-90"
+                    className="text-lg opacity-90"
                     style={{
                       fontFamily: "Source Sans Pro, sans-serif",
-                      fontWeight: "300",
+                      fontWeight: "400",
                     }}
                   >
                     Creating employment through digital services
@@ -542,10 +517,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     Innovation & Research
                   </h3>
                   <p
-                    className="text-sm opacity-90"
+                    className="text-lg opacity-90"
                     style={{
                       fontFamily: "Source Sans Pro, sans-serif",
-                      fontWeight: "300",
+                      fontWeight: "400",
                     }}
                   >
                     Advancing agricultural technology and practices
@@ -555,13 +530,14 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
-      {/* Mobile App Section with Real Phone Mockups */}
-      <section className="py-20 px-8 bg-[#E5D2B8]">
+      {/* Mobile App Section - Large Hero Style */}
+      < section className="py-32 px-8 bg-[#E5D2B8] overflow-hidden" >
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-3 gap-8 items-center">
+            {/* Content - Takes 1/3 of the space */}
+            <div className="lg:col-span-1 space-y-8">
               <div className="space-y-6">
                 <h2
                   className="text-4xl text-[#725C3A] leading-tight"
@@ -574,47 +550,38 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   One App for All Your Needs
                 </h2>
               </div>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {[
                   {
-                    icon: Smartphone,
-                    title: "Order Tracking",
+                    title: "Single Application",
                     description:
-                      "Track your orders in real-time with QR codes and detailed shipping information for complete transparency",
-                    iconBg: "bg-[#809671]",
+                      "Manage your harvesting, inventory, compliance, logistics and orders with single ecopia value chain application",
                   },
                   {
-                    icon: CheckCircle,
-                    title: "Order Management",
+                    title: "Simplified Compliance",
                     description:
-                      "Manage buyer details, shipping destinations, and payment information all in one integrated platform",
-                    iconBg: "bg-[#B3B792]",
+                      "Integrated compliance aligns with national and international, opens access to global market",
                   },
                   {
-                    icon: Globe,
-                    title: "Global Connectivity",
-                    description: "Connect with international buyers and manage exports to ports worldwide seamlessly",
-                    iconBg: "bg-[#725C3A]",
+                    title: "Pan African Market",
+                    description: "Etablishing African Farmers Network for easy african market access and seamless transactions",
                   },
                 ].map((item, index) => (
-                  <div key={index} className="flex space-x-4 group">
-                    <div
-                      className={`w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}
+                  <div key={index} className="group">
+                    <h3
+                      className="text-2xl text-[#725C3A] mb-4"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "400",
+                      }}
                     >
-                      <item.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3
-                        className="text-xl text-[#725C3A] mb-2"
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: "500",
-                        }}
-                      >
-                        {item.title}
-                      </h3>
+                      {item.title}
+                    </h3>
+                    {/* Description with brown bullet point matching text size */}
+                    <div className="flex items-start space-x-4">
+                      <div className="w-2 h-2 bg-[#725C3A] rounded-full mt-3 flex-shrink-0"></div>
                       <p
-                        className="text-[#725C3A]/80 leading-relaxed"
+                        className="text-[#725C3A]/90 leading-relaxed text-xl flex-1"
                         style={{
                           fontFamily: "Source Sans Pro, sans-serif",
                           fontWeight: "300",
@@ -629,59 +596,31 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
 
-            {/* Real Phone Mockups */}
-            <div className="relative flex justify-center items-center space-x-6">
-              {/* First Phone - Tracking Order */}
-              <div className="relative transform rotate-6 hover:rotate-3 transition-transform duration-300">
-                <div className="w-64 h-[520px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-1 shadow-2xl hover:shadow-3xl transition-shadow duration-300">
-                  <div className="w-full h-full bg-black rounded-[2rem] p-1">
-                    <div className="w-full h-full bg-white rounded-[1.5rem] overflow-hidden relative">
-                      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
-                      <img
-                        src="/images/tracking-order-screen.png"
-                        alt="Order Tracking Screen"
-                        className="w-full h-full object-cover object-top"
-                      />
-                      <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-black rounded-full opacity-30"></div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Second Phone - Order Detail */}
-              <div className="relative transform -rotate-3 hover:rotate-0 transition-transform duration-300 z-10">
-                <div className="w-64 h-[520px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-1 shadow-2xl hover:shadow-3xl transition-shadow duration-300">
-                  <div className="w-full h-full bg-black rounded-[2rem] p-1">
-                    <div className="w-full h-full bg-white rounded-[1.5rem] overflow-hidden relative">
-                      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
-                      <img
-                        src="/images/order-detail-screen.png"
-                        alt="Order Detail Screen"
-                        className="w-full h-full object-cover object-top"
-                      />
-                      <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-black rounded-full opacity-30"></div>
-                    </div>
-                  </div>
-                </div>
-
+            {/* Extra Large Phone Mockups - Takes 2/3 of the space */}
+            <div className="lg:col-span-2 relative flex justify-center items-center -my-40 -mx-8">
+              <div className="relative w-full max-w-7xl">
+                <img
+                  src="/images/frame11.png"
+                  alt="EVC Mobile App - Digital Traceability Dashboard"
+                  className="w-full h-auto transform hover:scale-105 transition-transform duration-500"
+                />
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Digital Solutions Section - New Background, Minimal Cards */}
-      <section className="relative py-40 px-8">
+      < section className="relative py-40 px-8" >
         {/* Background Image */}
-        <div className="absolute inset-0">
+        < div className="absolute inset-0" >
           <img
             src="/images/tablet-agriculture.jpeg"
             alt="Woman using tablet in agricultural field"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/30"></div>
-        </div>
+        </div >
 
         <div className="container mx-auto relative z-10">
           <div className="text-center mb-20">
@@ -695,7 +634,19 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             >
               Platform Features
             </h2>
+            <p
+              className="text-xl text-white/90 leading-relaxed max-w-6xl mx-auto"
+              style={{
+                fontFamily: "Source Sans Pro, sans-serif",
+                fontWeight: "400",
+                lineHeight: "1.7",
+              }}
+            >
+              Comprehensive digital tools designed to streamline agricultural operations, enhance traceability, and
+              connect farmers with global markets through innovative technology solutions.
+            </p>
           </div>
+
 
           {/* Minimal Feature List - No Cards */}
           <div className="max-w-4xl mx-auto">
@@ -723,10 +674,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                       {feature.title}
                     </h3>
                     <p
-                      className="text-white/80"
+                      className="text-lg text-white/90"
                       style={{
                         fontFamily: "Source Sans Pro, sans-serif",
-                        fontWeight: "300",
+                        fontWeight: "400",
                       }}
                     >
                       {feature.description}
@@ -737,7 +688,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   )
 }

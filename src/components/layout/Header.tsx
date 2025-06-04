@@ -68,7 +68,12 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         setTimeout(() => {
           const element = document.getElementById("cooperatives-section")
           if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" })
+            const headerHeight = 80 // Approximate header height
+            const elementPosition = element.offsetTop - headerHeight
+            window.scrollTo({
+              top: elementPosition,
+              behavior: "smooth",
+            })
           }
         }, 100)
         break
@@ -77,7 +82,12 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         setTimeout(() => {
           const element = document.getElementById("private-farms-section")
           if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" })
+            const headerHeight = 80 // Approximate header height
+            const elementPosition = element.offsetTop - headerHeight
+            window.scrollTo({
+              top: elementPosition,
+              behavior: "smooth",
+            })
           }
         }, 100)
         break
@@ -86,7 +96,12 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         setTimeout(() => {
           const element = document.getElementById("outgrowers-section")
           if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" })
+            const headerHeight = 80 // Approximate header height
+            const elementPosition = element.offsetTop - headerHeight
+            window.scrollTo({
+              top: elementPosition,
+              behavior: "smooth",
+            })
           }
         }, 100)
         break

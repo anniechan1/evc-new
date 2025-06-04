@@ -19,20 +19,10 @@ export default function ExportersImporters({ onNavigate }: ExportersImportersPro
         >
           <img src="/images/coffeebeans.webp" alt="Coffee beans" className="w-full h-full object-cover" />
         </div>
-
-        {/* Coffee bag image - organic shape bottom left */}
-        <div
-          className="absolute bottom-20 left-10 w-[450px] h-[350px] opacity-20"
-          style={{
-            clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-          }}
-        >
-          <img src="/images/coffeebag.webp" alt="Coffee packaging" className="w-full h-full object-cover" />
-        </div>
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 px-8 relative z-10">
+      <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
         <div className="container mx-auto max-w-4xl text-center">
           <h1
             className="text-4xl text-[#725C3A] mb-8 text-center"
@@ -42,12 +32,19 @@ export default function ExportersImporters({ onNavigate }: ExportersImportersPro
               letterSpacing: "0.01em",
             }}
           >
-            For
-            International Buyers
-            and Importers
+            For International Buyers and Importers
           </h1>
+
+        </div>
+      </section>
+
+      {/* Benefits Overview - New Layout with Large Image */}
+
+
+      <section className="py-20 px-8 bg-white relative z-10">
+        <div className="container mx-auto max-w-6xl">
           <p
-            className="text-xl text-[#725C3A] leading-relaxed max-w-3xl mx-auto"
+            className="text-xl text-[#725C3A] leading-relaxed max-w-none mx-auto whitespace-nowrap mb-16 text-center"
             style={{
               fontFamily: "Source Sans Pro, sans-serif",
               fontWeight: "300",
@@ -57,12 +54,8 @@ export default function ExportersImporters({ onNavigate }: ExportersImportersPro
             Access verified, traceable, and compliant agricultural products with complete transparency from farm to
             export.
           </p>
-        </div>
-      </section>
 
-      {/* Benefits Overview - New Layout with Large Image */}
-      <section className="py-20 px-8 bg-white relative z-10">
-        <div className="container mx-auto max-w-6xl">
+
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Content Side */}
             <div className="space-y-8">
@@ -112,7 +105,7 @@ export default function ExportersImporters({ onNavigate }: ExportersImportersPro
                       {benefit.title}
                     </h3>
                     <p
-                      className="text-[#725C3A]/80 leading-relaxed"
+                      className="text-lg text-[#725C3A]/80 leading-relaxed"
                       style={{
                         fontFamily: "Source Sans Pro, sans-serif",
                         fontWeight: "300",
@@ -147,25 +140,14 @@ export default function ExportersImporters({ onNavigate }: ExportersImportersPro
         <div className="container mx-auto text-center max-w-4xl">
           <div className="space-y-8">
             <h2
-              className="text-4xl mb-8"
+              className="text-2xl mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
                 letterSpacing: "0.01em",
               }}
             >
-              By streamlining data collection and compliance across the entire value chain,{" "}
-              <span
-                style={{
-                  fontFamily: "Dancing Script, cursive",
-                  fontWeight: "600",
-                  fontSize: "1.1em",
-                  color: "#E5D2B8",
-                }}
-              >
-                EVC gives importers peace of mind
-              </span>{" "}
-              and helps producers stay competitive in regulated global markets.
+              By streamlining data collection and compliance across the entire value chain, EVC gives importers peace of mind and helps producers stay competitive in regulated global markets.
             </h2>
 
             <div className="bg-white/10 rounded-3xl p-10">
@@ -182,11 +164,12 @@ export default function ExportersImporters({ onNavigate }: ExportersImportersPro
               </p>
 
               <Button
+                onClick={() => onNavigate("marketplace")}
                 size="lg"
                 className="bg-[#E5D2B8] hover:bg-[#D2AB80] text-[#725C3A] rounded-full px-8 py-4"
                 style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
               >
-                {/* Access Verified Sourcing */}
+                Access Verified Sourcing
               </Button>
             </div>
           </div>

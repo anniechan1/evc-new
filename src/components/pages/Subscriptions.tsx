@@ -22,12 +22,15 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
       bgColor: "bg-white",
       borderColor: "border-[#E5D2B8]",
       features: [
+
+
+        "Implement digital solutions (ERP systems, traceability platforms)",
         "Digital farmer registration",
         "Harvest tracking and management",
-        "Certification support",
-        "Payment tracking",
+
+        "Navigate certification options"
       ],
-      price: "$",
+      price: "",
       priceUnit: "/month",
       buttonText: "Register",
       buttonStyle: "bg-[#725C3A] hover:bg-[#725C3A]/90",
@@ -40,10 +43,14 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
       textColor: "text-[#725C3A]",
       borderColor: "border-[#E5D2B8]",
       features: [
-        "Comprehensive training program",
-        "Mobile app access",
-        "Data collection tools",
-        "Performance tracking",
+        "Digital platform training for job creation opportunities",
+        "EUDR compliance support for cooperatives and farmers",
+        "Supply chain traceability and data management skills",
+        "International market access facilitation",
+        "Certification as Data Logistics Manager",
+
+
+
       ],
       price: "Free",
       priceUnit: "",
@@ -58,12 +65,15 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
       textColor: "text-[#725C3A]",
       borderColor: "border-[#E5D2B8]",
       features: [
-        "Verified producer data access",
-        "EUDR-compliant documentation",
-        "Real-time traceability reports",
-        "Certification downloads",
+
+
+
+        "Verified, deforestation-free coffee compliant with EU regulations",
+        "Build local expertise and jobs for Ethiopian youth",
+        "Enhanced supply chain transparency and risk management",
+        "Multiple partnership options (sponsoring, hiring DLMs...)"
       ],
-      price: "$",
+      price: "",
       priceUnit: "/month",
       buttonText: "Register",
       buttonStyle: "bg-[#725C3A] hover:bg-[#725C3A]/90",
@@ -73,10 +83,10 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
   return (
     <div className="min-h-screen bg-[#E5E0D8]">
       {/* Hero Section */}
-      <section className="py-16 px-8">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
+        <div className="container mx-auto max-w-5xl text-center">
           <h1
-            className="text-4xl text-[#725C3A] mb-8 text-left"
+            className="text-4xl text-[#725C3A] mb-8"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",
@@ -85,8 +95,15 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
           >
             Subscription Plans for Every Stakeholder
           </h1>
+
+        </div>
+      </section>
+
+      {/* Subscription Plans */}
+      <section className="py-16 px-8 bg-white">
+        <div className="container mx-auto max-w-[1200px]">
           <p
-            className="text-xl text-[#725C3A] leading-relaxed max-w-3xl text-left"
+            className="text-xl text-[#725C3A] leading-relaxed text-center mb-8"
             style={{
               fontFamily: "Source Sans Pro, sans-serif",
               fontWeight: "300",
@@ -96,13 +113,7 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
             Choose the right plan for your role in the agricultural value chain. From producers to importers, we have
             tailored solutions for everyone.
           </p>
-        </div>
-      </section>
-
-      {/* Subscription Plans */}
-      <section className="py-20 px-8 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-12">
             {stakeholderPlans.map((plan, index) => (
               <Card
                 key={index}
@@ -110,9 +121,9 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
               >
                 <CardContent className="p-8">
                   {/* Header */}
-                  <div className="text-center mb-8">
+                  <div className="text-center mb-6">
                     <h3
-                      className={`text-2xl mb-4 ${plan.textColor ? plan.textColor : "text-[#725C3A]"}`}
+                      className={`text-2xl mb-3 ${plan.textColor ? plan.textColor : "text-[#725C3A]"}`}
                       style={{
                         fontFamily: "Poppins, sans-serif",
                         fontWeight: "500",
@@ -121,7 +132,7 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
                       {plan.stakeholder}
                     </h3>
                     <p
-                      className={`text-sm mb-4 ${plan.textColor ? "text-[#725C3A]/80" : "text-[#725C3A]/80"}`}
+                      className={`text-lg mb-4 ${plan.textColor ? "text-[#725C3A]/80" : "text-[#725C3A]/80"}`}
                       style={{
                         fontFamily: "Source Sans Pro, sans-serif",
                         fontWeight: "400",
@@ -129,10 +140,10 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
                     >
                       {plan.feeType}
                     </p>
-                    <div className="mb-6">
+                    <div className="mb-4">
                       <span
-                        className={`text-4xl font-bold ${plan.textColor ? plan.textColor : "text-[#725C3A]"}`}
-                        style={{ fontFamily: "Poppins, sans-serif" }}
+                        className={`text-4xl ${plan.textColor ? plan.textColor : "text-[#725C3A]"}`}
+                        style={{ fontFamily: "Poppins, sans-serif", fontWeight: "400" }}
                       >
                         {plan.price}
                       </span>
@@ -148,13 +159,13 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
                   </div>
 
                   {/* Access Description */}
-                  <div className={`bg-[#E5E0D8] rounded-2xl p-4 mb-6`}>
+                  <div className={`bg-[#E5E0D8] rounded-2xl p-6 mb-6`}>
                     <p
-                      className={`text-center text-[#725C3A]`}
+                      className={`text-center text-[#725C3A] text-lg`}
                       style={{
                         fontFamily: "Source Sans Pro, sans-serif",
                         fontWeight: "400",
-                        lineHeight: "1.6",
+                        lineHeight: "1.5",
                       }}
                     >
                       {plan.accessDescription}
@@ -162,12 +173,12 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
                   </div>
 
                   {/* Features */}
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-3 mb-6">
                     {plan.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start space-x-3">
-                        <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-[#809671]`}></div>
+                        <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 bg-[#725C3A]/80`}></div>
                         <span
-                          className={`text-[#725C3A]`}
+                          className={`text-[#725C3A]/80 text-lg`}
                           style={{
                             fontFamily: "Source Sans Pro, sans-serif",
                             fontWeight: "300",
@@ -181,60 +192,18 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
                   </div>
 
                   {/* Button */}
-                  <Button
-                    onClick={plan.buttonText === "Learn More" ? handleLearnMore : undefined}
-                    className={`w-full ${plan.buttonStyle} text-white rounded-full py-3`}
-                    style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-                  >
-                    {plan.buttonText}
-                  </Button>
+                  <div className="flex justify-center">
+                    <Button
+                      onClick={plan.buttonText === "Learn More" ? handleLearnMore : undefined}
+                      className={`${plan.buttonStyle} text-white rounded-full py-2 px-6`}
+                      style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                    >
+                      {plan.buttonText}
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 px-8 bg-[#E5D2B8]">
-        <div className="container mx-auto text-center max-w-3xl">
-          <h2
-            className="text-4xl text-[#725C3A] mb-8"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: "300",
-              letterSpacing: "0.01em",
-            }}
-          >
-            Ready to Transform Your Operations?
-          </h2>
-          <p
-            className="text-xl text-[#725C3A] mb-8 leading-relaxed"
-            style={{
-              fontFamily: "Source Sans Pro, sans-serif",
-              fontWeight: "300",
-              lineHeight: "1.7",
-            }}
-          >
-            Join thousands of producers who are already using EVC to streamline their operations, improve transparency,
-            and access better markets.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-[#725C3A] hover:bg-[#725C3A]/90 text-white rounded-full px-8 py-4"
-              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-            >
-              Start Your Journey
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-[#809671] text-[#725C3A] hover:bg-[#809671] hover:text-white rounded-full px-8 py-4"
-              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-            >
-              {/* Schedule a Demo */}
-            </Button>
           </div>
         </div>
       </section>

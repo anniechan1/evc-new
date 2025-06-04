@@ -3,12 +3,15 @@
 import { Calendar, User, Globe, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useState } from "react"
 
 interface NewsOutlookProps {
   onNavigate: (page: string) => void
 }
 
 export default function NewsOutlook({ onNavigate }: NewsOutlookProps) {
+  const [selectedCategory, setSelectedCategory] = useState("All")
+
   const newsArticles = [
     {
       title: "Digital Transformation in Ethiopian Coffee: A Field Report",
@@ -29,54 +32,14 @@ export default function NewsOutlook({ onNavigate }: NewsOutlookProps) {
       category: "Market Trends",
       image: "",
       icon: Globe,
-      bgColor: "bg-[#F5F5F0]",
+      bgColor: "bg-white",
     },
-    // {
-    //   title: "Tech Outlook: AI in Agricultural Supply Chains",
-    //   excerpt:
-    //     "Exploring how artificial intelligence is shaping the future of agricultural traceability and compliance.",
-    //   author: "Felix Matschie",
-    //   date: "December 5, 2024",
-    //   category: "Tech Outlook",
-    //   image: "/placeholder.svg?height=200&width=400",
-    //   icon: Users,
-    //   bgColor: "bg-white",
-    // },
-    // {
-    //   title: "Success Story: Keffa Cooperative's Digital Journey",
-    //   excerpt:
-    //     "How one cooperative increased their export revenue by 40% through digital transformation and certification.",
-    //   author: "Hanna Bekele",
-    //   date: "November 28, 2024",
-    //   category: "Success Stories",
-    //   image: "/placeholder.svg?height=200&width=400",
-    //   icon: Globe,
-    //   bgColor: "bg-[#F5F5F0]",
-    // },
-    // {
-    //   title: "Market Analysis: Specialty Coffee Demand in 2025",
-    //   excerpt: "Understanding global trends in specialty coffee consumption and what it means for Ethiopian producers.",
-    //   author: "James Wilson",
-    //   date: "November 20, 2024",
-    //   category: "Market Trends",
-    //   image: "/placeholder.svg?height=200&width=400",
-    //   icon: Users,
-    //   bgColor: "bg-white",
-    // },
-    // {
-    //   title: "Developer Interview: Building for Rural Connectivity",
-    //   excerpt:
-    //     "Our lead developer discusses the challenges and solutions for creating offline-capable agricultural software.",
-    //   author: "Tech Team",
-    //   date: "November 15, 2024",
-    //   category: "Developer Stories",
-    //   image: "/placeholder.svg?height=200&width=400",
-    //   icon: Globe,
-    //   bgColor: "bg-[#F5F5F0]",
-    // },
   ]
 
   const categories = ["All", "Field Stories", "Market Trends", "Tech Outlook", "Success Stories", "Developer Stories"]
+
+  const filteredArticles =
+    selectedCategory === "All" ? newsArticles : newsArticles.filter((article) => article.category === selectedCategory)
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
@@ -108,17 +71,6 @@ export default function NewsOutlook({ onNavigate }: NewsOutlookProps) {
             >
               News & Outlook
             </h1>
-            <p
-              className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto"
-              style={{
-                fontFamily: "Source Sans Pro, sans-serif",
-                fontWeight: "300",
-                lineHeight: "1.7",
-              }}
-            >
-              Stories from the value chain: field updates, market insights, technology developments, and success stories
-              from our community.
-            </p>
           </div>
         </div>
       </section>
@@ -126,107 +78,130 @@ export default function NewsOutlook({ onNavigate }: NewsOutlookProps) {
       {/* Category Filter */}
       <section className="py-8 px-8 bg-white relative z-20">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-wrap gap-4 justify-center">
+          <p
+            className="text-xl text-[#725C3A]/90 leading-relaxed max-w-5xl mx-auto text-center mb-10"
+            style={{
+              fontFamily: "Source Sans Pro, sans-serif",
+              fontWeight: "300",
+              lineHeight: "1.7",
+            }}
+          >
+            Stories from the value chain: field updates, market insights, technology developments, and success stories
+            from community.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center mt-8">
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={category === "All" ? "default" : "outline"}
-                className={`rounded-full px-6 ${category === "All"
+                variant={category === selectedCategory ? "default" : "outline"}
+                className={`rounded-full px-6 ${category === selectedCategory
                   ? "bg-[#725C3A] hover:bg-[#5A4A2E] text-white"
                   : "border-[#725C3A] text-[#725C3A] hover:bg-[#F5F5F0]"
                   }`}
                 style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </Button>
             ))}
           </div>
+
         </div>
       </section>
 
       {/* News Articles */}
-      <section className="py-20 px-8 bg-white relative z-20">
+      <section className="pt-8 pb-20 px-8 bg-white relative z-20">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {newsArticles.map((article, index) => (
-              <Card
-                key={index}
-                className={`${article.bgColor} border border-gray-100 rounded-3xl hover:shadow-xl transition-all duration-300 group cursor-pointer`}
+          {filteredArticles.length === 0 ? (
+            <div className="text-center py-20">
+              <p
+                className="text-xl text-[#725C3A]/60"
+                style={{
+                  fontFamily: "Source Sans Pro, sans-serif",
+                  fontWeight: "300",
+                }}
               >
-                <CardContent className="p-0">
-                  <img
-                    src={article.image || "/placeholder.svg"}
-                    alt={article.title}
-                    className="w-full h-48 object-cover rounded-t-3xl"
-                  />
-                  <div className="p-6">
-                    <div className="flex items-center space-x-2 mb-4">
-                      <article.icon className="w-5 h-5 text-[#725C3A]" />
-                      <span
-                        className="text-sm text-[#725C3A]/80"
+                No articles found for this category.
+              </p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredArticles.map((article, index) => (
+                <Card
+                  key={index}
+                  className={`${article.bgColor} border border-gray-100 rounded-3xl hover:shadow-xl transition-all duration-300 group cursor-pointer`}
+                >
+                  <CardContent className="p-0">
+                    <div className="w-full h-48 bg-gray-100 rounded-t-3xl"></div>
+                    <div className="p-6">
+                      <div className="flex items-center space-x-2 mb-4">
+                        <article.icon className="w-5 h-5 text-[#725C3A]" />
+                        <span
+                          className="text-sm text-[#725C3A]/80"
+                          style={{
+                            fontFamily: "Source Sans Pro, sans-serif",
+                            fontWeight: "400",
+                          }}
+                        >
+                          {article.category}
+                        </span>
+                      </div>
+
+                      <h3
+                        className="text-xl mb-3 text-[#725C3A] group-hover:text-[#5A4A2E] transition-colors"
                         style={{
-                          fontFamily: "Source Sans Pro, sans-serif",
-                          fontWeight: "400",
+                          fontFamily: "Poppins, sans-serif",
+                          fontWeight: "300",
+                          letterSpacing: "0.01em",
+                          lineHeight: "1.3",
                         }}
                       >
-                        {article.category}
-                      </span>
-                    </div>
+                        {article.title}
+                      </h3>
 
-                    <h3
-                      className="text-xl mb-3 text-[#725C3A] group-hover:text-[#5A4A2E] transition-colors"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "300",
-                        letterSpacing: "0.01em",
-                        lineHeight: "1.3",
-                      }}
-                    >
-                      {article.title}
-                    </h3>
+                      <p
+                        className="leading-relaxed mb-4 text-[#725C3A]/80"
+                        style={{
+                          fontFamily: "Source Sans Pro, sans-serif",
+                          fontWeight: "300",
+                          lineHeight: "1.6",
+                        }}
+                      >
+                        {article.excerpt}
+                      </p>
 
-                    <p
-                      className="leading-relaxed mb-4 text-[#725C3A]/80"
-                      style={{
-                        fontFamily: "Source Sans Pro, sans-serif",
-                        fontWeight: "300",
-                        lineHeight: "1.6",
-                      }}
-                    >
-                      {article.excerpt}
-                    </p>
-
-                    <div className="flex items-center justify-between text-sm">
-                      <div className="flex items-center space-x-2">
-                        <User className="w-4 h-4 text-[#725C3A]/60" />
-                        <span
-                          className="text-[#725C3A]/80"
-                          style={{
-                            fontFamily: "Source Sans Pro, sans-serif",
-                            fontWeight: "400",
-                          }}
-                        >
-                          {article.author}
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Calendar className="w-4 h-4 text-[#725C3A]/60" />
-                        <span
-                          className="text-[#725C3A]/80"
-                          style={{
-                            fontFamily: "Source Sans Pro, sans-serif",
-                            fontWeight: "400",
-                          }}
-                        >
-                          {article.date}
-                        </span>
+                      <div className="flex items-center justify-between text-sm">
+                        <div className="flex items-center space-x-2">
+                          <User className="w-4 h-4 text-[#725C3A]/60" />
+                          <span
+                            className="text-[#725C3A]/80"
+                            style={{
+                              fontFamily: "Source Sans Pro, sans-serif",
+                              fontWeight: "400",
+                            }}
+                          >
+                            {article.author}
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Calendar className="w-4 h-4 text-[#725C3A]/60" />
+                          <span
+                            className="text-[#725C3A]/80"
+                            style={{
+                              fontFamily: "Source Sans Pro, sans-serif",
+                              fontWeight: "400",
+                            }}
+                          >
+                            {article.date}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>

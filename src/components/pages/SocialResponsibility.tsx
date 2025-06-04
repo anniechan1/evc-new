@@ -12,11 +12,11 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
         <div className="container mx-auto max-w-6xl">
           {/* Very large, obvious blob-shaped images positioned to not interfere with text */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {/* Students image - large organic blob top left */}
+            {/* Students image - smooth organic blob top left */}
             <div
               className="absolute top-10 left-10 w-[600px] h-[500px] opacity-85"
               style={{
-                clipPath: "polygon(25% 0%, 100% 0%, 100% 75%, 75% 100%, 0% 100%, 0% 25%, 15% 10%, 20% 5%)",
+                clipPath: "ellipse(80% 70% at 30% 40%)",
               }}
             >
               <img src="/images/students.webp" alt="University students" className="w-full h-full object-cover" />
@@ -26,7 +26,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
             <div
               className="absolute top-20 right-10 w-[550px] h-[450px] opacity-80"
               style={{
-                clipPath: "polygon(0% 20%, 60% 0%, 100% 40%, 80% 100%, 20% 100%, 0% 60%)",
+                clipPath: "ellipse(75% 85% at 70% 30%)",
               }}
             >
               <img src="/images/gathering.png" alt="Laboratory work" className="w-full h-full object-cover" />
@@ -36,18 +36,17 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
             <div
               className="absolute bottom-20 left-20 w-[650px] h-[400px] opacity-75"
               style={{
-                clipPath: "polygon(20% 0%, 80% 0%, 100% 30%, 90% 70%, 70% 100%, 30% 100%, 10% 70%, 0% 30%)",
+                clipPath: "ellipse(90% 60% at 40% 70%)",
               }}
             >
               <img src="/images/class.webp" alt="Classroom learning" className="w-full h-full object-cover" />
             </div>
 
-            {/* Youth processing image - interesting star-like blob bottom right */}
+            {/* Youth processing image - smooth oval blob bottom right */}
             <div
               className="absolute bottom-10 right-20 w-[500px] h-[500px] opacity-70"
               style={{
-                clipPath:
-                  "polygon(50% 0%, 80% 10%, 100% 35%, 90% 70%, 80% 100%, 50% 90%, 20% 100%, 10% 70%, 0% 35%, 20% 10%)",
+                clipPath: "ellipse(65% 80% at 60% 50%)",
               }}
             >
               <img src="/images/youth-processing.png" alt="Youth processing" className="w-full h-full object-cover" />

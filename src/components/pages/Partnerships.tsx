@@ -1,6 +1,6 @@
 "use client"
 
-import { GraduationCap, Cpu, Heart, Building } from "lucide-react"
+import { GraduationCap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -16,10 +16,7 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
       bgColor: "bg-white",
       iconBg: "bg-[#725C3A]",
       description: "Academic institutions collaborating on research, training, and student development programs.",
-      partners: [
-        "Jimma University - Agricultural Research Center",
-
-      ],
+      partners: ["Jimma University - Agricultural Research Center"],
     },
     // {
     //   type: "Tech Partners",
@@ -65,7 +62,7 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
   return (
     <div className="min-h-screen bg-[#E5E0D8]">
       {/* Hero Section */}
-      <section className="py-16 px-8">
+      <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
         <div className="container mx-auto max-w-4xl text-center">
           <h1
             className="text-4xl text-[#725C3A] mb-8"
@@ -77,8 +74,15 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
           >
             Our Strategic Partnerships
           </h1>
+
+        </div>
+      </section>
+
+      {/* Partnership Types */}
+      <section className="py-20 px-8 bg-white">
+        <div className="container mx-auto max-w-6xl">
           <p
-            className="text-xl text-[#725C3A] leading-relaxed max-w-3xl mx-auto"
+            className="text-xl text-[#725C3A] leading-relaxed max-w-3xl mx-auto mb-8"
             style={{
               fontFamily: "Source Sans Pro, sans-serif",
               fontWeight: "300",
@@ -88,12 +92,6 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
             Building a sustainable agricultural ecosystem through collaborative partnerships across academia,
             technology, development, and commerce.
           </p>
-        </div>
-      </section>
-
-      {/* Partnership Types */}
-      <section className="py-20 px-8 bg-white">
-        <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8">
             {partnershipTypes.map((partnership, index) => (
               <Card

@@ -3,7 +3,7 @@
 import { Search, Coffee, Leaf, Truck, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 
 interface MarketplaceProps {
   onNavigate: (page: string) => void
@@ -17,105 +17,139 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
     priceRange: "all",
   })
 
+  const [searchQuery, setSearchQuery] = useState("")
+
   const coffeeLots = [
     {
-      id: 1,
-      // title: "Premium Sidamo Coffee",
-      //   farmer: "Keffa Cooperative",
-      //   region: "Sidamo",
-      // quantity: "2.5 tons",
+      id: 5,
+      title: "Jimma Commercial",
+      farmer: "Jimma Coffee Producers",
+      region: "Jimma",
+      quantity: "",
       price: "€/kg",
-      certification: ["Organic", "Fair Trade"],
-      //   harvestDate: "Nov 2024",
-      //   quality: "Grade 1",
-      // image: "",
+      certification: ["EUDR Compliant"],
+      harvestDate: "",
+      quality: "",
+      image: "/placeholder.svg?height=200&width=300",
+      type: "coffee",
     },
-    {
-      id: 2,
-      //   title: "Yirgacheffe Specialty",
-      //   farmer: "Gedeo Union",
-      //   region: "Yirgacheffe",
-      //   quantity: "1.8 tons",
-      price: "€/kg",
-      certification: ["Organic", "EUDR Compliant"],
-      //   harvestDate: "Dec 2024",
-      // quality: "Specialty Grade",
-      //   image: "/placeholder.svg?height=200&width=300",
-    },
-    // {
-    //   id: 3,
-    //   title: "Harar Longberry",
-    //   farmer: "Oromia Farmers Group",
-    //   region: "Harar",
-    //   quantity: "3.2 tons",
-    //   price: "$3.80/kg",
-    //   certification: ["EUDR Compliant"],
-    //   harvestDate: "Oct 2024",
-    //   quality: "Grade 2",
-    //   image: "/placeholder.svg?height=200&width=300",
-    // },
   ]
 
   const digitalServices = [
     {
       title: "Farm Mapping & GPS",
-      // provider: "EVC Digital Services",
+      provider: "",
       price: "€",
       unit: "per farm",
       description: "Professional GPS mapping and digital farm profiling with satellite imagery",
+      type: "services",
     },
     {
       title: "Certification Support",
-      // provider: "Compliance Experts",
+      provider: "",
       price: "€",
       unit: "per audit",
       description: "EUDR and organic certification assistance with documentation support",
+      type: "services",
     },
-    // {
-    //   title: "Data Collection",
-    //   provider: "DLM Network",
-    //   price: "$30",
-    //   unit: "per month",
-    //   description: "Professional data logistic management services with real-time reporting",
-    // },
   ]
 
   const inputSupplies = [
     {
       title: "Organic Fertilizer",
-      // supplier: "Green Inputs Ltd",
+      supplier: "",
       price: "€",
-      // unit: "50kg bag",
+      unit: "",
       certification: "Organic Certified",
       availability: "In Stock",
+      type: "inputs",
     },
-    // {
-    //   title: "Coffee Seedlings",
-    //   supplier: "Jimma Research Center",
-    //   price: "$0.50",
-    //   unit: "per seedling",
-    //   certification: "Disease Resistant",
-    //   availability: "Pre-order",
-    // },
     {
-      title: "Processing Equipment",
-      //   supplier: "AgriTech Solutions",
+      title: "Coffee Seedlings",
+      supplier: "Jimma Research Center",
       price: "€",
-      //   unit: "pulping machine",
-      //   certification: "Quality Assured",
-      //   availability: "2 weeks delivery",
+      unit: "per seedling",
+      certification: "",
+      availability: "Pre-order",
+      type: "inputs",
     },
   ]
+
+  // Combine all items for filtering with proper typing
+  const allItems = useMemo(
+    () => [
+      ...coffeeLots.map((item) => ({ ...item, category: "coffee" as const })),
+      ...digitalServices.map((item) => ({ ...item, category: "services" as const })),
+      ...inputSupplies.map((item) => ({ ...item, category: "inputs" as const })),
+    ],
+    [],
+  )
+
+  // Filter logic
+  const filteredItems = useMemo(() => {
+    return allItems.filter((item) => {
+      // Search query filter
+      if (searchQuery) {
+        const searchLower = searchQuery.toLowerCase()
+        const searchableFields = [
+          item.title,
+          "farmer" in item ? item.farmer : "",
+          "provider" in item ? item.provider : "",
+          "supplier" in item ? item.supplier : "",
+          "region" in item ? item.region : "",
+        ].filter(Boolean)
+
+        const matchesSearch = searchableFields.some((field) => field.toLowerCase().includes(searchLower))
+
+        if (!matchesSearch) return false
+      }
+
+      // Product type filter
+      if (selectedFilters.productType !== "all") {
+        if (selectedFilters.productType !== item.type && selectedFilters.productType !== item.category) {
+          return false
+        }
+      }
+
+      // Certification filter
+      if (selectedFilters.certification !== "all") {
+        if ("certification" in item && Array.isArray(item.certification)) {
+          const hasCertification = item.certification.some((cert: string) =>
+            cert.toLowerCase().includes(selectedFilters.certification.toLowerCase()),
+          )
+          if (!hasCertification) return false
+        } else {
+          return false
+        }
+      }
+
+      // Region filter
+      if (selectedFilters.region !== "all") {
+        if ("region" in item && item.region && item.region.toLowerCase() !== selectedFilters.region.toLowerCase()) {
+          return false
+        } else if (!("region" in item)) {
+          return false
+        }
+      }
+
+      return true
+    })
+  }, [searchQuery, selectedFilters, allItems])
+
+  // Separate filtered items by category
+  const filteredCoffee = filteredItems.filter((item) => item.category === "coffee")
+  const filteredServices = filteredItems.filter((item) => item.category === "services")
+  const filteredInputs = filteredItems.filter((item) => item.category === "inputs")
 
   return (
     <div className="min-h-screen bg-[#F8F6F3]">
       {/* Hero Section */}
-      <section className="relative py-20 px-8">
+      <section className="relative py-6 px-8 flex items-center justify-center min-h-[400px]">
         <div className="absolute inset-0">
           <img src="/images/coffee-beans.jpeg" alt="Coffee beans background" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-white/85"></div>
         </div>
-        <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="container mx-auto max-w-6xl relative z-10 flex flex-col items-center justify-center">
           <div className="text-center mb-12">
             <h1
               className="text-4xl text-[#725C3A] mb-6"
@@ -127,33 +161,24 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
             >
               Agricultural Marketplace
             </h1>
-            <p
-              className="text-xl text-[#725C3A]/80 leading-relaxed max-w-3xl mx-auto"
-              style={{
-                fontFamily: "Source Sans Pro, sans-serif",
-                fontWeight: "300",
-                lineHeight: "1.7",
-              }}
-            >
-              Connect with verified producers, access quality inputs, and discover professional services—all in one
-              trusted platform.
-            </p>
           </div>
 
           {/* Search and Filters */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <div className="flex flex-col lg:flex-row gap-6 items-center">
-              <div className="flex-1 relative">
+          <div className="bg-white rounded-2xl p-2 shadow-lg">
+            <div className="flex flex-col lg:flex-row gap-3 items-center w-full">
+              <div className="flex-1 relative min-w-[400px]">
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#725C3A]/60 w-5 h-5" />
                 <input
                   placeholder="Search coffee lots, services, or inputs..."
                   className="pl-12 py-4 rounded-xl border-[#E5D2B8] focus:border-[#809671] text-lg w-full"
                   style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
               <div className="flex gap-4 flex-wrap">
                 <select
-                  className="px-6 py-3 rounded-xl border border-[#E5D2B8] bg-white text-[#725C3A] min-w-[140px]"
+                  className="px-6 py-2 rounded-xl border border-[#E5D2B8] bg-white text-[#725C3A] min-w-[140px]"
                   style={{ fontFamily: "Source Sans Pro, sans-serif" }}
                   value={selectedFilters.productType}
                   onChange={(e) => setSelectedFilters({ ...selectedFilters, productType: e.target.value })}
@@ -164,7 +189,7 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
                   <option value="services">Services</option>
                 </select>
                 <select
-                  className="px-6 py-3 rounded-xl border border-[#E5D2B8] bg-white text-[#725C3A] min-w-[160px]"
+                  className="px-6 py-2 rounded-xl border border-[#E5D2B8] bg-white text-[#725C3A] min-w-[160px]"
                   style={{ fontFamily: "Source Sans Pro, sans-serif" }}
                   value={selectedFilters.certification}
                   onChange={(e) => setSelectedFilters({ ...selectedFilters, certification: e.target.value })}
@@ -176,7 +201,7 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
                   <option value="ecopia">Ecopia Certified</option>
                 </select>
                 <select
-                  className="px-6 py-3 rounded-xl border border-[#E5D2B8] bg-white text-[#725C3A] min-w-[140px]"
+                  className="px-6 py-2 rounded-xl border border-[#E5D2B8] bg-white text-[#725C3A] min-w-[140px]"
                   style={{ fontFamily: "Source Sans Pro, sans-serif" }}
                   value={selectedFilters.region}
                   onChange={(e) => setSelectedFilters({ ...selectedFilters, region: e.target.value })}
@@ -195,347 +220,390 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
       </section>
 
       {/* Coffee Lots Section */}
-      <section className="py-20 px-8 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex items-center justify-between mb-12">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-[#809671] rounded-xl flex items-center justify-center">
-                <Coffee className="w-6 h-6 text-white" />
-              </div>
-              <h2
-                className="text-3xl text-[#725C3A]"
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "500",
-                  letterSpacing: "0.01em",
-                }}
-              >
-                Premium Coffee Lots
-              </h2>
-            </div>
-            <Button
-              variant="outline"
-              className="border-[#809671] text-[#809671] hover:bg-[#809671] hover:text-white"
-              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+      {(selectedFilters.productType === "all" || selectedFilters.productType === "coffee") && (
+        <section className="py-20 px-8 bg-white">
+          <div className="container mx-auto max-w-6xl">
+            <p
+              className="text-xl text-[#725C3A]/80 leading-relaxed max-w-3xl mx-auto whitespace-nowrap mb-12"
+              style={{
+                fontFamily: "Source Sans Pro, sans-serif",
+                fontWeight: "300",
+                lineHeight: "1.7",
+              }}
             >
-              View All Coffee
-            </Button>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coffeeLots.map((lot) => (
-              <Card
-                key={lot.id}
-                className="bg-white border border-[#E5D2B8] rounded-2xl hover:shadow-xl transition-all duration-300 overflow-hidden"
+              Connect with verified producers, access quality inputs, and discover professional services—all in one
+              trusted platform.
+            </p>
+            <div className="flex items-center justify-between mb-12">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-[#809671] rounded-xl flex items-center justify-center">
+                  <Coffee className="w-6 h-6 text-white" />
+                </div>
+                <h2
+                  className="text-3xl text-[#725C3A]"
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "500",
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  Premium Coffee Lots ({filteredCoffee.length})
+                </h2>
+              </div>
+              <Button
+                variant="outline"
+                className="border-[#809671] text-[#809671] hover:bg-[#809671] hover:text-white"
+                style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
               >
-                <CardContent className="p-0">
-                  <div className="relative">
-                    <img src={lot.image || "/placeholder.svg"} alt={lot.title} className="w-full h-48 object-cover" />
-                  </div>
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3
-                        className="text-xl text-[#725C3A] font-medium"
-                        style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-                      >
-                        {lot.title}
-                      </h3>
-                      <div className="text-right">
-                        <span
-                          className="text-2xl text-[#809671] font-bold"
-                          style={{ fontFamily: "Poppins, sans-serif", fontWeight: "600" }}
-                        >
-                          {lot.price}
-                        </span>
-                        <p className="text-xs text-[#725C3A]/60" style={{ fontFamily: "Source Sans Pro, sans-serif" }}>
-                          per kilogram
-                        </p>
-                      </div>
-                    </div>
+                View All Coffee
+              </Button>
+            </div>
 
-                    <div className="space-y-3 mb-4">
-                      <div className="flex items-center justify-between">
-                        <span
-                          className="text-[#725C3A]/80 text-sm"
-                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-                        >
-                          Producer:
-                        </span>
-                        <span
-                          className="text-[#725C3A] text-sm font-medium"
-                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
-                        >
-                          {lot.farmer}
-                        </span>
+            {filteredCoffee.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-xl text-[#725C3A]/60">No coffee lots match your current filters.</p>
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredCoffee.map((lot) => (
+                  <Card
+                    key={lot.id}
+                    className="bg-white border border-[#E5D2B8] rounded-2xl hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  >
+                    <CardContent className="p-0">
+                      <div className="relative">
+                        <img
+                          src={lot.image || "/placeholder.svg"}
+                          alt={lot.title}
+                          className="w-full h-48 object-cover"
+                        />
                       </div>
-                      <div className="flex items-center justify-between">
-                        <span
-                          className="text-[#725C3A]/80 text-sm"
-                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-                        >
-                          Region:
-                        </span>
-                        <span
-                          className="text-[#725C3A] text-sm font-medium"
-                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
-                        >
-                          {lot.region}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span
-                          className="text-[#725C3A]/80 text-sm"
-                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-                        >
-                          Available:
-                        </span>
-                        <span
-                          className="text-[#725C3A] text-sm font-medium"
-                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
-                        >
-                          {lot.quantity}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span
-                          className="text-[#725C3A]/80 text-sm"
-                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-                        >
-                          Quality:
-                        </span>
-                        <span
-                          className="text-[#725C3A] text-sm font-medium"
-                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
-                        >
-                          {lot.quality}
-                        </span>
-                      </div>
-                    </div>
+                      <div className="p-6">
+                        <div className="flex justify-between items-start mb-4">
+                          <h3
+                            className="text-xl text-[#725C3A] font-medium"
+                            style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                          >
+                            {lot.title}
+                          </h3>
+                          <div className="text-right">
+                            <span
+                              className="text-2xl text-[#809671] font-bold"
+                              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "600" }}
+                            >
+                              {lot.price}
+                            </span>
+                            <p
+                              className="text-xs text-[#725C3A]/60"
+                              style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+                            >
+                              per kilogram
+                            </p>
+                          </div>
+                        </div>
 
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {lot.certification.map((cert, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-[#E5D2B8] text-[#725C3A] text-xs rounded-full flex items-center space-x-1"
-                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-                        >
-                          <Shield className="w-3 h-3" />
-                          <span>{cert}</span>
-                        </span>
-                      ))}
-                    </div>
+                        <div className="space-y-3 mb-4">
+                          <div className="flex items-center justify-between">
+                            <span
+                              className="text-[#725C3A]/80 text-sm"
+                              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                            >
+                              Producer:
+                            </span>
+                            <span
+                              className="text-[#725C3A] text-sm font-medium"
+                              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
+                            >
+                              {lot.farmer}
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span
+                              className="text-[#725C3A]/80 text-sm"
+                              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                            >
+                              Region:
+                            </span>
+                            <span
+                              className="text-[#725C3A] text-sm font-medium"
+                              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
+                            >
+                              {lot.region}
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span
+                              className="text-[#725C3A]/80 text-sm"
+                              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                            >
+                              Available:
+                            </span>
+                            <span
+                              className="text-[#725C3A] text-sm font-medium"
+                              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
+                            >
+                              {lot.quantity}
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span
+                              className="text-[#725C3A]/80 text-sm"
+                              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                            >
+                              Quality:
+                            </span>
+                            <span
+                              className="text-[#725C3A] text-sm font-medium"
+                              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
+                            >
+                              {lot.quality}
+                            </span>
+                          </div>
+                        </div>
 
-                    <Button
-                      className="w-full bg-[#809671] hover:bg-[#725C3A] text-white rounded-xl py-3"
-                      style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-                    >
-                      Request Quote
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {lot.certification.map((cert, index) => (
+                            <span
+                              key={index}
+                              className="px-3 py-1 bg-[#E5D2B8] text-[#725C3A] text-xs rounded-full flex items-center space-x-1"
+                              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                            >
+                              <Shield className="w-3 h-3" />
+                              <span>{cert}</span>
+                            </span>
+                          ))}
+                        </div>
+
+                        <Button
+                          className="w-full bg-[#809671] hover:bg-[#725C3A] text-white rounded-xl py-3"
+                          style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                        >
+                          Request Quote
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Digital Services Section */}
-      <section className="py-20 px-8 bg-[#F8F6F3]">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex items-center justify-between mb-12">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-[#B3B792] rounded-xl flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-white" />
+      {(selectedFilters.productType === "all" || selectedFilters.productType === "services") && (
+        <section className="py-20 px-8 bg-[#F8F6F3]">
+          <div className="container mx-auto max-w-6xl">
+            <div className="flex items-center justify-between mb-12">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-[#B3B792] rounded-xl flex items-center justify-center">
+                  <Leaf className="w-6 h-6 text-white" />
+                </div>
+                <h2
+                  className="text-3xl text-[#725C3A]"
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "500",
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  Professional Services ({filteredServices.length})
+                </h2>
               </div>
-              <h2
-                className="text-3xl text-[#725C3A]"
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "500",
-                  letterSpacing: "0.01em",
-                }}
+              <Button
+                variant="outline"
+                className="border-[#B3B792] text-[#B3B792] hover:bg-[#B3B792] hover:text-white"
+                style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
               >
-                Professional Services
-              </h2>
+                View All Services
+              </Button>
             </div>
-            <Button
-              variant="outline"
-              className="border-[#B3B792] text-[#B3B792] hover:bg-[#B3B792] hover:text-white"
-              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-            >
-              View All Services
-            </Button>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {digitalServices.map((service, index) => (
-              <Card
-                key={index}
-                className="bg-white border border-[#E5D2B8] rounded-2xl hover:shadow-lg transition-all duration-300"
-              >
-                <CardContent className="p-8">
-                  <h3
-                    className="text-xl text-[#725C3A] mb-3"
-                    style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+            {filteredServices.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-xl text-[#725C3A]/60">No services match your current filters.</p>
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-3 gap-8">
+                {filteredServices.map((service, index) => (
+                  <Card
+                    key={index}
+                    className="bg-white border border-[#E5D2B8] rounded-2xl hover:shadow-lg transition-all duration-300"
                   >
-                    {service.title}
-                  </h3>
-                  <p
-                    className="text-[#725C3A]/80 mb-6 leading-relaxed"
-                    style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300", lineHeight: "1.6" }}
-                  >
-                    {service.description}
-                  </p>
-                  <div className="mb-6">
-                    <div className="flex items-baseline space-x-1">
-                      <span
-                        className="text-3xl text-[#B3B792] font-bold"
-                        style={{ fontFamily: "Poppins, sans-serif", fontWeight: "600" }}
+                    <CardContent className="p-8">
+                      <h3
+                        className="text-xl text-[#725C3A] mb-3"
+                        style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
                       >
-                        {service.price}
-                      </span>
-                      <span
-                        className="text-[#725C3A]/60"
-                        style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                        {service.title}
+                      </h3>
+                      <p
+                        className="text-[#725C3A]/80 mb-6 leading-relaxed"
+                        style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300", lineHeight: "1.6" }}
                       >
-                        {service.unit}
-                      </span>
-                    </div>
-                    <p
-                      className="text-[#725C3A]/80 text-sm mt-1"
-                      style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300" }}
-                    >
-                      by {service.provider}
-                    </p>
-                  </div>
-                  <Button
-                    className="w-full bg-[#B3B792] hover:bg-[#725C3A] text-white rounded-xl py-3"
-                    style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-                  >
-                    Book Service
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                        {service.description}
+                      </p>
+                      <div className="mb-6">
+                        <div className="flex items-baseline space-x-1">
+                          <span
+                            className="text-3xl text-[#B3B792] font-bold"
+                            style={{ fontFamily: "Poppins, sans-serif", fontWeight: "600" }}
+                          >
+                            {service.price}
+                          </span>
+                          <span
+                            className="text-[#725C3A]/60"
+                            style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                          >
+                            {service.unit}
+                          </span>
+                        </div>
+                        <p
+                          className="text-[#725C3A]/80 text-sm mt-1"
+                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300" }}
+                        >
+                          by {service.provider}
+                        </p>
+                      </div>
+                      <Button
+                        className="w-full bg-[#B3B792] hover:bg-[#725C3A] text-white rounded-xl py-3"
+                        style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                      >
+                        Book Service
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Input Sales Section */}
-      <section className="py-20 px-8 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex items-center justify-between mb-12">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-[#D2AB80] rounded-xl flex items-center justify-center">
-                <Truck className="w-6 h-6 text-white" />
+      {(selectedFilters.productType === "all" || selectedFilters.productType === "inputs") && (
+        <section className="py-20 px-8 bg-white">
+          <div className="container mx-auto max-w-6xl">
+            <div className="flex items-center justify-between mb-12">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-[#D2AB80] rounded-xl flex items-center justify-center">
+                  <Truck className="w-6 h-6 text-white" />
+                </div>
+                <h2
+                  className="text-3xl text-[#725C3A]"
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "500",
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  Agricultural Inputs ({filteredInputs.length})
+                </h2>
               </div>
-              <h2
-                className="text-3xl text-[#725C3A]"
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "500",
-                  letterSpacing: "0.01em",
-                }}
+              <Button
+                variant="outline"
+                className="border-[#D2AB80] text-[#D2AB80] hover:bg-[#D2AB80] hover:text-white"
+                style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
               >
-                Agricultural Inputs
-              </h2>
+                View All Inputs
+              </Button>
             </div>
-            <Button
-              variant="outline"
-              className="border-[#D2AB80] text-[#D2AB80] hover:bg-[#D2AB80] hover:text-white"
-              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-            >
-              View All Inputs
-            </Button>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {inputSupplies.map((input, index) => (
-              <Card
-                key={index}
-                className="bg-white border border-[#E5D2B8] rounded-2xl hover:shadow-lg transition-all duration-300"
-              >
-                <CardContent className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3
-                      className="text-xl text-[#725C3A] font-medium"
-                      style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-                    >
-                      {input.title}
-                    </h3>
-                    <span
-                      className={`px-3 py-1 text-xs rounded-full ${input.availability === "In Stock"
-                        ? "bg-green-100 text-green-800"
-                        : input.availability === "Pre-order"
-                          ? "bg-yellow-100 text-yellow-800"
-                          : "bg-blue-100 text-blue-800"
-                        }`}
-                      style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-                    >
-                      {input.availability}
-                    </span>
-                  </div>
-
-                  <div className="mb-6">
-                    <div className="flex items-baseline space-x-1">
-                      <span
-                        className="text-3xl text-[#D2AB80] font-bold"
-                        style={{ fontFamily: "Poppins, sans-serif", fontWeight: "600" }}
-                      >
-                        {input.price}
-                      </span>
-                      <span
-                        className="text-[#725C3A]/60"
-                        style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-                      >
-                        per {input.unit}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3 mb-6">
-                    <div className="flex justify-between">
-                      <span
-                        className="text-[#725C3A]/80 text-sm"
-                        style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-                      >
-                        Supplier:
-                      </span>
-                      <span
-                        className="text-[#725C3A] text-sm font-medium"
-                        style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
-                      >
-                        {input.supplier}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span
-                        className="text-[#725C3A]/80 text-sm"
-                        style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
-                      >
-                        Certification:
-                      </span>
-                      <span
-                        className="text-[#725C3A] text-sm font-medium"
-                        style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
-                      >
-                        {input.certification}
-                      </span>
-                    </div>
-                  </div>
-
-                  <Button
-                    className="w-full bg-[#D2AB80] hover:bg-[#725C3A] text-white rounded-xl py-3"
-                    style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+            {filteredInputs.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-xl text-[#725C3A]/60">No inputs match your current filters.</p>
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-3 gap-8">
+                {filteredInputs.map((input, index) => (
+                  <Card
+                    key={index}
+                    className="bg-white border border-[#E5D2B8] rounded-2xl hover:shadow-lg transition-all duration-300"
                   >
-                    Add to Cart
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start mb-4">
+                        <h3
+                          className="text-xl text-[#725C3A] font-medium"
+                          style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                        >
+                          {input.title}
+                        </h3>
+                        <span
+                          className={`px-3 py-1 text-xs rounded-full ${input.availability === "In Stock"
+                            ? "bg-green-100 text-green-800"
+                            : input.availability === "Pre-order"
+                              ? "bg-yellow-100 text-yellow-800"
+                              : "bg-blue-100 text-blue-800"
+                            }`}
+                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                        >
+                          {input.availability}
+                        </span>
+                      </div>
+
+                      <div className="mb-6">
+                        <div className="flex items-baseline space-x-1">
+                          <span
+                            className="text-3xl text-[#D2AB80] font-bold"
+                            style={{ fontFamily: "Poppins, sans-serif", fontWeight: "600" }}
+                          >
+                            {input.price}
+                          </span>
+                          <span
+                            className="text-[#725C3A]/60"
+                            style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                          >
+                            per {input.unit}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="space-y-3 mb-6">
+                        <div className="flex justify-between">
+                          <span
+                            className="text-[#725C3A]/80 text-sm"
+                            style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                          >
+                            Supplier:
+                          </span>
+                          <span
+                            className="text-[#725C3A] text-sm font-medium"
+                            style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
+                          >
+                            {input.supplier}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span
+                            className="text-[#725C3A]/80 text-sm"
+                            style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                          >
+                            Certification:
+                          </span>
+                          <span
+                            className="text-[#725C3A] text-sm font-medium"
+                            style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "500" }}
+                          >
+                            {input.certification}
+                          </span>
+                        </div>
+                      </div>
+
+                      <Button
+                        onClick={() => onNavigate("marketplace")}
+                        className="w-full bg-[#D2AB80] hover:bg-[#725C3A] text-white rounded-xl py-3"
+                        style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                      >
+                        Add to Cart
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   )
 }
