@@ -15,7 +15,7 @@ export default function Contact({ onNavigate }: ContactProps) {
       <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
         <div className="container mx-auto max-w-4xl text-center">
           <h1
-            className="text-4xl text-[#725C3A] mb-8"
+            className="text-3xl text-[#725C3A] mb-8"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",
@@ -29,9 +29,9 @@ export default function Contact({ onNavigate }: ContactProps) {
 
       {/* Contact Form Section */}
       <section className="py-20 px-8 bg-white">
-        <div className="container mx-auto max-w-3xl">
+        <div className="container mx-auto max-w-2xl">
           <p
-            className="text-xl text-[#725C3A] leading-relaxed max-w-3xl mx-auto text-center mb-8"
+            className="text-lg text-[#725C3A] leading-relaxed max-w-3xl mx-auto text-center mb-8"
             style={{
               fontFamily: "Source Sans Pro, sans-serif",
               fontWeight: "300",
@@ -54,7 +54,7 @@ export default function Contact({ onNavigate }: ContactProps) {
           <div className="bg-[#E5E0D8] rounded-3xl p-8">
             <div className="text-center mb-8">
               <h2
-                className="text-3xl text-[#725C3A] mb-4"
+                className="text-2xl text-[#725C3A] mb-4"
                 style={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: "300",
@@ -76,15 +76,15 @@ export default function Contact({ onNavigate }: ContactProps) {
             </div>
 
             <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-4">
                 <input
                   placeholder="First Name"
-                  className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-4 px-4 w-full"
+                  className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-2 px-3 w-full"
                   style={{ fontFamily: "Source Sans Pro, sans-serif" }}
                 />
                 <input
                   placeholder="Last Name"
-                  className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-4 px-4 w-full"
+                  className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-2 px-3 w-full"
                   style={{ fontFamily: "Source Sans Pro, sans-serif" }}
                 />
               </div>
@@ -92,18 +92,18 @@ export default function Contact({ onNavigate }: ContactProps) {
               <input
                 type="email"
                 placeholder="your.email@example.com"
-                className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-4 px-4 w-full"
+                className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-2 px-3 w-full"
                 style={{ fontFamily: "Source Sans Pro, sans-serif" }}
               />
 
               <input
                 placeholder="Organization (optional)"
-                className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-4 px-4 w-full"
+                className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-2 px-3 w-full"
                 style={{ fontFamily: "Source Sans Pro, sans-serif" }}
               />
 
               <select
-                className="w-full p-4 bg-white border border-[#D2AB80] focus:border-[#809671] rounded-xl"
+                className="w-full py-2 px-3 bg-white border border-[#D2AB80] focus:border-[#809671] rounded-xl"
                 style={{ fontFamily: "Source Sans Pro, sans-serif" }}
               >
                 <option>General Inquiry</option>
@@ -116,20 +116,19 @@ export default function Contact({ onNavigate }: ContactProps) {
 
               <textarea
                 placeholder="Tell us about your needs, questions, or how we can help you..."
-                rows={5}
-                className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl resize-none p-4 w-full"
+                rows={4}
+                className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl resize-none py-2 px-3 w-full"
                 style={{ fontFamily: "Source Sans Pro, sans-serif" }}
               />
 
-              <div className="flex justify-center">
+              <div className="flex justify-center pt-4">
                 <Button
                   type="submit"
-                  size="lg"
-                  className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-xl py-4 group px-8"
+                  className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-xl py-2 px-6 group"
                   style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
                 >
                   Send Message
-                  <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
             </form>
@@ -142,7 +141,7 @@ export default function Contact({ onNavigate }: ContactProps) {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2
-              className="text-4xl text-[#725C3A] mb-8"
+              className="text-2xl text-[#725C3A] mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
@@ -153,7 +152,7 @@ export default function Contact({ onNavigate }: ContactProps) {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 title: "For Producers",
@@ -182,31 +181,36 @@ export default function Contact({ onNavigate }: ContactProps) {
                 buttonAction: () => onNavigate("exporters-importers"),
               },
             ].map((item, index) => (
-              <Card key={index} className="bg-white border-0 rounded-2xl text-center">
-                <CardContent className="p-6">
-                  <h3
-                    className="text-xl text-[#725C3A] mb-3"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "300",
-                      letterSpacing: "0.01em",
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    className="text-[#725C3A]/80 mb-6"
-                    style={{
-                      fontFamily: "Source Sans Pro, sans-serif",
-                      fontWeight: "300",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    {item.description}
-                  </p>
+              <Card
+                key={index}
+                className="bg-white border-0 rounded-3xl text-center hover:shadow-lg transition-all duration-300 h-full"
+              >
+                <CardContent className="p-6 flex flex-col justify-between h-full">
+                  <div>
+                    <h3
+                      className="text-lg text-[#725C3A] mb-3"
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "400",
+                        letterSpacing: "0.01em",
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p
+                      className="text-[#725C3A]/80 mb-6 leading-relaxed"
+                      style={{
+                        fontFamily: "Source Sans Pro, sans-serif",
+                        fontWeight: "300",
+                        lineHeight: "1.6",
+                      }}
+                    >
+                      {item.description}
+                    </p>
+                  </div>
                   <Button
                     onClick={item.buttonAction}
-                    className="bg-[#809671] hover:bg-[#725C3A] text-white rounded-full px-6"
+                    className="bg-[#809671] hover:bg-[#725C3A] text-white rounded-full px-6 py-2 w-full"
                     style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
                   >
                     {item.buttonText}

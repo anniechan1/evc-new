@@ -21,7 +21,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-8">
             <h1
-              className="text-4xl text-[#725C3A]"
+              className="text-3xl text-[#725C3A]"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
@@ -39,7 +39,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl text-[#725C3A] mb-8"
+              className="text-2xl text-[#725C3A] mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
@@ -50,7 +50,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
             </h2>
             <div className="flex justify-center">
               <p
-                className="text-xl text-[#725C3A] leading-relaxed max-w-5xl"
+                className="text-lg text-[#725C3A] leading-relaxed max-w-5xl"
                 style={{
                   fontFamily: "Source Sans Pro, sans-serif",
                   fontWeight: "300",
@@ -124,7 +124,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                     </span>
                   </div>
                   <h3
-                    className={`text-2xl mb-6 ${item.textColor ? item.textColor : "text-[#725C3A]"}`}
+                    className={`text-xl mb-6 ${item.textColor ? item.textColor : "text-[#725C3A]"}`}
                     style={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: "500",
@@ -133,7 +133,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                     {item.title}
                   </h3>
                   <p
-                    className={`leading-relaxed text-lg ${item.textColor ? "text-white/90" : "text-[#725C3A]/80"}`}
+                    className={`leading-relaxed text-base ${item.textColor ? "text-white/90" : "text-[#725C3A]/80"}`}
                     style={{
                       fontFamily: "Source Sans Pro, sans-serif",
                       fontWeight: "350",
@@ -164,7 +164,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
             {/* Content Side - Takes up left half and positioned left */}
             <div className="px-8 space-y-12">
               <h2
-                className="text-3xl text-[#725C3A] mb-12"
+                className="text-2xl text-[#725C3A] mb-12"
                 style={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: "300",
@@ -185,7 +185,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                   <div key={index} className="flex items-start space-x-6">
                     <div className="w-1.5 h-1.5 bg-[#725C3A]/80 rounded-full mt-3 flex-shrink-0"></div>
                     <p
-                      className="text-xl text-[#725C3A] leading-relaxed"
+                      className="text-lg text-[#725C3A] leading-relaxed"
                       style={{
                         fontFamily: "Source Sans Pro, sans-serif",
                         fontWeight: "375",
@@ -221,7 +221,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
             <div className="flex items-center py-32 px-8">
               <div className="space-y-12">
                 <h2
-                  className="text-3xl text-[#725C3A] mb-12"
+                  className="text-2xl text-[#725C3A] mb-12"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "300",
@@ -241,7 +241,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                     <div key={index} className="flex items-start space-x-6">
                       <div className="w-1.5 h-1.5 bg-[#725C3A]/80 rounded-full mt-3 flex-shrink-0"></div>
                       <p
-                        className="text-xl text-[#725C3A] leading-relaxed"
+                        className="text-lg text-[#725C3A] leading-relaxed"
                         style={{
                           fontFamily: "Source Sans Pro, sans-serif",
                           fontWeight: "375",
@@ -263,7 +263,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
       <section className="py-20 px-8 bg-[#725C3A] text-white">
         <div className="container mx-auto text-center max-w-5xl">
           <h2
-            className="text-4xl mb-8"
+            className="text-2xl mb-8"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",

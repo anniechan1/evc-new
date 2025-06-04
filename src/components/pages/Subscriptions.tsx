@@ -86,7 +86,7 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
       <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
         <div className="container mx-auto max-w-5xl text-center">
           <h1
-            className="text-4xl text-[#725C3A] mb-8"
+            className="text-3xl text-[#725C3A] mb-8"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",

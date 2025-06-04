@@ -49,7 +49,7 @@ export default function UsingPlatform({ onNavigate }: UsingPlatformProps) {
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl px-8">
             <h1
-              className="text-4xl leading-tight mb-8"
+              className="text-3xl leading-tight mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
@@ -68,7 +68,7 @@ export default function UsingPlatform({ onNavigate }: UsingPlatformProps) {
 
           <div className="text-center mb-16">
             <h2
-              className="text-4xl text-[#725C3A] mb-10"
+              className="text-2xl text-[#725C3A] mb-10"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
@@ -78,7 +78,7 @@ export default function UsingPlatform({ onNavigate }: UsingPlatformProps) {
               Platform Features
             </h2>
             <p
-              className="text-xl leading-relaxed max-w-5xl mx-auto text-[#725C3A]/80"
+              className="text-lg leading-relaxed max-w-5xl mx-auto text-[#725C3A]/80"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -99,16 +99,16 @@ export default function UsingPlatform({ onNavigate }: UsingPlatformProps) {
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
                     <h3
-                      className="text-2xl text-[#725C3A] mb-4"
+                      className="text-xl text-[#725C3A] mb-4"
                       style={{
                         fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
+                        fontWeight: "400",
                       }}
                     >
                       {feature.title}
                     </h3>
                     <p
-                      className="leading-relaxed text-[#725C3A]/80 text-lg"
+                      className="leading-relaxed text-[#725C3A]/80 text-base"
                       style={{
                         fontFamily: "Source Sans Pro, sans-serif",
                         fontWeight: "350",
@@ -139,7 +139,7 @@ export default function UsingPlatform({ onNavigate }: UsingPlatformProps) {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl text-[#725C3A] mb-8"
+              className="text-3xl text-[#725C3A] mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
@@ -155,7 +155,7 @@ export default function UsingPlatform({ onNavigate }: UsingPlatformProps) {
               <CardContent className="p-8 text-center">
                 <FileText className="w-12 h-12 text-[#725C3A] mx-auto mb-4" />
                 <h3
-                  className="text-xl text-[#725C3A] mb-4"
+                  className="text-lg text-[#725C3A] mb-4"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "500",
@@ -164,7 +164,7 @@ export default function UsingPlatform({ onNavigate }: UsingPlatformProps) {
                   User Documentation
                 </h3>
                 <p
-                  className="text-[#725C3A]/80 mb-6 text-lg"
+                  className="text-[#725C3A]/80 mb-6 text-base"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
                     fontWeight: "350",
@@ -186,7 +186,7 @@ export default function UsingPlatform({ onNavigate }: UsingPlatformProps) {
               <CardContent className="p-8 text-center">
                 <Monitor className="w-12 h-12 text-[#725C3A] mx-auto mb-4" />
                 <h3
-                  className="text-xl text-[#725C3A] mb-4"
+                  className="text-lg text-[#725C3A] mb-4"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "500",
@@ -195,7 +195,7 @@ export default function UsingPlatform({ onNavigate }: UsingPlatformProps) {
                   Training Sessions
                 </h3>
                 <p
-                  className="text-[#725C3A]/80 mb-6 text-lg"
+                  className="text-[#725C3A]/80 mb-6 text-base"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
                     fontWeight: "350",

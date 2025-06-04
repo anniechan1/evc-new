@@ -14,7 +14,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {/* Students image - smooth organic blob top left */}
             <div
-              className="absolute top-10 left-10 w-[600px] h-[500px] opacity-85"
+              className="absolute top-10 left-10 w-[450px] h-[350px] opacity-75"
               style={{
                 clipPath: "ellipse(80% 70% at 30% 40%)",
               }}
@@ -24,7 +24,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
 
             {/* Lab image - flowing organic shape top right */}
             <div
-              className="absolute top-20 right-10 w-[550px] h-[450px] opacity-80"
+              className="absolute top-20 right-10 w-[400px] h-[320px] opacity-70"
               style={{
                 clipPath: "ellipse(75% 85% at 70% 30%)",
               }}
@@ -34,7 +34,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
 
             {/* Class image - large curved blob bottom left */}
             <div
-              className="absolute bottom-20 left-20 w-[650px] h-[400px] opacity-75"
+              className="absolute bottom-5 left-5 w-[490px] h-[300px] opacity-65"
               style={{
                 clipPath: "ellipse(90% 60% at 40% 70%)",
               }}
@@ -44,7 +44,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
 
             {/* Youth processing image - smooth oval blob bottom right */}
             <div
-              className="absolute bottom-10 right-20 w-[500px] h-[500px] opacity-70"
+              className="absolute bottom-5 right-5 w-[375px] h-[375px] opacity-60"
               style={{
                 clipPath: "ellipse(65% 80% at 60% 50%)",
               }}
@@ -56,7 +56,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
           {/* Content positioned to avoid image overlap */}
           <div className="relative z-10 max-w-4xl mx-auto pt-20">
             <div
-              className="bg-white/98 backdrop-blur-sm rounded-3xl p-12 shadow-lg ml-auto mr-auto"
+              className="bg-white/99 backdrop-blur-md rounded-3xl p-12 shadow-xl ml-auto mr-auto"
               style={{ marginTop: "200px", marginBottom: "200px" }}
             >
               <h1
@@ -104,7 +104,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
 
                 <div className="bg-[#E5D2B8] rounded-2xl p-8 my-12">
                   <h3
-                    className="text-2xl text-[#725C3A] mb-6"
+                    className="text-xl text-[#725C3A] mb-6"
                     style={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: "300",

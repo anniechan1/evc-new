@@ -13,7 +13,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
       <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
         <div className="container mx-auto max-w-4xl text-center">
           <h1
-            className="text-4xl text-[#725C3A] mb-8"
+            className="text-3xl text-[#725C3A] mb-8"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",
@@ -29,7 +29,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
       <section className="py-20 px-8 bg-white">
         <div className="container mx-auto max-w-6xl">
           <p
-            className="text-xl text-[#725C3A] leading-relaxed max-w-3xl mx-auto mb-16"
+            className="text-lg text-[#725C3A] leading-relaxed max-w-3xl mx-auto mb-16"
             style={{
               fontFamily: "Source Sans Pro, sans-serif",
               fontWeight: "300",
@@ -48,7 +48,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3
-                className="text-4xl text-[#725C3A]"
+                className="text-2xl text-[#725C3A]"
                 style={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: "300",
@@ -72,7 +72,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
             {/* Content */}
             <div className="space-y-12">
               <p
-                className="text-2xl text-[#725C3A] leading-relaxed"
+                className="text-lg text-[#725C3A] leading-relaxed"
                 style={{
                   fontFamily: "Source Sans Pro, sans-serif",
                   fontWeight: "300",
@@ -86,7 +86,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
 
               <div>
                 <h4
-                  className="text-2xl text-[#725C3A] font-medium mb-8"
+                  className="text-xl text-[#725C3A] font-medium mb-8"
                   style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
                 >
                   Features:
@@ -103,7 +103,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
                     <div key={index} className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-[#725C3A] mt-0.5 flex-shrink-0" />
                       <span
-                        className="text-xl text-[#725C3A]"
+                        className="text-base text-[#725C3A]"
                         style={{
                           fontFamily: "Source Sans Pro, sans-serif",
                           fontWeight: "300",
@@ -124,7 +124,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
                   Benefits:
                 </h5>
                 <p
-                  className="text-2xl text-[#725C3A]"
+                  className="text-lg text-[#725C3A]"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
                     fontWeight: "300",
@@ -145,7 +145,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
                 <MapPin className="w-8 h-8 text-white" />
               </div>
               <h3
-                className="text-4xl text-[#725C3A]"
+                className="text-2xl text-[#725C3A]"
                 style={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: "300",
@@ -158,7 +158,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
             {/* Content */}
             <div className="space-y-12">
               <p
-                className="text-2xl text-[#725C3A] leading-relaxed"
+                className="text-lg text-[#725C3A] leading-relaxed"
                 style={{
                   fontFamily: "Source Sans Pro, sans-serif",
                   fontWeight: "300",
@@ -172,7 +172,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
 
               <div>
                 <h4
-                  className="text-2xl text-[#725C3A] font-medium mb-8"
+                  className="text-xl text-[#725C3A] font-medium mb-8"
                   style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
                 >
                   Features:
@@ -188,7 +188,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
                     <div key={index} className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-[#725C3A] mt-0.5 flex-shrink-0" />
                       <span
-                        className="text-xl text-[#725C3A]"
+                        className="text-base text-[#725C3A]"
                         style={{
                           fontFamily: "Source Sans Pro, sans-serif",
                           fontWeight: "300",
@@ -209,7 +209,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
                   Benefits:
                 </h5>
                 <p
-                  className="text-2xl text-[#725C3A]"
+                  className="text-lg text-[#725C3A]"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
                     fontWeight: "300",
@@ -229,7 +229,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
                 <Database className="w-8 h-8 text-white" />
               </div>
               <h3
-                className="text-4xl text-[#725C3A]"
+                className="text-2xl text-[#725C3A]"
                 style={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: "300",
@@ -249,7 +249,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
             {/* Content */}
             <div className="space-y-12">
               <p
-                className="text-2xl text-[#725C3A] leading-relaxed"
+                className="text-lg text-[#725C3A] leading-relaxed"
                 style={{
                   fontFamily: "Source Sans Pro, sans-serif",
                   fontWeight: "300",
@@ -262,7 +262,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
 
               <div>
                 <h4
-                  className="text-2xl text-[#725C3A] font-medium mb-8"
+                  className="text-xl text-[#725C3A] font-medium mb-8"
                   style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
                 >
                   Features:
@@ -278,7 +278,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
                     <div key={index} className="flex items-start space-x-3">
                       <CheckCircle className="w-5 h-5 text-[#725C3A] mt-0.5 flex-shrink-0" />
                       <span
-                        className="text-xl text-[#725C3A]"
+                        className="text-base text-[#725C3A]"
                         style={{
                           fontFamily: "Source Sans Pro, sans-serif",
                           fontWeight: "300",
@@ -299,7 +299,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
                   Benefits:
                 </h5>
                 <p
-                  className="text-2xl text-[#725C3A]"
+                  className="text-lg text-[#725C3A]"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
                     fontWeight: "300",

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Users, Package, ShoppingCart, FileText, GitBranch, Puzzle, ArrowRight, Play } from "lucide-react"
+import { Users, Package, ShoppingCart, FileText, GitBranch, Puzzle, ArrowRight, Play } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
 interface HomePageProps {
@@ -80,7 +80,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <div className="max-w-3xl space-y-8">
                 <div className="space-y-6">
                   <h1
-                    className="text-4xl text-white mb-8 whitespace-nowrap"
+                    className="text-3xl text-white mb-8 whitespace-nowrap"
                     style={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: "500",
@@ -92,7 +92,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   </h1>
                 </div>
                 <p
-                  className="text-2xl text-white/90 leading-relaxed max-w-2xl"
+                  className="text-xl text-white/90 leading-relaxed max-w-2xl"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
                     fontWeight: "400",
@@ -104,7 +104,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
-                    className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-full px-8 py-3 shadow-xl"
+                    className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-full px-6 py-2 shadow-xl"
                     style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
                     onClick={() => {
                       const element = document.getElementById("welcome-section")
@@ -118,7 +118,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   </Button>
                   <Button
                     variant="outline"
-                    className="border-2 border-white text-[#725C3A] hover:bg-white hover:text-[#725C3A] rounded-full px-8 py-3 group"
+                    className="border-2 border-white text-[#725C3A] hover:bg-white hover:text-[#725C3A] rounded-full px-6 py-2 group"
                     style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
                   >
                     <Play className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
@@ -140,7 +140,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <div className="max-w-3xl space-y-8">
                 <div className="space-y-6">
                   <h1
-                    className="text-4xl text-white mb-8 whitespace-nowrap"
+                    className="text-3xl text-white mb-8 whitespace-nowrap"
                     style={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: "500",
@@ -152,7 +152,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   </h1>
                 </div>
                 <p
-                  className="text-2xl text-white/90 leading-relaxed max-w-2xl"
+                  className="text-xl text-white/90 leading-relaxed max-w-2xl"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
                     fontWeight: "400",
@@ -164,7 +164,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
-                    className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-full px-8 py-3 shadow-xl"
+                    className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-full px-6 py-2 shadow-xl"
                     style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
                     onClick={handleEUDRClick}
 
@@ -192,7 +192,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <div className="max-w-3xl space-y-8">
                 <div className="space-y-6">
                   <h1
-                    className="text-4xl text-white mb-8 whitespace-nowrap"
+                    className="text-3xl text-white mb-8 whitespace-nowrap"
                     style={{
                       fontFamily: "Poppins, sans-serif",
                       fontWeight: "500",
@@ -204,7 +204,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   </h1>
                 </div>
                 <p
-                  className="text-2xl text-white/90 leading-relaxed max-w-2xl"
+                  className="text-xl text-white/90 leading-relaxed max-w-2xl"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
                     fontWeight: "400",
@@ -216,7 +216,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
-                    className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-full px-8 py-3 shadow-xl"
+                    className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-full px-6 py-2 shadow-xl"
                     style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
                     onClick={() => onNavigate("marketplace")}
                   >
@@ -247,7 +247,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2
-              className="text-4xl text-[#725C3A] mb-8"
+              className="text-3xl text-[#725C3A] mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "500",
@@ -271,7 +271,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
           <div className="space-y-8">
             <p
-              className="text-xl text-[#725C3A] leading-relaxed"
+              className="text-lg text-[#725C3A] leading-relaxed"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -285,7 +285,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </p>
 
             <p
-              className="text-xl text-[#725C3A] leading-relaxed"
+              className="text-lg text-[#725C3A] leading-relaxed"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -302,7 +302,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
             <div className="bg-[#E5E0D8] rounded-2xl p-10">
               <h3
-                className="text-2xl text-[#725C3A] mb-6"
+                className="text-xl text-[#725C3A] mb-6"
                 style={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: "500",
@@ -352,22 +352,22 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 ].map((stakeholder, index) => (
                   <div
                     key={index}
-                    className={`flex space-x-4 ${stakeholder.clickable ? "cursor-pointer hover:bg-white/50 p-4 rounded-lg transition-colors" : ""}`}
+                    className={`flex space-x-3 ${stakeholder.clickable ? "cursor-pointer hover:bg-white/50 p-4 rounded-lg transition-colors" : ""}`}
                     onClick={() => stakeholder.clickable && handleStakeholderClick(stakeholder.title)}
                   >
-                    <div className="w-2.5 h-2.5 bg-[#809671] rounded-full mt-3 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 bg-[#725C3A] rounded-full mt-2.5 flex-shrink-0"></div>
                     <div>
                       <span
-                        className={`font-medium text-lg text-[#725C3A] ${stakeholder.clickable ? "hover:text-[#809671] underline" : ""}`}
+                        className={`font-medium text-lg text-[#725C3A] leading-normal ${stakeholder.clickable ? "hover:text-[#809671] underline" : ""}`}
                         style={{
                           fontFamily: "Poppins, sans-serif",
-                          fontWeight: "500",
+                          fontWeight: "300",
                         }}
                       >
                         {stakeholder.title}
                       </span>
                       <span
-                        className="text-xl text-[#725C3A]"
+                        className="text-base text-[#725C3A]"
                         style={{
                           fontFamily: "Source Sans Pro, sans-serif",
                           fontWeight: "300",
@@ -383,7 +383,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
 
             <p
-              className="text-xl text-[#725C3A] leading-relaxed text-center"
+              className="text-lg text-[#725C3A] leading-relaxed text-center"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -403,7 +403,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl text-[#725C3A] mb-4"
+              className="text-3xl text-[#725C3A] mb-4"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
@@ -413,7 +413,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               Empowering Every Stakeholder
             </h2>
             <p
-              className="text-2xl text-[#725C3A]/90 max-w-2x "
+              className="text-xl text-[#725C3A]/90 max-w-2x "
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -540,7 +540,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             <div className="lg:col-span-1 space-y-8">
               <div className="space-y-6">
                 <h2
-                  className="text-4xl text-[#725C3A] leading-tight"
+                  className="text-3xl text-[#725C3A] leading-tight"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "300",
@@ -569,7 +569,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 ].map((item, index) => (
                   <div key={index} className="group">
                     <h3
-                      className="text-2xl text-[#725C3A] mb-4"
+                      className="text-lg text-[#725C3A] mb-4"
                       style={{
                         fontFamily: "Poppins, sans-serif",
                         fontWeight: "400",
@@ -579,9 +579,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     </h3>
                     {/* Description with brown bullet point matching text size */}
                     <div className="flex items-start space-x-4">
-                      <div className="w-2 h-2 bg-[#725C3A] rounded-full mt-3 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-[#725C3A] rounded-full mt-2 flex-shrink-0"></div>
                       <p
-                        className="text-[#725C3A]/90 leading-relaxed text-xl flex-1"
+                        className="text-[#725C3A]/90 leading-relaxed text-lg flex-1"
                         style={{
                           fontFamily: "Source Sans Pro, sans-serif",
                           fontWeight: "300",
@@ -665,10 +665,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   </div>
                   <div>
                     <h3
-                      className="text-2xl mb-2"
+                      className="text-xl mb-2"
                       style={{
                         fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
+                        fontWeight: "400",
                       }}
                     >
                       {feature.title}

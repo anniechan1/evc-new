@@ -62,7 +62,7 @@ export default function NewsOutlook({ onNavigate }: NewsOutlookProps) {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container mx-auto max-w-4xl text-center px-8">
             <h1
-              className="text-4xl text-white mb-8"
+              className="text-3xl text-white mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
@@ -79,7 +79,7 @@ export default function NewsOutlook({ onNavigate }: NewsOutlookProps) {
       <section className="py-8 px-8 bg-white relative z-20">
         <div className="container mx-auto max-w-6xl">
           <p
-            className="text-xl text-[#725C3A]/90 leading-relaxed max-w-5xl mx-auto text-center mb-10"
+            className="text-lg text-[#725C3A]/90 leading-relaxed max-w-5xl mx-auto text-center mb-10"
             style={{
               fontFamily: "Source Sans Pro, sans-serif",
               fontWeight: "300",

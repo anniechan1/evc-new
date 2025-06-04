@@ -65,7 +65,7 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
       <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
         <div className="container mx-auto max-w-4xl text-center">
           <h1
-            className="text-4xl text-[#725C3A] mb-8"
+            className="text-3xl text-[#725C3A] mb-8"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",
@@ -156,7 +156,7 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
       <section className="py-20 px-8 bg-[#725C3A] text-white">
         <div className="container mx-auto text-center max-w-4xl">
           <h2
-            className="text-4xl mb-8"
+            className="text-2xl mb-8"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",
@@ -166,7 +166,7 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
             Interested in Partnering with Us?
           </h2>
           <p
-            className="text-xl text-white/90 mb-8 leading-relaxed"
+            className="text-base text-white/90 mb-8 leading-relaxed"
             style={{
               fontFamily: "Source Sans Pro, sans-serif",
               fontWeight: "300",

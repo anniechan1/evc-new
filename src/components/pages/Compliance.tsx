@@ -14,7 +14,7 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
         <div className="container mx-auto max-w-4xl relative z-20 flex items-center justify-start min-h-[300px]">
           <div className="relative">
             <h1
-              className="text-4xl text-[#725C3A] inline-block"
+              className="text-3xl text-[#725C3A] inline-block"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
@@ -36,7 +36,7 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
         <div className="container mx-auto max-w-4xl">
           <div className="space-y-8">
             <p
-              className="text-xl text-[#725C3A] leading-relaxed"
+              className="text-lg text-[#725C3A] leading-relaxed"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -83,7 +83,7 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
         <div className="container mx-auto max-w-4xl">
           <div className="space-y-8">
             <h2
-              className="text-3xl text-[#725C3A] mb-8"
+              className="text-2xl text-[#725C3A] mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
@@ -161,7 +161,7 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
 
         <div className="container mx-auto max-w-7xl relative z-10">
           <h2
-            className="text-4xl text-white mb-12 text-center"
+            className="text-2xl text-white mb-12 text-center"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",
@@ -399,13 +399,14 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
       {/* Why Compliance Matters - Redesigned with Enhanced Background */}
       <section className="relative py-32 px-8">
         <div className="absolute inset-0">
+
           <img src="/images/handshake.webp" alt="Partnership handshake" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#725C3A]/60 via-[#725C3A]/40 to-[#809671]/30"></div>
         </div>
 
         <div className="container mx-auto max-w-6xl relative z-10">
           <h2
-            className="text-5xl text-white mb-16 text-center"
+            className="text-3xl text-white mb-16 text-center"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",
@@ -478,7 +479,7 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 max-w-6xl mx-auto">
               <div className="flex justify-center">
                 <p
-                  className="text-3xl text-white leading-relaxed"
+                  className="text-2xl text-white leading-relaxed"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "300",
