@@ -1,5 +1,6 @@
 "use client"
 import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 
 interface ExportersImportersProps {
   onNavigate: (page: string) => void
@@ -8,169 +9,209 @@ interface ExportersImportersProps {
 export default function ExportersImporters({ onNavigate }: ExportersImportersProps) {
   return (
     <div className="min-h-screen bg-[#E5E0D8] relative overflow-hidden">
-      {/* Coffee Images Background */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        {/* Coffee beans image - large blob top right */}
-        <div
-          className="absolute top-10 right-10 w-[500px] h-[400px] opacity-25"
-          style={{
-            clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
-          }}
-        >
-          <img src="/images/coffeebeans.webp" alt="Coffee beans" className="w-full h-full object-cover" />
-        </div>
-      </div>
-
-      {/* Hero Section */}
-      <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1
-            className="text-4xl text-[#725C3A] mb-8 text-center"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: "300",
-              letterSpacing: "0.01em",
-            }}
-          >
-            For International Buyers and Importers
-          </h1>
-
-        </div>
-      </section>
-
-      {/* Benefits Overview - New Layout with Large Image */}
-
-
-      <section className="py-20 px-8 bg-white relative z-10">
-        <div className="container mx-auto max-w-6xl">
-          <p
-            className="text-xl text-[#725C3A] leading-relaxed max-w-none mx-auto whitespace-nowrap mb-16 text-center"
-            style={{
-              fontFamily: "Source Sans Pro, sans-serif",
-              fontWeight: "300",
-              lineHeight: "1.7",
-            }}
-          >
-            Access verified, traceable, and compliant agricultural products with complete transparency from farm to
-            export.
-          </p>
-
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Content Side */}
-            <div className="space-y-8">
-              <h2
-                className="text-4xl text-[#725C3A] mb-8"
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "300",
-                  letterSpacing: "0.01em",
-                }}
-              >
-                International buyers and importers benefit through:
-              </h2>
-
-              <div className="space-y-6">
-                {[
-                  {
-                    title: "Instant access to verified producer data and certifications",
-                    description:
-                      "Get real-time access to comprehensive farmer profiles, production data, and certification status through our digital platform.",
-                  },
-                  {
-                    title: "Downloads of EUDR-compliant documentation and audit-ready reports",
-                    description:
-                      "Access complete EUDR compliance documentation, GPS coordinates, and audit-ready reports for seamless regulatory compliance.",
-                  },
-                  {
-                    title: "Verified traceability down to the farm level",
-                    description:
-                      "Track your products from individual farms through the entire supply chain with QR codes and digital documentation.",
-                  },
-                  {
-                    title: "Confidence in ethically sourced, certified products",
-                    description:
-                      "Source with confidence knowing all products meet international sustainability standards and ethical sourcing requirements.",
-                  },
-                ].map((benefit, index) => (
-                  <div key={index} className="border-l-4 border-[#809671] pl-6">
-                    <h3
-                      className="text-xl text-[#725C3A] mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
-                        letterSpacing: "0.01em",
-                      }}
-                    >
-                      {benefit.title}
-                    </h3>
-                    <p
-                      className="text-lg text-[#725C3A]/80 leading-relaxed"
-                      style={{
-                        fontFamily: "Source Sans Pro, sans-serif",
-                        fontWeight: "300",
-                        lineHeight: "1.7",
-                      }}
-                    >
-                      {benefit.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Image Side */}
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coffeebag-Z24R2BNQZ6iw93DsYn6jyQGWPzt28w.webp"
-                  alt="Coffee packaging and quality control"
-                  className="w-full h-[600px] object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#E5D2B8] rounded-full opacity-20"></div>
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#809671] rounded-full opacity-20"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 px-8 bg-[#725C3A] text-white relative z-10">
-        <div className="container mx-auto text-center max-w-4xl">
-          <div className="space-y-8">
-            <h2
-              className="text-2xl mb-8"
+      {/* Hero Section - Same size as UsingPlatform with cropped image */}
+      <section className="relative h-[50vh] md:h-[70vh]">
+        <img
+          src="/images/coffeebucket.webp"
+          alt="Coffee packaging and quality control"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="text-center text-white max-w-4xl px-4 sm:px-8">
+            <h1
+              className="text-2xl md:text-3xl leading-tight mb-4 md:mb-6"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
                 letterSpacing: "0.01em",
               }}
             >
-              By streamlining data collection and compliance across the entire value chain, EVC gives importers peace of mind and helps producers stay competitive in regulated global markets.
+              For International Buyers and Importers
+            </h1>
+            <p
+              className="text-base md:text-xl text-white/90 max-w-full md:whitespace-nowrap"
+              style={{
+                fontFamily: "Source Sans Pro, sans-serif",
+                fontWeight: "300",
+              }}
+            >
+              Access verified, traceable agricultural products with farm-to-export transparency.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Overview - Single column layout without image */}
+      <section className="py-12 md:py-16 px-4 sm:px-8 bg-white relative z-10">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center space-y-6 md:space-y-8">
+            <h2
+              className="text-2xl md:text-3xl text-[#725C3A] mb-6 md:mb-8"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "300",
+                letterSpacing: "0.01em",
+              }}
+            >
+              International buyers and importers benefit through:
             </h2>
 
-            <div className="bg-white/10 rounded-3xl p-10">
+            <div className="space-y-4 md:space-y-6 text-left max-w-3xl mx-auto">
+              {[
+                {
+                  title: "Instant access to verified producer data and certifications",
+                  description: "Real-time access to farmer profiles, production data, and certification status.",
+                },
+                {
+                  title: "Downloads of EUDR-compliant documentation and audit-ready reports",
+                  description: "Complete EUDR compliance documentation, GPS coordinates, and audit-ready reports.",
+                },
+                {
+                  title: "Verified traceability down to the farm level",
+                  description: "Track products from individual farms through the entire supply chain with QR codes.",
+                },
+                {
+                  title: "Confidence in ethically sourced, certified products",
+                  description:
+                    "Products meeting international sustainability standards and ethical sourcing requirements.",
+                },
+              ].map((benefit, index) => (
+                <div key={index} className="border-l-4 border-[#809671] pl-4 md:pl-5">
+                  <h3
+                    className="text-base md:text-lg text-[#725C3A] mb-1 md:mb-2"
+                    style={{
+                      fontFamily: "Poppins, sans-serif",
+                      fontWeight: "500",
+                      letterSpacing: "0.01em",
+                    }}
+                  >
+                    {benefit.title}
+                  </h3>
+                  <p
+                    className="text-sm md:text-base text-[#725C3A]/80 md:whitespace-nowrap"
+                    style={{
+                      fontFamily: "Source Sans Pro, sans-serif",
+                      fontWeight: "300",
+                    }}
+                  >
+                    {benefit.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action - Redesigned with smaller content */}
+      <section className="relative py-16 md:py-24 px-4 sm:px-8 overflow-hidden">
+        {/* Background with gradient overlay */}
+        <div className="absolute inset-0">
+          <img src="/images/coffee.webp" alt="Partnership handshake" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#725C3A]/80 via-[#725C3A]/60 to-[#809671]/40"></div>
+        </div>
+
+        {/* Decorative elements */}
+        <div className="absolute top-10 left-10 w-24 md:w-32 h-24 md:h-32 bg-[#E5D2B8]/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-10 right-10 w-32 md:w-40 h-32 md:h-40 bg-[#809671]/20 rounded-full blur-xl"></div>
+
+        <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="text-center space-y-8 md:space-y-10">
+            {/* Main heading */}
+            <div className="space-y-3 md:space-y-4">
+              <h2
+                className="text-2xl md:text-3xl text-white leading-tight"
+                style={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: "300",
+                  letterSpacing: "0.01em",
+                }}
+              >
+                Transform Your Sourcing Strategy
+              </h2>
+              <div className="w-16 md:w-20 h-1 bg-[#E5D2B8] mx-auto rounded-full"></div>
+            </div>
+
+            {/* Description */}
+            <p
+              className="text-base md:text-lg text-white/95 leading-relaxed max-w-3xl mx-auto"
+              style={{
+                fontFamily: "Source Sans Pro, sans-serif",
+                fontWeight: "400",
+                lineHeight: "1.7",
+              }}
+            >
+              By streamlining data collection and compliance across the entire value chain, EVC gives importers peace of
+              mind and helps producers stay competitive in regulated global markets.
+            </p>
+
+            {/* Feature highlights - Smaller */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 my-8 md:my-12">
+              {[
+                {
+                  title: "Verified Traceability",
+                  description: "Complete farm-to-export tracking with GPS coordinates and digital documentation",
+                },
+                {
+                  title: "EUDR Compliance",
+                  description: "Ready-to-download compliance reports and audit documentation",
+                },
+                {
+                  title: "Ethical Sourcing",
+                  description: "Certified sustainable and socially responsible supply chains",
+                },
+              ].map((feature, index) => (
+                <div key={index} className="text-center space-y-2 md:space-y-3">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto">
+                    <div className="w-5 h-5 md:w-6 md:h-6 bg-[#E5D2B8] rounded-full"></div>
+                  </div>
+                  <h3
+                    className="text-sm md:text-base text-white font-medium"
+                    style={{
+                      fontFamily: "Poppins, sans-serif",
+                      fontWeight: "400",
+                    }}
+                  >
+                    {feature.title}
+                  </h3>
+                  <p
+                    className="text-xs md:text-sm text-white/90 leading-relaxed"
+                    style={{
+                      fontFamily: "Source Sans Pro, sans-serif",
+                      fontWeight: "400",
+                      lineHeight: "1.5",
+                    }}
+                  >
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="space-y-4 md:space-y-6">
               <p
-                className="text-xl leading-relaxed mb-8"
+                className="text-sm md:text-base text-white/90 leading-relaxed max-w-2xl mx-auto"
                 style={{
                   fontFamily: "Source Sans Pro, sans-serif",
-                  fontWeight: "300",
-                  lineHeight: "1.7",
+                  fontWeight: "400",
+                  lineHeight: "1.6",
                 }}
               >
                 Join the growing network of international buyers who trust EVC for transparent, compliant, and
                 sustainable sourcing from Ethiopian producers.
               </p>
 
-              <Button
-                onClick={() => onNavigate("marketplace")}
-                size="lg"
-                className="bg-[#E5D2B8] hover:bg-[#D2AB80] text-[#725C3A] rounded-full px-8 py-4"
-                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-              >
-                Access Verified Sourcing
-              </Button>
+              <div className="flex justify-center">
+                <Button
+                  onClick={() => onNavigate("marketplace")}
+                  className="bg-white text-[#725C3A] rounded-full px-4 md:px-6 py-1.5 md:py-2 shadow-xl"
+                  style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                >
+                  Access Verified Sourcing
+                  <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-2" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>

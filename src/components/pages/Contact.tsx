@@ -1,223 +1,187 @@
 "use client"
 
-import { Send } from "lucide-react"
+import { Send, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { useState } from "react"
+import { useTranslation } from "react-i18next"
 
 interface ContactProps {
   onNavigate: (page: string) => void
 }
 
 export default function Contact({ onNavigate }: ContactProps) {
+  const { t } = useTranslation()
+  const [selectedOption, setSelectedOption] = useState(t("contact.inquiryOptions.general"))
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+
+  const inquiryOptions = [
+    t("contact.inquiryOptions.general"),
+    t("contact.inquiryOptions.partnership"),
+    t("contact.inquiryOptions.technical"),
+    t("contact.inquiryOptions.dlm"),
+    t("contact.inquiryOptions.producer"),
+    t("contact.inquiryOptions.buyer"),
+  ]
+
+  const handleOptionSelect = (option: string) => {
+    setSelectedOption(option)
+    setIsDropdownOpen(false)
+  }
+
   return (
-    <div className="min-h-screen bg-[#E5E0D8]">
-      {/* Hero Section */}
-      <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1
-            className="text-3xl text-[#725C3A] mb-8"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: "300",
-              letterSpacing: "0.01em",
-            }}
-          >
-            Get in Touch
-          </h1>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section className="py-20 px-8 bg-white">
-        <div className="container mx-auto max-w-2xl">
-          <p
-            className="text-lg text-[#725C3A] leading-relaxed max-w-3xl mx-auto text-center mb-8"
-            style={{
-              fontFamily: "Source Sans Pro, sans-serif",
-              fontWeight: "300",
-              lineHeight: "1.7",
-            }}
-          >
-            Ready to transform your agricultural operations? Contact us directly via email at{" "}
-            <a
-              href="mailto:admin@ecopiavaluechain.com"
-              className="font-medium text-[#809671] hover:text-[#725C3A] transition-colors underline"
-              style={{
-                fontFamily: "Source Sans Pro, sans-serif",
-                fontWeight: "500",
-              }}
-            >
-              admin@ecopiavaluechain.com
-            </a>{" "}
-            or use our contact form below.
-          </p>
-          <div className="bg-[#E5E0D8] rounded-3xl p-8">
-            <div className="text-center mb-8">
-              <h2
-                className="text-2xl text-[#725C3A] mb-4"
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "300",
-                  letterSpacing: "0.01em",
-                }}
-              >
-                Contact Form
-              </h2>
-              <p
-                className="text-[#725C3A]/80"
-                style={{
-                  fontFamily: "Source Sans Pro, sans-serif",
-                  fontWeight: "300",
-                  lineHeight: "1.6",
-                }}
-              >
-                Fill out the form below and we'll get back to you as soon as possible.
-              </p>
-            </div>
-
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <input
-                  placeholder="First Name"
-                  className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-2 px-3 w-full"
-                  style={{ fontFamily: "Source Sans Pro, sans-serif" }}
-                />
-                <input
-                  placeholder="Last Name"
-                  className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-2 px-3 w-full"
-                  style={{ fontFamily: "Source Sans Pro, sans-serif" }}
-                />
-              </div>
-
-              <input
-                type="email"
-                placeholder="your.email@example.com"
-                className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-2 px-3 w-full"
-                style={{ fontFamily: "Source Sans Pro, sans-serif" }}
-              />
-
-              <input
-                placeholder="Organization (optional)"
-                className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl py-2 px-3 w-full"
-                style={{ fontFamily: "Source Sans Pro, sans-serif" }}
-              />
-
-              <select
-                className="w-full py-2 px-3 bg-white border border-[#D2AB80] focus:border-[#809671] rounded-xl"
-                style={{ fontFamily: "Source Sans Pro, sans-serif" }}
-              >
-                <option>General Inquiry</option>
-                <option>Partnership Opportunity</option>
-                <option>Technical Support</option>
-                <option>DLM Application</option>
-                <option>Producer Registration</option>
-                <option>Buyer/Importer Interest</option>
-              </select>
-
-              <textarea
-                placeholder="Tell us about your needs, questions, or how we can help you..."
-                rows={4}
-                className="bg-white border-[#D2AB80] focus:border-[#809671] rounded-xl resize-none py-2 px-3 w-full"
-                style={{ fontFamily: "Source Sans Pro, sans-serif" }}
-              />
-
-              <div className="flex justify-center pt-4">
-                <Button
-                  type="submit"
-                  className="bg-[#725C3A] hover:bg-[#809671] text-white rounded-xl py-2 px-6 group"
-                  style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-                >
-                  Send Message
-                  <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Information */}
-      <section className="py-20 px-8 bg-[#E5D2B8]">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2
-              className="text-2xl text-[#725C3A] mb-8"
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Responsive height */}
+      <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh]">
+        <img src="/images/seed.webp" alt="Agricultural field" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="text-center text-white max-w-4xl px-4 sm:px-8">
+            <h1
+              className="text-2xl sm:text-3xl leading-tight mb-6 md:mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
                 letterSpacing: "0.01em",
               }}
             >
-              Additional Resources
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "For Producers",
-                description: "Ready to digitize your operations?",
-                buttonText: "Get Started",
-                buttonAction: () =>
-                  window.open(
-                    "https://docs.google.com/forms/d/e/1FAIpQLSeQPRZV4bcFpwxNbqPvhnTJV_dv-wYzPKAY5uQ4UQOECT8RoA/viewform",
-                    "_blank",
-                  ),
-              },
-              {
-                title: "For DLMs",
-                description: "Interested in becoming a Data Logistic Manager?",
-                buttonText: "Apply Now",
-                buttonAction: () =>
-                  window.open(
-                    "https://docs.google.com/forms/d/e/1FAIpQLSdHY6eRAGHRjcb154z2nFstqvey49E_XK525SSK3-acwN8LVw/viewform",
-                    "_blank",
-                  ),
-              },
-              {
-                title: "For Buyers",
-                description: "Looking for traceable, compliant products?",
-                buttonText: "Learn More",
-                buttonAction: () => onNavigate("exporters-importers"),
-              },
-            ].map((item, index) => (
-              <Card
-                key={index}
-                className="bg-white border-0 rounded-3xl text-center hover:shadow-lg transition-all duration-300 h-full"
+              {t("contact.title")}
+            </h1>
+            <p
+              className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto"
+              style={{
+                fontFamily: "Source Sans Pro, sans-serif",
+                fontWeight: "300",
+                lineHeight: "1.7",
+              }}
+            >
+              {t("contact.subtitle").split("admin@ecopiavaluechain.com")[0]}
+              <a
+                href="mailto:admin@ecopiavaluechain.com?subject=Inquiry from Ecopia Value Chain Website"
+                className="font-medium text-white hover:text-white/80 transition-colors underline break-all sm:break-normal"
+                style={{
+                  fontFamily: "Source Sans Pro, sans-serif",
+                  fontWeight: "500",
+                }}
               >
-                <CardContent className="p-6 flex flex-col justify-between h-full">
-                  <div>
-                    <h3
-                      className="text-lg text-[#725C3A] mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "400",
-                        letterSpacing: "0.01em",
-                      }}
-                    >
-                      {item.title}
-                    </h3>
-                    <p
-                      className="text-[#725C3A]/80 mb-6 leading-relaxed"
-                      style={{
-                        fontFamily: "Source Sans Pro, sans-serif",
-                        fontWeight: "300",
-                        lineHeight: "1.6",
-                      }}
-                    >
-                      {item.description}
-                    </p>
-                  </div>
-                  <Button
-                    onClick={item.buttonAction}
-                    className="bg-[#809671] hover:bg-[#725C3A] text-white rounded-full px-6 py-2 w-full"
-                    style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                admin@ecopiavaluechain.com
+              </a>
+              {t("contact.subtitle").split("admin@ecopiavaluechain.com")[1]}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section - Responsive layout */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-8 bg-white">
+        <div className="container mx-auto max-w-2xl">
+          <div className="bg-white border border-[#725C3A]/20 rounded-2xl md:rounded-3xl p-6 sm:p-8 shadow-sm">
+            <div className="text-center mb-6 md:mb-8">
+              <h2
+                className="text-xl sm:text-2xl text-[#725C3A] mb-3 md:mb-4"
+                style={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: "300",
+                  letterSpacing: "0.01em",
+                }}
+              >
+                {t("contact.formTitle")}
+              </h2>
+              <p
+                className="text-sm sm:text-base text-[#725C3A]/80"
+                style={{
+                  fontFamily: "Source Sans Pro, sans-serif",
+                  fontWeight: "300",
+                  lineHeight: "1.6",
+                }}
+              >
+                {t("contact.formSubtitle")}
+              </p>
+            </div>
+
+            <form className="space-y-4 md:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  placeholder={t("contact.firstName")}
+                  className="bg-white border border-[#725C3A]/20 focus:border-[#725C3A] rounded-xl py-2.5 sm:py-2 px-3 w-full text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#725C3A]/20"
+                  style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+                />
+                <input
+                  placeholder={t("contact.lastName")}
+                  className="bg-white border border-[#725C3A]/20 focus:border-[#725C3A] rounded-xl py-2.5 sm:py-2 px-3 w-full text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#725C3A]/20"
+                  style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+                />
+              </div>
+
+              <input
+                type="email"
+                placeholder={t("contact.email")}
+                className="bg-white border border-[#725C3A]/20 focus:border-[#725C3A] rounded-xl py-2.5 sm:py-2 px-3 w-full text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#725C3A]/20"
+                style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+              />
+
+              <input
+                placeholder={t("contact.organization")}
+                className="bg-white border border-[#725C3A]/20 focus:border-[#725C3A] rounded-xl py-2.5 sm:py-2 px-3 w-full text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#725C3A]/20"
+                style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+              />
+
+              {/* Custom Dropdown */}
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="bg-white border border-[#725C3A]/20 focus:border-[#725C3A] rounded-xl py-2.5 sm:py-2 px-3 w-full text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#725C3A]/20 flex items-center justify-between text-left text-gray-500"
+                  style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+                >
+                  <span
+                    className={
+                      selectedOption === t("contact.inquiryOptions.general") ? "text-gray-500" : "text-[#725C3A]"
+                    }
                   >
-                    {item.buttonText}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                    {selectedOption}
+                  </span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-gray-400 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                {isDropdownOpen && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#725C3A]/20 rounded-xl shadow-lg z-10 max-h-48 overflow-y-auto">
+                    {inquiryOptions.map((option, index) => (
+                      <button
+                        key={option}
+                        type="button"
+                        onClick={() => handleOptionSelect(option)}
+                        className={`w-full text-left px-3 py-2.5 sm:py-2 text-sm sm:text-base hover:bg-[#F5F5F0] transition-colors ${index === 0 ? "rounded-t-xl" : ""
+                          } ${index === inquiryOptions.length - 1 ? "rounded-b-xl" : ""} ${selectedOption === option ? "bg-[#F5F5F0] text-[#725C3A]" : "text-[#725C3A]"
+                          }`}
+                        style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <textarea
+                placeholder={t("contact.message")}
+                rows={4}
+                className="bg-white border border-[#725C3A]/20 focus:border-[#725C3A] rounded-xl resize-none py-2.5 sm:py-2 px-3 w-full text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#725C3A]/20"
+                style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+              />
+
+              <div className="flex justify-center pt-2 md:pt-4">
+                <Button
+                  type="submit"
+                  variant="outline"
+                  className="rounded-full px-6 sm:px-8 py-2 sm:py-2.5 border-[#725C3A] text-[#725C3A] hover:bg-[#F5F5F0] text-sm sm:text-base"
+                  style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
+                >
+                  {t("contact.sendMessage")}
+                  <Send className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 text-[#725C3A]" />
+                </Button>
+              </div>
+            </form>
           </div>
         </div>
       </section>

@@ -14,6 +14,11 @@ import UsingPlatform from "@/components/pages/UsingPlatform"
 import NewsOutlook from "@/components/pages/NewsOutlook"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
+import TheTeam from "@/components/pages/TheTeam"
+import EUDRCompliance from "@/components/pages/EUDRCompliance"
+
+// Import i18n here
+import "../i18n"
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>("home")
@@ -51,6 +56,10 @@ export default function App() {
         return <UsingPlatform {...pageProps} />
       case "news-outlook":
         return <NewsOutlook {...pageProps} />
+      case "the-team":
+        return <TheTeam {...pageProps} />
+      case "eudr-compliance":
+        return <EUDRCompliance {...pageProps} />
       default:
         return <HomePage {...pageProps} />
     }

@@ -1,0 +1,761 @@
+{
+  "header": {
+    "marketplace": "Marketplace",
+    "forProducers": "For Producers",
+    "dataLogisticManager": "Data Logistic Manager",
+    "platformHelp": "Platform Help",
+    "resources": "Resources",
+    "about": "About",
+    "contact": "Contact",
+    "cooperatives": "Cooperatives",
+    "privateFarms": "Private Farms",
+    "outgrowers": "Outgrowers",
+    "usingPlatform": "Using the Platform",
+    "subscriptions": "Subscriptions",
+    "newsOutlook": "News & Outlook",
+    "compliance": "Compliance (Certifications)",
+    "successStories": "Success Stories",
+    "theTeam": "The Team",
+    "socialResponsibility": "Social Responsibility",
+    "partnerships": "Partnerships"
+  },
+  "hero": {
+    "title1": "Empowering African Farmers with Digital Solutions",
+    "subtitle1": "EVC enables end-to-end coffee supply chain management, connecting traditional farming with modern digital innovation.",
+    "title2": "Simplified Compliance for Global Markets",
+    "subtitle2": "Navigate complex international regulations with ease. Our platform helps you meet EUDR requirements with tools for geo-mapping, digital farm profiles, and supply chain tracking.",
+    "title3": "Unlocking Market Border, Ensuring Global Presence",
+    "subtitle3": "Connect Ethiopian producers with international markets through verified traceability, quality assurance, and sustainable practices that meet global standards.",
+    "explorePlatform": "Explore Platform",
+    "watchVideo": "Watch Video",
+    "learnAboutEUDR": "Learn About EUDR",
+    "exploreMarketplace": "Explore Marketplace"
+  },
+  "welcome": {
+    "title": "Welcome to the Ecopia Value Chain (EVC) Platform",
+    "description1": "The EVC platform is a digital infrastructure developed to address persistent bottlenecks in agricultural value chains, with a strong focus on the coffee sector in Ethiopia. These bottlenecks include scattered or missing production data, limited financial inclusion, costly and complicated certification processes, and weak market connections—especially for smallholder farmers, cooperatives, and rural entrepreneurs.",
+    "description2": "To overcome these challenges, EVC provides an integrated software solution that digitizes all key aspects of the value chain—from individual farmer registration to harvest tracking, cooperative management, logistics, compliance, and market engagement. Our system is built to function offline in rural settings and does not require individual farmers to own smartphones. Instead, trained local youth—known as Data Logistic Managers (DLMs)—are deployed to collect data and support daily operations using tablets or shared devices.",
+    "empowersTitle": "EVC empowers a wide range of stakeholders:",
+    "stakeholders": {
+      "smallholderFarmers": "Smallholder farmers",
+      "smallholderFarmersDesc": "gain access to fairer markets, quality inputs, and transparent payment records, improving their income and visibility.",
+      "cooperativesUnions": "Cooperatives and unions",
+      "cooperativesUnionsDesc": "benefit from centralized databases, certification support, and easier reporting to buyers, auditors, and government bodies.",
+      "youthStartups": "Youth and startups",
+      "youthStartupsDesc": "generate income and employment by offering digital services to producers, creating new entrepreneurial pathways.",
+      "exportersImporters": "Exporters and importers",
+      "exportersImportersDesc": "receive verified, real-time data on product origin, quality, and compliance—reducing risk and enhancing traceability.",
+      "academicInstitutions": "Academic institutions and researchers",
+      "academicInstitutionsDesc": "access real-life value chain data to inform innovation, training, and project-based learning.",
+      "financialInstitutions": "Financial institutions and development partners",
+      "financialInstitutionsDesc": "use EVC data to provide credit scoring, insurance, and tailored support to underserved actors."
+    },
+    "conclusion": "With backing from partners like the MasterCard Foundation and key universities, EVC is building an inclusive ecosystem where digital tools enable rural actors to thrive and global buyers can source responsibly."
+  },
+  "stakeholdersShowcase": {
+    "title": "Empowering Every Stakeholder",
+    "subtitle": "From smallholder farmers to tech-savvy youth, our platform creates opportunities across the entire value chain",
+    "smallholderFarmers": "Smallholder Farmers",
+    "smallholderDescription": "Access to fairer markets and transparent payment records",
+    "dataLogisticManagers": "Data Logistic Managers",
+    "dataLogisticDescription": "Creating employment through digital services",
+    "innovationResearch": "Innovation & Research",
+    "innovationDescription": "Advancing agricultural technology and practices"
+  },
+  "mobileApp": {
+    "title": "One App for All Your Needs",
+    "subtitle": "Streamline your entire agricultural operation with our comprehensive digital platform designed for modern farming",
+    "singleApplication": {
+      "title": "Single Application",
+      "description": "Manage harvesting, inventory, compliance, logistics and orders with one unified platform that simplifies your workflow"
+    },
+    "simplifiedCompliance": {
+      "title": "Simplified Compliance",
+      "description": "Integrated compliance tools align with national and international standards, opening doors to global market access"
+    },
+    "panAfricanMarket": {
+      "title": "Pan African Market",
+      "description": "Join the African Farmers Network for seamless market access, secure transactions, and expanded opportunities"
+    }
+  },
+  "platformFeatures": {
+    "title": "Platform Features",
+    "subtitle": "Comprehensive digital tools designed to streamline agricultural operations, enhance traceability, and connect farmers with global markets through innovative technology solutions.",
+    "farmerNetwork": {
+      "title": "Farmer Network",
+      "description": "Connect farmers and track contributions"
+    },
+    "smartInventory": {
+      "title": "Smart Inventory",
+      "description": "Real-time monitoring and management"
+    },
+    "orderManagement": {
+      "title": "Order Management",
+      "description": "Streamlined compliance workflows"
+    },
+    "digitalDocuments": {
+      "title": "Digital Documents",
+      "description": "Secure record organization"
+    },
+    "supplyChainTracking": {
+      "title": "Supply Chain Tracking",
+      "description": "End-to-end traceability"
+    },
+    "apiIntegration": {
+      "title": "API Integration",
+      "description": "Seamless system connectivity"
+    }
+  },
+  "footer": {
+    "description": "Empowering African farmers through digital innovation and sustainable agriculture technology.",
+    "platform": "Platform",
+    "resources": "Resources",
+    "complianceTools": "Compliance Tools",
+    "copyright": "© {{year}} Ecopia Value Chain. Powered by Ticker Tape Technologies"
+  },
+
+
+
+
+"forProducers": {
+  "title": "How EVC Supports Different Producers",
+  "subtitle": "EVC is designed to accommodate the operational realities of various agricultural producers in Ethiopia and across Sub-Saharan Africa. Whether you're a cooperative manager coordinating thousands of smallholders, a private farm exporting specialty coffee, or an organization working with contract growers—EVC helps you streamline your work and meet global standards.",
+  "cooperatives": {
+    "title": "For Cooperatives and Unions",
+    "description": "Cooperatives and unions often struggle with fragmented data, low transparency, and complex compliance obligations. EVC allows you to digitize your member registry, track production and deliveries, automate farmer payments, and manage certifications like organic, Fair Trade, and EUDR.",
+    "features": "Features:",
+    "featuresList": [
+      "Digital registration of members with geo-coordinates",
+      "Real-time harvest collection data and logistics",
+      "Payment tracking and transparent distribution records",
+      "Monitoring of training and input distribution",
+      "Certification documentation and dashboards for audits",
+      "Cooperative performance and productivity analytics"
+    ],
+    "benefits": "Benefits:",
+    "benefitsText": "Time-saving administration, better decision-making, easier access to certification, trust with members, and market visibility."
+  },
+  "privateFarms": {
+    "title": "For Private Farms",
+    "description": "Private and commercial farms face increasing demand for data transparency and sustainability credentials. EVC enables you to map your plots, record farm activities, monitor labor usage, and track production costs.",
+    "features": "Features:",
+    "featuresList": [
+      "Digital farm mapping using GPS and satellite data",
+      "Input and harvest tracking with expense monitoring",
+      "Yield comparisons and performance visualization",
+      "Sustainability and compliance documentation",
+      "Interfaces with warehouse and export tools"
+    ],
+    "benefits": "Benefits:",
+    "benefitsText": "Improved operational control, accountability, and readiness for international buyers and inspections."
+  },
+  "outgrowers": {
+    "title": "For Outgrowers and Contract Schemes",
+    "description": "Organizing dispersed smallholder suppliers under outgrower models is complex. EVC simplifies it through centralized databases, geo-referenced records, and customizable dashboards.",
+    "features": "Features:",
+    "featuresList": [
+      "Registration and profiling of contracted farmers",
+      "Monitoring field activities and input use",
+      "Quality control and delivery documentation",
+      "Communication channels with farmers",
+      "Mobile compliance checks by DLMs"
+    ],
+    "benefits": "Benefits:",
+    "benefitsText": "Stronger traceability, lower non-compliance risk, better oversight, and buyer confidence."
+  }
+},
+
+
+"dataLogisticManager": {
+  "title": "Become a Data Logistic Manager",
+  "subtitle": "Bridge the digital gap between technology and traditional farming. Create meaningful employment while empowering agricultural communities across Ethiopia.",
+  "applyNow": "Apply Now",
+  "whatIsDLM": {
+    "title": "What is a Data Logistic Manager?",
+    "description": "Data Logistic Managers are young professionals who bridge the digital gap between smallholder producers and technology. They are the vital link that makes digital transformation accessible to rural communities.",
+    "features": [
+      { "title": "Community Focus", "desc": "Work directly with farmers" },
+      { "title": "Tech Enabled", "desc": "Use cutting-edge tools" },
+      { "title": "Career Growth", "desc": "Build valuable skills" },
+      { "title": "Certified", "desc": "Professional recognition" }
+    ]
+  },
+  "journey": {
+    "title": "Your Journey to Becoming a DLM",
+    "subtitle": "A simple 4-step process to start your career as a Data Logistic Manager",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Apply Online",
+        "description": "Submit your application through our online form"
+      },
+      {
+        "step": "02",
+        "title": "Complete Training",
+        "description": "Participate in our comprehensive training program"
+      },
+      {
+        "step": "03",
+        "title": "Get Certified",
+        "description": "Receive your official DLM certification"
+      },
+      {
+        "step": "04",
+        "title": "Start Working",
+        "description": "Begin your career supporting agricultural communities"
+      }
+    ]
+  },
+  "responsibilities": {
+    "title": "What You'll Do as a DLM",
+    "subtitle": "Your daily responsibilities will include a variety of meaningful tasks that directly impact agricultural communities",
+    "list": [
+      "Register farmers and GPS-locate plots",
+      "Support cooperatives during audits and inspections",
+      "Input harvest, training, and input usage data",
+      "Help manage farm records and reports",
+      "Facilitate digital payments and certification documentation"
+    ]
+  },
+  "benefits": {
+    "title": "Why Become a DLM?",
+    "subtitle": "Join a growing network of young professionals making a real difference in Ethiopian agriculture",
+    "list": [
+      {
+        "title": "Competitive Compensation",
+        "description": "Earn through service contracts and performance bonuses"
+      },
+      {
+        "title": "Valuable Experience",
+        "description": "Gain hands-on experience in agritech and digital tools"
+      },
+      {
+        "title": "Career Development",
+        "description": "Build pathways in agri-business and entrepreneurship"
+      },
+      {
+        "title": "Professional Mentorship",
+        "description": "Receive guidance from Ecopia and university partners"
+      }
+    ]
+  }
+},
+
+
+"usingPlatform": {
+  "title": "Using the EVC Platform",
+  "subtitle": "Learn how to maximize the potential of the EVC platform with comprehensive guides and videos",
+  "platformFeatures": "Platform Features",
+  "features": [
+    {
+      "title": "Welcome & Visibility",
+      "description": "Get started with your digital profile and increase your market visibility",
+      "videoTitle": "Getting Started with EVC Platform"
+    },
+    {
+      "title": "Demonstrating Compliance",
+      "description": "Meet EUDR requirements and sustainability standards with ease",
+      "videoTitle": "EUDR Compliance Made Simple"
+    },
+    {
+      "title": "ERP System for Organization",
+      "description": "Streamline your internal operations with integrated management tools",
+      "videoTitle": "Managing Your Operations"
+    },
+    {
+      "title": "Reaching Buyers & Uploading Offers",
+      "description": "Connect with international buyers and showcase your products",
+      "videoTitle": "Marketing Your Products"
+    },
+    {
+      "title": "Sourcing Inputs",
+      "description": "Access quality agricultural inputs through our marketplace",
+      "videoTitle": "Finding Quality Inputs"
+    }
+  ],
+  "watchVideo": "Watch Video"
+},
+
+"subscriptions": {
+  "title": "Subscription Plans for Every Stakeholder",
+  "subtitle": "Choose the right plan for your role in the agricultural value chain. From producers to importers, we have tailored solutions for everyone.",
+  "stakeholderPlans": [
+    {
+      "stakeholder": "Producers",
+      "feeType": "ERP system monthly fee",
+      "accessDescription": "For registration, harvest management, certifications",
+      "features": [
+        "Implement digital solutions (ERP systems, traceability platforms)",
+        "Digital farmer registration",
+        "Harvest tracking and management",
+        "Navigate certification options"
+      ],
+      "price": "",
+      "priceUnit": "/month",
+      "buttonText": "Register"
+    },
+    {
+      "stakeholder": "Data Logistic Managers",
+      "feeType": "Training and app access",
+      "accessDescription": "Comprehensive training program and mobile tools",
+      "features": [
+        "Digital platform training for job creation opportunities",
+        "EUDR compliance support for cooperatives and farmers",
+        "Supply chain traceability and data management skills",
+        "International market access facilitation",
+        "Certification as Data Logistics Manager"
+      ],
+      "price": "Free",
+      "priceUnit": "",
+      "buttonText": "Learn More"
+    },
+    {
+      "stakeholder": "Importers/Buyers",
+      "feeType": "Document access fee",
+      "accessDescription": "Download verified sourcing + certificates",
+      "features": [
+        "Verified, deforestation-free coffee compliant with EU regulations",
+        "Build local expertise and jobs for Ethiopian youth",
+        "Enhanced supply chain transparency and risk management",
+        "Multiple partnership options (sponsoring, hiring DLMs...)"
+      ],
+      "price": "",
+      "priceUnit": "/month",
+      "buttonText": "Register"
+    }
+  ]
+},
+
+
+"eudrCompliance": {
+  "backToNews": "Back to News",
+  "date": "June 2025",
+  "title": "EUDR Compliance: What Ethiopian Exporters Need to Know",
+  "subtitle": "Breaking down the new EU Deforestation Regulation and its impact on coffee exports from Ethiopia.",
+  "sections": {
+    "introduction": {
+      "title": "Introduction",
+      "content": [
+        "The European Union Deforestation Regulation (EUDR) represents one of the most significant regulatory changes affecting global agricultural trade in recent years. For Ethiopian coffee exporters, this regulation is not just another compliance hurdle—it's a fundamental shift that will determine market access to one of the world's largest coffee-consuming regions.",
+        "As the regulation comes into full effect, Ethiopian producers, cooperatives, and exporters must understand what EUDR means, why it matters, and how they can adapt to meet these new requirements."
+      ]
+    },
+    "whatIsEUDR": {
+      "title": "What is the EUDR?",
+      "content": [
+        "The EU Deforestation Regulation (EUDR) is a comprehensive law designed to ensure that products imported into the European Union do not contribute to deforestation or forest degradation anywhere in the world. The regulation covers seven key commodities: cattle, cocoa, coffee, palm oil, rubber, soy, and wood.",
+        "For coffee, this means that every shipment entering the EU must be accompanied by proof that the coffee was produced on land that was not deforested after December 31, 2020."
+      ],
+      "exportersMustEnsure": "Exporters must ensure:",
+      "requirements": [
+        "Products are deforestation-free (no deforestation after December 31, 2020)",
+        "Products are legally produced in accordance with the laws of the country of production",
+        "Complete traceability to the exact plot of land where the coffee was grown",
+        "Comprehensive due diligence documentation"
+      ],
+      "conclusion": "This means that coffee farmers, cooperatives, and exporters in Ethiopia must show clear geolocation data (GPS mapping), harvest records, and proof of legal land use."
+    },
+    "whyMatters": {
+      "title": "Why This Matters for Ethiopia",
+      "content": "Ethiopia is one of the world's largest coffee producers, with coffee accounting for a significant portion of the country's export earnings. The EU is a major market for Ethiopian coffee, making EUDR compliance essential for maintaining these valuable trade relationships. Non-compliance could result in products being rejected at EU borders, leading to significant financial losses and damaged reputations."
+    },
+    "keyRequirements": {
+      "title": "Key Compliance Requirements",
+      "items": [
+        {
+          "title": "Geolocation Data",
+          "content": "Every coffee plot must be mapped with precise GPS coordinates. This includes smallholder farms, which make up the majority of Ethiopia's coffee production."
+        },
+        {
+          "title": "Legal Documentation",
+          "content": "Proof that the land is legally owned or used, and that all applicable laws were followed during production."
+        },
+        {
+          "title": "Deforestation-Free Proof",
+          "content": "Evidence that no deforestation occurred on the land after December 31, 2020, typically through satellite imagery or official documentation."
+        },
+        {
+          "title": "Supply Chain Traceability",
+          "content": "Complete documentation of the coffee's journey from farm to export, including processing, storage, and transportation records."
+        }
+      ]
+    },
+    "challenges": {
+      "title": "Challenges for Ethiopian Exporters",
+      "items": [
+        {
+          "title": "Smallholder Fragmentation:",
+          "content": "Most Ethiopian coffee comes from smallholder farmers with plots as small as 0.5 hectares, making individual mapping and documentation complex."
+        },
+        {
+          "title": "Limited Digital Infrastructure:",
+          "content": "Many rural areas lack the digital tools and connectivity needed for comprehensive data collection and management."
+        },
+        {
+          "title": "Documentation Gaps:",
+          "content": "Historical land use records and legal documentation may be incomplete or difficult to access."
+        },
+        {
+          "title": "Cost and Complexity:",
+          "content": "The resources required for compliance can be overwhelming for smaller exporters and cooperatives."
+        }
+      ]
+    },
+    "solutions": {
+      "title": "What Can Be Done?",
+      "items": [
+        {
+          "title": "Digital Traceability Solutions",
+          "content": "Digital platforms can help track deforestation risks and provide the documentation needed for EUDR compliance through GPS mapping and supply chain tracking."
+        },
+        {
+          "title": "Cooperative Collaboration",
+          "content": "Working through cooperatives can help smallholder farmers pool resources and share the costs of compliance documentation."
+        },
+        {
+          "title": "Government Support",
+          "content": "The Ethiopian government can play a crucial role by providing legal documentation support and facilitating access to satellite imagery."
+        },
+        {
+          "title": "Capacity Building",
+          "content": "Training programs for farmers, cooperatives, and exporters on EUDR requirements and compliance procedures."
+        },
+        {
+          "title": "Technology Adoption",
+          "content": "Implementing digital tools for data collection, GPS mapping, and supply chain management."
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Conclusion",
+      "content": [
+        "The EUDR represents both a challenge and an opportunity for Ethiopian coffee exporters. While compliance requires significant effort and investment, it also opens doors to premium markets that value sustainability and transparency.",
+        "Success will depend on collaboration between farmers, cooperatives, exporters, technology providers, and government agencies to build the systems and processes needed for compliance."
+      ]
+    },
+    "sources": {
+      "title": "Sources & Further Reading",
+      "items": [
+        {
+          "title": "European Union Deforestation Regulation (EUDR)",
+          "description": "Regulation (EU) 2023/1115, officially adopted on May 31, 2023; implementation begins December 30, 2024 for larger companies, and June 30, 2025 for SMEs",
+          "linkText": "View full regulation (EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1115/oj"
+        },
+        {
+          "title": "Agroberichten Buitenland: Ethiopia's coffee sector under EUDR",
+          "description": "Covers impact on smallholders and government action plan submitted to the EU",
+          "linkText": "Read the full article",
+          "url": "https://www.agroberichtenbuitenland.nl/actueel/nieuws/2024/08/20/as11-ethiopias-coffee-crisis-navigating-eu-regulations-amid-sustainability-challenges"
+        },
+        {
+          "title": "Global Coffee Platform – EUDR Guidance for Coffee Sector",
+          "description": "Practical guidance on data exchange & digitization for compliance",
+          "linkText": "Access GCP guidance",
+          "url": "https://www.globalcoffeeplatform.org/eudr-guidance-and-recommendations/"
+        },
+        {
+          "title": "CBI – 7 Tips to Become EUDR Compliant in Coffee",
+          "description": "Summarizes key requirements: deforestation-free, legal production, due diligence, SME transition period",
+          "linkText": "See the CBI compliance guide",
+          "url": "https://www.cbi.eu/market-information/coffee/tips-become-eudr-compliant"
+        }
+      ]
+    }
+  }
+},
+"newsOutlook": {
+  "title": "News & Outlook",
+  "subtitle": "Stay informed with the latest developments in agricultural technology, market trends, and regulatory updates affecting the Ethiopian coffee industry.",
+  "categories": ["All", "Market Trends", "Technology", "Regulations", "Sustainability"],
+  "noArticles": "No articles match your current filters.",
+  "articles": [
+    {
+      "title": "EUDR Compliance: What Ethiopian Exporters Need to Know",
+      "excerpt": "Breaking down the new EU Deforestation Regulation and its impact on coffee exports from Ethiopia.",
+      "author": "EVC Editorial Team",
+      "date": "June 2025",
+      "category": "Market Trends"
+    }
+  ]
+},
+
+"compliance": {
+  "title": "Building Trust Through Verified Standards",
+  "introduction": {
+    "paragraph1": "The Ecopia Value Chain (EVC) platform is not only a digital tool for managing agricultural operations—it's also designed to help producers, cooperatives, and buyers meet increasingly strict international compliance standards. We help users navigate both public regulations, like the EU Deforestation Regulation (EUDR), and private sustainability standards, including our own Ecopia Certification program.",
+    "paragraph2": "Compliance is no longer optional—it is essential for reaching international markets, securing premium prices, and building lasting relationships with buyers. EVC simplifies this process with embedded tools that support data collection, traceability, documentation, and third-party verification."
+  },
+  "whatIsEUDR": {
+    "title": "What is EUDR (EU Deforestation Regulation)?",
+    "description": "The EUDR is a regulation from the European Union aimed at stopping deforestation and forest degradation caused by the production and consumption of certain agricultural commodities— including coffee and cocoa. As of 2025, any company importing these goods into the EU must prove that their products:",
+    "requirements": [
+      "Are deforestation-free",
+      "Were legally produced",
+      "Are traceable to their exact origin"
+    ],
+    "conclusion": "This means that coffee farmers, cooperatives, and exporters in Ethiopia must show clear geolocation data (GPS mapping), harvest records, and proof of legal land use."
+  },
+  "howEVCHelps": {
+    "title": "How EVC Helps You Meet EUDR Requirements",
+    "items": [
+      "Geo-mapping tools for farms and plots",
+      "Digital farm profiles that include land ownership and production history",
+      "Harvest logs linked to individual farmers",
+      "Supply chain tracking from field to export",
+      "Documentation upload and sharing features"
+    ],
+    "conclusion": "We enable producers to build transparent supply chains that meet EU buyer expectations—while creating real value for local actors."
+  },
+  "ecopiaCertification": {
+    "title": "Ecopia Certification",
+    "tagline": " – Traceable. Inclusive. Sustainable",
+    "description": "While many international standards exist, they are often expensive and inaccessible to smallholder farmers and emerging cooperatives. That's why Ecopia has created the Ecopia Certification —a practical, locally grounded system aligned with key international sustainability goals, but adapted to the Ethiopian context.",
+    "features": {
+      "title": "What Does Ecopia Certification Cover?",
+      "traceability": {
+        "title": "Traceability and data accuracy",
+        "description": "Ensuring that products are trackable from farm to final buyer using real-time data collection and mapping tools."
+      },
+      "inclusion": {
+        "title": "Social inclusion",
+        "description": "Promoting fair compensation for farmers and youth (Data Logistic Managers), gender inclusion, and access to digital tools."
+      },
+      "sustainability": {
+        "title": "Environmental sustainability",
+        "description": "Encouraging climate-smart agriculture, avoiding deforestation, and supporting agroecological practices."
+      },
+      "ethics": {
+        "title": "Ethical labor practices",
+        "description": "Ensuring that no forced or child labor is involved and that safe working conditions are met."
+      },
+      "transparency": {
+        "title": "Financial transparency",
+        "description": "Strengthening digital payment records, equitable bonus distribution, and income tracking for producers."
+      }
+    },
+    "howToGetCertified": {
+      "title": "How Do You Get Certified?",
+      "steps": [
+        "Sign up on the EVC platform",
+        "Participate in basic digital onboarding and training",
+        "Ensure that your data is consistently and accurately maintained",
+        "Pass a digital review process, supported by our certification team",
+        "Display your certification status on your digital profile"
+      ],
+      "conclusion": "is designed to be low-cost, inclusive, and attainable for producers of all sizes—while delivering the credibility and transparency that buyers demand."
+    }
+  },
+  "whyCompliance": {
+    "title": "Why Compliance Matters",
+    "benefits": [
+      {
+        "title": "Market Access",
+        "description": "International buyers require verified traceability and sustainability data",
+        "number": "01"
+      },
+      {
+        "title": "Premium Prices",
+        "description": "Certified and traceable products command higher market prices",
+        "number": "02"
+      },
+      {
+        "title": "Investor Confidence",
+        "description": "Transparent data attracts financial institutions and development partners",
+        "number": "03"
+      },
+      {
+        "title": "Operational Benefits",
+        "description": "Digital tools improve planning, oversight, and coordination",
+        "number": "04"
+      }
+    ],
+    "conclusion": "With EVC, compliance is not a burden—it becomes a strategic advantage."
+  }
+},
+
+"socialResponsibility": {
+  "title": "Our Commitment to Social Responsibility",
+  "subtitle": "At Ecopia, we believe in a future where innovation and inclusion go hand in hand.",
+  "missionStatement": {
+    "paragraph1": "The Ecopia Value Chain Digital Platform was built not only as a tool for traceability and compliance—but as a social mission to empower Ethiopia's next generation of entrepreneurs while serving the nation's farmers.",
+    "paragraph2": "For far too long, startups developed within Ethiopian universities have lacked a bridge to connect with rural communities and deliver value directly to farmers. Ecopia is changing that."
+  },
+  "innovation": {
+    "paragraph1": "By owning and managing the Ecopia Value Chain platform, we provide students and young innovators a launching pad for their digital startups, creating new income streams, real-world experience, and job opportunities— without charging farmers.",
+    "paragraph2": "We are firmly convinced that Ethiopian farmers should never have to pay to be included on a digital platform that exists to improve their access to markets and enhance their livelihoods."
+  },
+  "impact": {
+    "title": "Creating a Socially Responsible Ecosystem",
+    "features": [
+      {
+        "title": "Empowers youth-led innovation",
+        "description": "Creating opportunities for young entrepreneurs to build sustainable businesses"
+      },
+      {
+        "title": "Connects academic efforts to real-world impact",
+        "description": "Bridging the gap between university research and practical agricultural solutions"
+      },
+      {
+        "title": "Supports farmers without financial burden",
+        "description": "Ensuring farmers benefit from technology without additional costs"
+      },
+      {
+        "title": "Strengthens Ethiopia's agricultural economy",
+        "description": "Building a stronger, more connected agricultural value chain"
+      }
+    ]
+  },
+  "finalStatement": {
+    "paragraph": "This is not just a platform. It is a movement for equity, sustainability, and shared prosperity— where technology meets community, and education drives transformation.",
+    "conclusion": "Ecopia – Empowering Innovation. Strengthening Communities."
+  }
+},
+
+"partnerships": {
+  "title": "Our Strategic Partnerships",
+  "subtitle": "Building a sustainable agricultural ecosystem through collaborative partnerships across academia, technology, development, and commerce.",
+  "categoriesTitle": "Partnership Categories",
+  "categories": {
+    "academic": {
+      "title": "Academic Institutions",
+      "description": "Universities and research centers driving innovation in agricultural technology",
+      "count": "3+"
+    },
+    "technology": {
+      "title": "Technology Partners",
+      "description": "Tech companies providing digital infrastructure and innovation solutions",
+      "count": "5+"
+    },
+    "government": {
+      "title": "Government & International",
+      "description": "Government ministries and international organizations",
+      "count": "4+"
+    },
+    "development": {
+      "title": "Development Organizations",
+      "description": "Foundations and NGOs supporting sustainable development goals",
+      "count": "5+"
+    }
+  },
+  "trustedPartnersTitle": "Our Trusted Partners",
+  "trustedPartnersDescription": "We collaborate with leading organizations across multiple sectors to create a comprehensive ecosystem for agricultural innovation and sustainable development.",
+  "partnershipCTA": {
+    "title": "Interested in Partnering with Us?",
+    "description": "Join our growing network of partners committed to transforming African agriculture through digital innovation and sustainable practices.",
+    "buttonText": "Contact Us"
+  }
+},
+
+
+"contact": {
+  "title": "Get in Touch",
+  "subtitle": "Ready to transform your agricultural operations? Contact us directly via email at admin@ecopiavaluechain.com or use our contact form below.",
+  "formTitle": "Contact Form",
+  "formSubtitle": "Fill out the form below and we'll get back to you as soon as possible.",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "email": "your.email@example.com",
+  "organization": "Organization (optional)",
+  "inquiryType": "General Inquiry",
+  "inquiryOptions": {
+    "general": "General Inquiry",
+    "partnership": "Partnership Opportunity",
+    "technical": "Technical Support",
+    "dlm": "DLM Application",
+    "producer": "Producer Registration",
+    "buyer": "Buyer/Importer Interest"
+  },
+  "message": "Tell us about your needs, questions, or how we can help you...",
+  "sendMessage": "Send Message"
+},
+
+  "marketplace": {
+    "title": "Agricultural Marketplace",
+    "subtitle": "Connect with verified producers, access quality inputs, and discover professional services—all in one trusted platform.",
+    "searchPlaceholder": "Search coffee lots, services, or inputs...",
+    "filters": {
+      "allProducts": "All Products",
+      "coffee": "Coffee",
+      "inputs": "Inputs",
+      "services": "Services",
+      "certifications": "Certifications",
+      "organic": "Organic",
+      "fairtrade": "Fair Trade",
+      "eudr": "EUDR Compliant",
+      "ecopia": "Ecopia Certified",
+      "regions": "Regions",
+      "sidamo": "Sidamo",
+      "yirgacheffe": "Yirgacheffe",
+      "harar": "Harar",
+      "jimma": "Jimma",
+      "kaffa": "Kaffa"
+    },
+    "sections": {
+      "coffeeLots": "Coffee Lots",
+      "professionalServices": "Professional Services",
+      "agriculturalInputs": "Agricultural Inputs"
+    },
+
+"services": {
+    "farmMapping": {
+      "title": "GPS Farm Mapping & Documentation",
+      "provider": "EVC Technical Team",
+      "unit": "per farm",
+      "description": "Professional GPS mapping service for EUDR compliance with detailed farm documentation and geo-coordinates."
+    },
+    "certificationSupport": {
+      "title": "Certification Support & Audit Preparation",
+      "provider": "Ecopia Certification",
+      "unit": "per cooperative",
+      "description": "Complete certification support including documentation, audit preparation, and compliance verification for international standards."
+    }
+  },
+  "labels": {
+    "provider": "Provider",
+    "delivery": "Delivery",
+    "deliveryTime": "2-3 weeks",
+    "verifiedProvider": "Verified Provider"
+  },
+
+    "buttons": {
+      "viewAll": "View All",
+      "requestQuote": "Request Quote",
+      "bookService": "Book Service",
+      "addToCart": "Add to Cart"
+    },
+    "noResults": {
+      "coffee": "No coffee lots match your current filters.",
+      "services": "No services match your current filters.",
+      "inputs": "No inputs match your current filters."
+    },
+    "comingSoon": {
+      "title": "Coming Soon",
+      "description": "We're working hard to bring you the best selection of products and services. Check back soon!"
+    }},
+
+
+
+   "theTeam": {
+  "title": "Our Leadership Team",
+  "subtitle": "Meet the experienced leadership team behind Ecopia Value Chain, dedicated to transforming African agriculture through digital innovation and sustainable practices.",
+  "lemlem": {
+  
+    "description": "has been Ecopia's accountant for over 10 years, bringing valuable experience from her time in Ethiopian government institutions. With her leadership, we began digitizing our documentation early on, aligning seamlessly with the government's digital transformation agenda. Today, all our records are digital and soon to be securely stored in the cloud. This shift has significantly improved efficiency, transparency, and accountability. At Ecopia, we believe digitalization is the most effective antidote to corruption in public institutions. By reducing manual handling and increasing traceability, it lays the foundation for a more honest, efficient, and future-ready Ethiopia."
+  },
+  "felix": {
+  
+    "description": "Having grown up in Ethiopia and Germany, born into a highly dynamic politically involved family, Felix was raised between AU summits in Addis Abeba and urgent foreign relations council meetings in Berlin. Already at an early age Felix demonstrated leadership skills and the ability to broker multi stakeholder partnerships between civil society, government and the private sector. Demonstrating long term strategic vision and a creative non conventional problem solving approach, making him our Chief Strategy Officer."
+  },
+  "mitslal": {
+   
+    "description": "With over 30 years of experience, working with governments, and international organizations, advising cabinet members in different countries of the African continent. Having successfully built several companies, and training more than 15000 farmers in manufacturing and brokering deals with large international companies, she has the experience and vision to lead this company to long-lasting success."
+  },
+  "hayridi": {
+
+    "description": "is the pride of Ecopias Training and Operations Team. With his dedication, we launched farmer training programs focused on food, cosmetics, and herbal medicinal plants. Over the years, Hayrdi has trained and certified more than 4,000 farmers across 14 different sites. His exceptional ability to standardize formulations—developed by Dr. Mitslal Kifleyesus-Matschie and other experts—has enriched Ecopia's knowledge base with over 50 food recipes, 70 cosmetic formulations, and 150 medicinal plant-based products. His work continues to strengthen local knowledge, create economic opportunities, and promote high-quality, African-made natural products rooted in science and tradition."
+  }
+
+
+  }}
+  

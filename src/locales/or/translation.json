@@ -1,0 +1,767 @@
+{
+  "header": {
+    "marketplace": "Gabaa",
+    "forProducers": "Oomishtootaaf",
+    "dataLogisticManager": "Bulchiinsa Loojistiksii Daataa",
+    "platformHelp": "Gargaarsa Waltajjii",
+    "resources": "Qabeenya",
+    "about": "Waa'ee Keenya",
+    "contact": "Nu Quunnamaa",
+    "cooperatives": "Kooperaatiivota",
+    "privateFarms": "Qonna Dhuunfaa",
+    "outgrowers": "Oomishtota Alaa",
+    "usingPlatform": "Waltajjii Fayyadamuu",
+    "subscriptions": "Galmee",
+    "newsOutlook": "Oduu fi Ilaalcha",
+    "compliance": "Ajajamuu (Ragaalee Mirkaneessaa)",
+    "successStories": "Seenaa Milkaa'inaa",
+    "theTeam": "Garee Keenya",
+    "socialResponsibility": "Itti Gaafatamummaa Hawaasaa",
+    "partnerships": "Tumsa"
+  },
+  "hero": {
+    "title1": "Qonnaan Bultoota Afrikaa Furmaata Dijitaalaan Humneessuu",
+    "subtitle1": "EVC tooftaa bulchiinsa sarba dhiyeessii bunaa jalqaba hanga dhumaatti dandeessisa, qonna aadaa fi kalaqaa dijitaalaa ammayyaa walitti hidhuu.",
+    "title2": "Ajajamuu Salphaa Gabaa Addunyaatiif",
+    "subtitle2": "Seera addunyaa walxaxaa salphaatti qoruu. Waltajjiin keenya ulaagaalee EUDR guutuuf meeshaalee kaartaa-jiiyoo, ibsa qonna dijitaalaa fi hordoffii sarba dhiyeessii si gargaara.",
+    "title3": "Daangaa Gabaa Banuun, Argamuu Addunyaa Mirkaneessuu",
+    "subtitle3": "Oomishtota Itoophiyaa gabaalee addunyaa waliin hordoffii mirkaneeffame, mirkaneessaa qulqullina fi gocha itti fufiinsa qabu kan ulaagaalee addunyaa guutan waliin walqabsiisuu.",
+    "explorePlatform": "Waltajjii Qoruu",
+    "watchVideo": "Viidiyoo Ilaaluu",
+    "learnAboutEUDR": "Waa'ee EUDR Barachuu",
+    "exploreMarketplace": "Gabaa Qoruu"
+  },
+  "welcome": {
+    "title": "Baga Gara Waltajjii Ecopia Value Chain (EVC) Dhuftanii",
+    "description1": "Waltajjiin EVC bu'uura dijitaalaa kan sarba gatii qonnaa keessatti rakkoolee cimoo furuu fi keessumaa damee bunaa Itoophiyaa keessatti xiyyeeffannoo cimaa kennuuf qophaa'edha. Rakkooleen kun odeeffannoo oomishaa bittinnaa'ee ykn kan hin jirre, hirmaannaa maallaqaa daangeffame, adeemsa ragaa mirkaneessaa qaala'aa fi walxaxaa, fi walqunnamtii gabaa dadhabaa - keessumaa qonnaan bultoota xixiqqoo, kooperaatiivota fi namoota hojii uumuu baadiyyaatiif.",
+    "description2": "Rakkoolee kana mo'uuf, EVC furmaata sooftiweerii walitti makame kan galmee qonnaan bultootaa dhuunfaa jalqabee hanga hordoffii midhaan galfamee, bulchiinsa kooperaatiivaa, loojistiksii, ajajamuu fi hirmaannaa gabaatti qaamolee ijoo sarba gatii hunda dijitaalaayizu kenna. Sirni keenya naannoo baadiyyaa keessatti sarbaan ala akka hojjetu ijaarame yoo ta'u qonnaan bultoota dhuunfaa bilbila sammuu akka qabaatan hin gaafatu. Qooda kanaa dargaggoota naannoo leenjii argatan - Bulchitootni Loojistiksii Daataa (DLMs) jedhamuun beekaman - taableetii ykn meeshaalee qooddataman fayyadamuun daataa walitti qabuu fi hojii guyyaa guyyaa deeggaruuf bobba'u.",
+    "empowersTitle": "EVC qaamolee dhimmi isaanii ilaalamu bal'aa humneessa:",
+    "stakeholders": {
+      "smallholderFarmers": "Qonnaan bultoota xixiqqoo",
+      "smallholderFarmersDesc": "gabaa haqa qabeessa, galtee qulqullina qabuu fi galmee kaffaltii ifa ta'e argachuu, galii fi mul'ina isaanii fooyyessuu.",
+      "cooperativesUnions": "Kooperaatiivotaa fi waldaaleen",
+      "cooperativesUnionsDesc": "kuusaa daataa giddugaleessaa, deeggarsa ragaa mirkaneessaa fi gabaasa salphaaf bitootaa, sakatta'ootaa fi qaamolee mootummaatiif fayyadamu.",
+      "youthStartups": "Dargaggoonii fi jalqabtoota hojii",
+      "youthStartupsDesc": "oomishtootaaf tajaajila dijitaalaa kennuudhaan galii fi hojii uumu, karaalee hojii uumuu haaraa uumu.",
+      "exportersImporters": "Ergitootaa fi galchitootni",
+      "exportersImportersDesc": "waa'ee madda oomishaa, qulqullina fi ajajamuu daataa mirkaneeffamee, yeroo qabatamaa argatu - balaa hir'isuun fi hordoffii fooyyessuu.",
+      "academicInstitutions": "Dhaabbilee barnootaa fi qorattootni",
+      "academicInstitutionsDesc": "daataa sarba gatii jireenya dhugaa kalaqaa, leenjii fi barnoota pirojektii irratti hundaa'e odeessuuf argatu.",
+      "financialInstitutions": "Dhaabbilee maallaqaa fi michootni misoomaa",
+      "financialInstitutionsDesc": "daataa EVC fayyadamuun qormaata liqii, inshuraansii fi deeggarsa mijataa namoota tajaajila hin argatiniif kennu."
+    },
+    "conclusion": "Deeggarsa michootaa akka MasterCard Foundation fi yunivarsiitii ijoo waliin, EVC sirna hammachuu meeshaaleen dijitaalaa namoota baadiyyaa akka badhaadhan fi bitootni addunyaa itti gaafatamummaadhaan akka argatan taasisu ijaaraa jira."
+  },
+  "stakeholdersShowcase": {
+    "title": "Qaamota Dhimmi Isaanii Ilaalamu Hunda Humneessuu",
+    "subtitle": "Qonnaan bultoota xixiqqoo jalqabee hanga dargaggoota teknooloojii beekaniitti, waltajjiin keenya sarba gatii guutuu keessatti carraa uuma",
+    "smallholderFarmers": "Qonnaan Bultoota Xixiqqoo",
+    "smallholderDescription": "Gabaa haqa qabeessaa fi galmee kaffaltii ifa ta'e argachuu",
+    "dataLogisticManagers": "Bulchitootni Loojistiksii Daataa",
+    "dataLogisticDescription": "Tajaajila dijitaalaan hojii uumuu",
+    "innovationResearch": "Kalaqaa fi Qorannoo",
+    "innovationDescription": "Teknooloojii qonnaa fi gocha guddisuun"
+  },
+  "mobileApp": {
+    "title": "Fedhii Kee Hundaaf Appii Tokko",
+    "subtitle": "Waltajjii dijitaalaa bal'aa qonna ammayyaaf qophaa'een hojii qonnaa kee guutuu salphisi",
+    "singleApplication": {
+      "title": "Appilikeeshinii Tokko",
+      "description": "Waltajjii tokko walitti makameen adeemsa hojii kee salphisu fayyadamuun midhaan galfachuu, kuusaa, ajajamuu, loojistiksii fi ajaja bulchuu"
+    },
+    "simplifiedCompliance": {
+      "title": "Ajajamuu Salphaa",
+      "description": "Meeshaaleen ajajamuu walitti makaman ulaagaalee biyyaalessaa fi addunyaa waliin walsimu, balbala gara argama gabaa addunyaatti banu"
+    },
+    "panAfricanMarket": {
+      "title": "Gabaa Paanin Afrikaa",
+      "description": "Argama gabaa salphaa, daldalaa nageenya qabuu fi carraa bal'aaf Neetworkii Qonnaan Bultoota Afrikaa keessatti makamuu"
+    }
+  },
+  "platformFeatures": {
+    "title": "Amala Waltajjii",
+    "subtitle": "Meeshaaleen dijitaalaa bal'aa hojii qonnaa salphisuuf, hordoffii fooyyessuuf fi qonnaan bultoota gabaalee addunyaa waliin furmaata teknooloojii kalaqaan walqabsiisuu.",
+    "farmerNetwork": {
+      "title": "Neetworkii Qonnaan Bultootaa",
+      "description": "Qonnaan bultoota walqabsiisuu fi gumaacha hordofuu"
+    },
+    "smartInventory": {
+      "title": "Kuusaa Sammuu",
+      "description": "Hordoffii fi bulchiinsa yeroo qabatamaa"
+    },
+    "orderManagement": {
+      "title": "Bulchiinsa Ajajaa",
+      "description": "Adeemsa hojii ajajamuu salphaa"
+    },
+    "digitalDocuments": {
+      "title": "Galmee Dijitaalaa",
+      "description": "Qindaa'ina kuusaa nageenya qabuu"
+    },
+    "supplyChainTracking": {
+      "title": "Hordoffii Sarba Dhiyeessii",
+      "description": "Hordoffii jalqaba hanga dhumaatti"
+    },
+    "apiIntegration": {
+      "title": "Walitti Makamuu API",
+      "description": "Walqunnamtii sirna salphaa"
+    }
+  },
+  "footer": {
+    "description": "Qonnaan bultoota Afrikaa kalaqaa dijitaalaa fi teknooloojii qonnaa itti fufiinsaan humneessuu.",
+    "platform": "Waltajjii",
+    "resources": "Qabeenya",
+    "complianceTools": "Meeshaalee Ajajamuu",
+    "copyright": "© {{year}} Ecopia Value Chain. Ticker Tape Technologies'n humnaan."
+  },
+
+
+
+  "forProducers": {
+  "title": "EVC Oomishtota Adda Addaa Akkamitti Deeggartu",
+  "subtitle": "EVC dhugaa hojii oomishtota qonnaa adda addaa Itoophiyaa fi Afrikaa Kibbaa keessatti argaman simachuuf qophaa'eera. Bulchaa kooperaatiivaa qonnaan bultoota xixiqqoo kumaatama walqabsiisu, qonna dhuunfaa bunaa addaa ergitu, ykn dhaabbata oomishtota waliigaltee waliin hojjetu taatanii - EVC hojii keessan salphisuu fi ulaagaalee addunyaa guutuuf isin gargaara.",
+  "cooperatives": {
+    "title": "Kooperaatiivotaa fi Waldaalee",
+    "description": "Kooperaatiivotaa fi waldaaleen yeroo baay'ee daataa bittinnaa'e, iftoomina gadi aanaa fi dirqama ajajamuu walxaxaadhaan qabsaawu. EVC galmee miseensota keessanii dijitaalaayizuu, oomisha fi geejjiba hordofuu, kaffaltii qonnaan bultootaa ofumaan bulchuu fi ragaalee mirkaneessaa akka orgaanikii, Fair Trade fi EUDR bulchuuf isin dandeessisa.",
+    "features": "Amaloota:",
+    "featuresList": [
+      "Galmee dijitaalaa miseensotaa koordineetii jiiyoo waliin",
+      "Daataa walitti qabuu midhaan galfamee fi loojistiksii yeroo qabatamaa",
+      "Hordoffii kaffaltii fi galmee raabsaa ifa ta'e",
+      "Hordoffii leenjii fi raabsaa galteewwanii",
+      "Ragaalee mirkaneessaa fi dashboard sakatta'aaf",
+      "Xiinxala raawwii fi oomishtummaa kooperaatiivaa"
+    ],
+    "benefits": "Faayidaalee:",
+    "benefitsText": "Bulchiinsa yeroo qusatu, murtoo kennuu fooyya'e, argama ragaa mirkaneessaa salphaa, amantaa miseensota waliin, fi mul'ina gabaa."
+  },
+  "privateFarms": {
+    "title": "Qonna Dhuunfaaf",
+    "description": "Qonnawwan dhuunfaa fi daldalaa gaafannoo iftoomina daataa fi ragaa mirkaneessaa itti fufiinsaaf guddachaa jiru mudatu. EVC bakka qonnaa keessanii kaartaa gochuu, sochiiwwan qonnaa galmeessuu, itti fayyadama hojjettootaa hordofuu fi baasii oomishaa hordofuuf isin dandeessisa.",
+    "features": "Amaloota:",
+    "featuresList": [
+      "Kaartaa qonnaa dijitaalaa GPS fi daataa satellaayitii fayyadamuun",
+      "Hordoffii galtee fi midhaan galfamee hordoffii baasii waliin",
+      "Wal bira qabuu oomishaa fi mul'achuu raawwii",
+      "Ragaalee itti fufiinsaa fi ajajamuu",
+      "Walqunnamtii meeshaalee kuusaa fi ergaa waliin"
+    ],
+    "benefits": "Faayidaalee:",
+    "benefitsText": "To'annoo hojii fooyya'e, itti gaafatamummaa, fi qophii bitootaa addunyaa fi sakatta'aaf."
+  },
+  "outgrowers": {
+    "title": "Oomishtota Alaa fi Karoora Waliigaltee",
+    "description": "Dhiyeessitootaa xixiqqoo bittinnaa'an moodeela oomishtota alaatti qindeessuu walxaxaadha. EVC kuusaa daataa giddugaleessaa, galmee jiiyoo-wabiitiin fi dashboard haala barbaadamuun salphisa.",
+    "features": "Amaloota:",
+    "featuresList": [
+      "Galmee fi ibsa qonnaan bultoota waliigaltee qaban",
+      "Hordoffii sochiiwwan dirree fi itti fayyadama galteewwanii",
+      "To'annoo qulqullina fi ragaalee geejjibaa",
+      "Karaalee qunnamtii qonnaan bultoota waliin",
+      "Sakatta'aa ajajamuu mobaayilaa DLMs'n"
+    ],
+    "benefits": "Faayidaalee:",
+    "benefitsText": "Hordoffii cimaa, balaa ajajamuu dhabuu gadi aanaa, to'annoo fooyya'e, fi amantaa bitootaa."
+  }
+},
+
+
+
+"dataLogisticManager": {
+  "title": "Bulchiinsa Loojistiksii Daataa Ta'uu",
+  "subtitle": "Teknooloojii fi qonna aadaa gidduu jiru hanqina dijitaalaa ceequmsaa ta'uu. Hawaasa qonnaa Itoophiyaa keessaa humneessuudhaan hojii hiika qabu uumuu.",
+  "applyNow": "Amma Iyyannoo Galchuu",
+  "whatIsDLM": {
+    "title": "Bulchiinsa Loojistiksii Daataa Maali?",
+    "description": "Bulchitootni Loojistiksii Daataa dargaggoota ogeeyyii oomishtota xixiqqoo fi teknooloojii gidduu jiru hanqina dijitaalaa ceequmsanii dha. Jijjiirama dijitaalaa hawaasa baadiyyaatiif dhaqqabamaa taasisu walqunnamtii barbaachisaa dha.",
+    "features": [
+      { "title": "Xiyyeeffannoo Hawaasaa", "desc": "Kallattiin qonnaan bultoota waliin hojjechuu" },
+      { "title": "Teknooloojiin Deeggare", "desc": "Meeshaalee ammayyaa fayyadamuu" },
+      { "title": "Guddina Hojii", "desc": "Dandeettii gatii qabu ijaaruu" },
+      { "title": "Ragaa Mirkaneeffame", "desc": "Beekamtii ogummaa" }
+    ]
+  },
+  "journey": {
+    "title": "Imala Kee DLM Ta'uuf",
+    "subtitle": "Adeemsa salphaa tarkaanfii 4 hojii kee akka Bulchiinsa Loojistiksii Daataa jalqabuuf",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Toora Interneetii Irratti Iyyannoo Galchuu",
+        "description": "Unka toora interneetii keenyaan iyyannoo kee galchi"
+      },
+      {
+        "step": "02",
+        "title": "Leenjii Xumuruu",
+        "description": "Sagantaa leenjii bal'aa keenyatti hirmaachuu"
+      },
+      {
+        "step": "03",
+        "title": "Ragaa Mirkaneessaa Argachuu",
+        "description": "Ragaa mirkaneessaa DLM ofiishaala kee fudhachuu"
+      },
+      {
+        "step": "04",
+        "title": "Hojjechuu Jalqabuu",
+        "description": "Hawaasa qonnaa deeggamuudhaan hojii kee jalqabuu"
+      }
+    ]
+  },
+  "responsibilities": {
+    "title": "Akka DLM Maal Gochuu Qabda",
+    "subtitle": "Itti gaafatamummaan kee guyyaa guyyaa hojiiwwan hiika qaban adda addaa hawaasa qonnaa kallattiin dhiibbaa godhan of keessatti qabata",
+    "list": [
+      "Qonnaan bultoota galmeessuu fi bakka qonnaa GPS'n argachuu",
+      "Yeroo sakatta'aa fi qorannoo kooperaatiivota deeggaruu",
+      "Daataa midhaan galfamee, leenjii fi itti fayyadama galteewwanii galchuu",
+      "Galmee qonnaa fi gabaasa bulchuuf gargaaruu",
+      "Kaffaltii dijitaalaa fi ragaalee mirkaneessaa haala mijeessuuf gargaaruu"
+    ]
+  },
+  "benefits": {
+    "title": "Maaliif DLM Ta'uu?",
+    "subtitle": "Neetworkii guddachaa jiru dargaggoota ogeeyyii qonnaa Itoophiyaa keessatti jijjiirama dhugaa fidan keessatti makamuu",
+    "list": [
+      {
+        "title": "Kaffaltii Dorgommii",
+        "description": "Waliigaltee tajaajilaa fi bonaasii raawwiidhaan galii argachuu"
+      },
+      {
+        "title": "Muuxannoo Gatii Qabu",
+        "description": "Teknooloojii qonnaa fi meeshaalee dijitaalaa keessatti muuxannoo harkaan argachuu"
+      },
+      {
+        "title": "Guddina Hojii",
+        "description": "Daldalaa qonnaa fi hojii uumuu keessatti karaalee ijaaruu"
+      },
+      {
+        "title": "Gorsa Ogummaa",
+        "description": "Ecopia fi michootaa yunivarsiitii irraa qajeelfama argachuu"
+      }
+    ]
+  }
+},
+
+
+"usingPlatform": {
+  "title": "Waltajjii EVC Fayyadamuu",
+  "subtitle": "Qajeelfama bal'aa fi viidiyoo keenya fayyadamuun dandeettii waltajjii EVC akkamitti guddisuu akka dandeessan baraadhaa",
+  "platformFeatures": "Amala Waltajjii",
+  "features": [
+    {
+      "title": "Baga Dhuftan & Mul'achuu",
+      "description": "Ibsa dijitaalaa kee jalqabiitii mul'ina gabaa kee dabali",
+      "videoTitle": "Waltajjii EVC waliin Jalqabuu"
+    },
+    {
+      "title": "Ajajamuu Agarsiisuu",
+      "description": "Ulaagaalee EUDR fi ulaagaalee itti fufiinsa salphaatti guuti",
+      "videoTitle": "Ajajamuu EUDR Salphaa Taasifame"
+    },
+    {
+      "title": "Sirna ERP Qindaa'inaaf",
+      "description": "Meeshaalee bulchiinsa walitti makaman fayyadamuun hojii keessan keessaa salphisi",
+      "videoTitle": "Hojii Kee Bulchuu"
+    },
+    {
+      "title": "Bitootaa Bira Ga'uu & Dhiyeessii Olkaa'uu",
+      "description": "Bitootaa addunyaa waliin walqunnamii uumiitii oomisha kee agarsiisi",
+      "videoTitle": "Oomisha Kee Beeksisuu"
+    },
+    {
+      "title": "Galtee Argachuu",
+      "description": "Karaa gabaa keenyaatiin galtee qonnaa qulqullina qabu argadhu",
+      "videoTitle": "Galtee Qulqullina Qabu Argachuu"
+    }
+  ],
+  "watchVideo": "Viidiyoo Ilaaluu"
+},
+
+
+"subscriptions": {
+  "title": "Karoora Galmee Qaamolee Dhimmi Isaanii Ilaalamu Hundaaf",
+  "subtitle": "Sarba gatii qonnaa keessatti gahee keetiif karoora sirrii filadhu. Oomishtootaa jalqabee hanga galchitootaatti, hundaaf furmaata mijataa qabna.",
+  "stakeholderPlans": [
+    {
+      "stakeholder": "Oomishtootaa",
+      "feeType": "Kaffaltii ji'aa sirna ERP",
+      "accessDescription": "Galmeef, bulchiinsa midhaan galfamee, ragaalee mirkaneessaaf",
+      "features": [
+        "Furmaata dijitaalaa hojiirra oolchuu (sirna ERP, waltajjii hordoffii)",
+        "Galmee qonnaan bultootaa dijitaalaa",
+        "Hordoffii fi bulchiinsa midhaan galfamee",
+        "Filannoo ragaa mirkaneessaa sakatta'uu"
+      ],
+      "price": "",
+      "priceUnit": "/ji'a",
+      "buttonText": "Galmeessi"
+    },
+    {
+      "stakeholder": "Bulchitootni Loojistiksii Daataa",
+      "feeType": "Leenjii fi argama appii",
+      "accessDescription": "Sagantaa leenjii bal'aa fi meeshaalee mobaayilaa",
+      "features": [
+        "Leenjii waltajjii dijitaalaa carraa hojii uumuuf",
+        "Deeggarsa ajajamuu EUDR kooperaatiivotaa fi qonnaan bultootaaf",
+        "Ogummaa hordoffii sarba dhiyeessii fi bulchiinsa daataa",
+        "Haala mijeessuu argama gabaa addunyaa",
+        "Ragaa mirkaneessaa akka Bulchiinsa Loojistiksii Daataa"
+      ],
+      "price": "Bilisaa",
+      "priceUnit": "",
+      "buttonText": "Dabalata Baraadhaa"
+    },
+    {
+      "stakeholder": "Galchitootaa/Bitootaa",
+      "feeType": "Kaffaltii argama galmee",
+      "accessDescription": "Madda mirkaneeffamee + ragaalee mirkaneessaa buufachuu",
+      "features": [
+        "Bunaa mirkaneeffamee, bosona balleessuu irraa bilisaa kan seerota EU waliin walsimu",
+        "Ogummaa naannoo fi hojii dargaggoota Itoophiyaatiif ijaaruu",
+        "Iftoomina sarba dhiyeessii fooyya'aa fi bulchiinsa balaa",
+        "Filannoo tumsa hedduu (sponsoring, DLMs qacaruu...)"
+      ],
+      "price": "",
+      "priceUnit": "/ji'a",
+      "buttonText": "Galmeessi"
+    }
+  ]
+},
+
+"eudrCompliance": {
+  "backToNews": "Gara Oduutti Deebi'i",
+  "date": "Waaxabajjii 2025",
+  "title": "Ajajamuu EUDR: Wanti Ergitootni Itoophiyaa Beekuu Qaban",
+  "subtitle": "Seera Balleessuu Bosona EU haaraa fi dhiibbaa inni ergaa bunaa Itoophiyaa irratti qabu xiinxaluu.",
+  "sections": {
+    "introduction": {
+      "title": "Seensa",
+      "content": [
+        "Seerri Balleessuu Bosona Gamtaa Awurooppaa (EUDR) waggoota dhiyoo keessatti daldala qonnaa addunyaa irratti dhiibbaa guddaa qabu jijjiirama seeraa barbaachisaa ta'e keessaa tokko bakka bu'a. Ergitootni bunaa Itoophiyaatiif, seerri kun rakkoo ajajamuu biraa qofa miti—jijjiirama bu'uuraa kan argama gabaa gara naannoo bunaa fayyadamtoota gurguddoo addunyaa keessaa tokkotti murteessudha.",
+        "Seerri kun guutummaatti hojiirra ooluu jalqabuun, oomishtootni Itoophiyaa, kooperaatiivotni fi ergitootni EUDR maal akka jechuudha, maaliif akka barbaachisu fi ulaagaalee haaraa kana guutuuf akkamitti akka madaqan hubachuu qabu."
+      ]
+    },
+    "whatIsEUDR": {
+      "title": "EUDR Maali?",
+      "content": [
+        "Seerri Balleessuu Bosona EU (EUDR) seera bal'aa kan oomishaaleen gara Gamtaa Awurooppaatti galchamanuu addunyaa kamiyyuu keessatti balleessuu bosona ykn miidhaa bosonaa keessatti gumaacha akka hin godhanneef mirkaneessuuf qophaa'edha. Seerri kun oomishaalee ijoo torba haguuga: loon, kookoo, bunaa, zayitii meexxii, raabarii, sooyyaa fi mukaa.",
+        "Bunaaf, kun jechuun ergaan gara EU galuu hundi ragaa bunaan sun lafa Muddee 31, 2020 booda bosoni hin balleeffamne irratti akka oomishame waliin walqabatee dhufuu qaba jechuudha."
+      ],
+      "exportersMustEnsure": "Ergitootni waan armaan gadii mirkaneessuu qabu:",
+      "requirements": [
+        "Oomishaaleen balleessuu bosona irraa bilisa ta'uu (Muddee 31, 2020 booda balleessuu bosona hin jiru)",
+        "Oomishaaleen akkaataa seera biyya oomishaa keessaatti seeraan oomishaman ta'uu",
+        "Gara lafa bunaan itti biqile sirrii ta'etti hordoffii guutuu",
+        "Ragaalee qorannoo of eeggannoo bal'aa"
+      ],
+      "conclusion": "Kun jechuun qonnaan bultootni bunaa, kooperaatiivotni fi ergitootni Itoophiyaa keessa jiran odeeffannoo bakka bu'uu ifa ta'e (kaartaa GPS), galmee midhaan galfamee fi ragaa fayyadama lafa seeraa agarsiisuu qabu jechuudha."
+    },
+    "whyMatters": {
+      "title": "Kun Itoophiyaaf Maaliif Barbaachisaa Ta'a",
+      "content": "Itoophiyaan oomishtootaa bunaa gurguddoo addunyaa keessaa tokko yoo ta'u, bunaan qooda guddaa galii ergaa biyyattiitii qabata. EU gabaa guddaa bunaa Itoophiyaatiif waan ta'eef, ajajamuu EUDR hariiroo daldala gatii guddaa qaban kana eeguuf barbaachisaa dha. Ajajamuu dhabuu oomishaaleen daangaa EU irratti akka gataman gochuu danda'a, kunis kasaaraa maallaqaa guddaa fi maqaa miidhame fida."
+    },
+    "keyRequirements": {
+      "title": "Ulaagaalee Ajajamuu Ijoo",
+      "items": [
+        {
+          "title": "Odeeffannoo Bakka Bu'uu",
+          "content": "Lafti bunaa hundi koordineetii GPS sirrii ta'een kaartaa irratti mul'achuu qaba. Kun qonnaan bultoota xixiqqoo kan oomisha bunaa Itoophiyaa harka caalaa qaban dabalatee."
+        },
+        {
+          "title": "Ragaalee Seeraa",
+          "content": "Lafti seeraan kan qabame ykn kan itti fayyadaman ta'uu fi yeroo oomishaa keessatti seerri hojjetamu hundi akka eegame ragaa."
+        },
+        {
+          "title": "Ragaa Balleessuu Bosona Irraa Bilisummaa",
+          "content": "Muddee 31, 2020 booda lafa irratti balleessuu bosona akka hin uumamne ragaa, akkaataa idileetti fakkii satelaayitii ykn ragaa ofiisaa."
+        },
+        {
+          "title": "Hordoffii Sarba Dhiyeessii",
+          "content": "Imala bunaa qonna irraa hanga ergaatti ragaa guutuu, galmee qopheessuu, kuusaa fi geejjibaa dabalatee."
+        }
+      ]
+    },
+    "challenges": {
+      "title": "Qormaatawwan Ergitootaa Itoophiyaa",
+      "items": [
+        {
+          "title": "Bittinnaa'uu Qonnaan Bultoota Xixiqqoo:",
+          "content": "Bunaan Itoophiyaa irra caalaan qonnaan bultoota xixiqqoo hektaara 0.5 hanga ta'an irraa kan dhufu yoo ta'u, kaartaa fi ragaa dhuunfaa walxaxaa taasisa."
+        },
+        {
+          "title": "Bu'uura Dijitaalaa Daangeffame:",
+          "content": "Naannoon baadiyyaa hedduun meeshaalee dijitaalaa fi walqunnamtii walitti qabuu fi bulchiinsa odeeffannoo bal'aaf barbaachisan dhabaniiru."
+        },
+        {
+          "title": "Hanqina Ragaa:",
+          "content": "Galmeen fayyadama lafa seenaa fi ragaan seeraa hin guutamne ykn argachuuf rakkisaa ta'uu danda'a."
+        },
+        {
+          "title": "Baasii fi Walxaxiinsa:",
+          "content": "Qabeenya ajajamuu barbaachisu ergitootaa fi kooperaatiivota xixiqqoof nama dhiphisu ta'uu danda'a."
+        }
+      ]
+    },
+    "solutions": {
+      "title": "Maal Gochuu Ni Danda'ama?",
+      "items": [
+        {
+          "title": "Furmaata Hordoffii Dijitaalaa",
+          "content": "Waltajjiin dijitaalaa balaa balleessuu bosona hordofuu fi ragaa EUDR ajajamuu barbaachisu kaartaa GPS fi hordoffii sarba dhiyeessii karaadhaan kennuu danda'u."
+        },
+        {
+          "title": "Tumsa Kooperaatiivaa",
+          "content": "Kooperaatiivota karaadhaan hojjechuun qonnaan bultoota xixiqqoo qabeenya walitti qabuu fi baasii ragaa ajajamuu qooduuf gargaara."
+        },
+        {
+          "title": "Deeggarsa Mootummaa",
+          "content": "Mootummaan Itoophiyaa deeggarsa ragaa seeraa kennuu fi argama fakkii satelaayitii haala mijeessuudhaan gahee murteessaa taphachuu danda'a."
+        },
+        {
+          "title": "Ijaarsa Dandeettii",
+          "content": "Sagantaalee leenjii qonnaan bultootaa, kooperaatiivotaa fi ergitootaaf ulaagaalee EUDR fi adeemsa ajajamuu irratti."
+        },
+        {
+          "title": "Fudhatama Teknooloojii",
+          "content": "Meeshaalee dijitaalaa walitti qabuu odeeffannoo, kaartaa GPS fi bulchiinsa sarba dhiyeessii hojiirra oolchuu."
+        }
+      ]
+    },
+    "conclusion": {
+      "title": "Xumura",
+      "content": [
+        "EUDR ergitootaa bunaa Itoophiyaaf qormaataa fi carraa lamaan bakka bu'a. Ajajamuu carraaqqii fi invastimantii guddaa gaafatu iyyuu, gabaa pirimiyam itti fufiinsa fi iftoomina dinqisiifatan balbala bana.",
+        "Milkaa'inni tumsa qonnaan bultoota, kooperaatiivota, ergitootaa, dhiyeessitootaa teknooloojii fi dhaabbilee mootummaa gidduutti sirna fi adeemsa ajajamuu barbaachisan ijaaruuf jiru irratti hundaa'a."
+      ]
+    },
+    "sources": {
+      "title": "Maddoota fi Dubbisuu Dabalataa",
+      "items": [
+        {
+          "title": "Seerri Balleessuu Bosona Gamtaa Awurooppaa (EUDR)",
+          "description": "Seerri (EU) 2023/1115, Caamsaa 31, 2023 ifatti fudhatame; hojiirra oolmaan dhaabbilee gurguddaaf Muddee 30, 2024 fi SMEsf Waaxabajjii 30, 2025 jalqaba",
+          "linkText": "Seera guutuu ilaali (EUR-Lex)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2023/1115/oj"
+        },
+        {
+          "title": "Agroberichten Buitenland: Dameen bunaa Itoophiyaa EUDR jalatti",
+          "description": "Dhiibbaa qonnaan bultoota xixiqqoo irratti fi karoora tarkaanfii mootummaa gara EU dhiyaate haguuga",
+          "linkText": "Barreeffama guutuu dubbisi",
+          "url": "https://www.agroberichtenbuitenland.nl/actueel/nieuws/2024/08/20/as11-ethiopias-coffee-crisis-navigating-eu-regulations-amid-sustainability-challenges"
+        },
+        {
+          "title": "Global Coffee Platform – Qajeelfama EUDR Damee Bunaatiif",
+          "description": "Qajeelfama qabatamaa jijjiirraa daataa fi dijitaalaayizeeshinii ajajamuu",
+          "linkText": "Qajeelfama GCP argadhu",
+          "url": "https://www.globalcoffeeplatform.org/eudr-guidance-and-recommendations/"
+        },
+        {
+          "title": "CBI – Gorsa 7 Bunaa Keessatti EUDR Ajajamaa Ta'uuf",
+          "description": "Ulaagaalee ijoo gabaabsa: balleessuu bosona irraa bilisa, oomisha seeraa, of eeggannoo, yeroo ce'umsa SME",
+          "linkText": "Qajeelfama ajajamuu CBI ilaali",
+          "url": "https://www.cbi.eu/market-information/coffee/tips-become-eudr-compliant"
+        }
+      ]
+    }
+  }
+},
+"newsOutlook": {
+  "title": "Oduu fi Ilaalcha",
+  "subtitle": "Guddina haaraa teknooloojii qonnaa, adeemsa gabaa fi fooyya'iinsa seeraa industirii bunaa Itoophiyaa irratti dhiibbaa qaban irratti odeeffannoo argadhaa.",
+  "categories": ["Hunda", "Adeemsa Gabaa", "Teknooloojii", "Seerota", "Itti Fufiinsa"],
+  "noArticles": "Barreeffamni gingilchaa ammaa keessan waliin walsimu hin jiru.",
+  "articles": [
+    {
+      "title": "Ajajamuu EUDR: Wanti Ergitootni Itoophiyaa Beekuu Qaban",
+      "excerpt": "Seera Balleessuu Bosona EU haaraa fi dhiibbaa inni ergaa bunaa Itoophiyaa irratti qabu xiinxaluu.",
+      "author": "Garee Gulaalaa EVC",
+      "date": "Waaxabajjii 2025",
+      "category": "Adeemsa Gabaa"
+    }]
+},
+
+
+"compliance": {
+  "title": "Ulaagaalee Mirkaneeffaman Karaa Amanamummaa Ijaaruu",
+  "introduction": {
+    "paragraph1": "Waltajjiin Ecopia Value Chain (EVC) meeshaa dijitaalaa hojii qonnaa bulchuuf qofa osoo hin taane—oomishtootni, kooperaatiivotni fi bitootni ulaagaalee ajajamuu addunyaa cimaa ta'anii dhufan akka guutan gargaaruuf qophaa'edha. Fayyadamtoota seera mootummaa akka Seera Bosona Balleessuu Gamtaa Awurooppaa (EUDR) fi ulaagaalee itti fufiinsaa dhuunfaa sagantaa Ragaa Ecopia keenyaa dabalatee akka deemsisan gargaarra.",
+    "paragraph2": "Ajajamuu filannoo miti—gabaalee addunyaa bira ga'uu, gatii olaanaa argachuu fi bitootaa waliin hariiroo itti fufiinsa qabu ijaaruuf barbaachisaa dha. EVC adeemsa kana meeshaalee walitti makaman walqabsiisuu daataa, hordoffii, galmeessuu fi mirkaneessaa nama sadaffaa deeggaraniin salphisa."
+  },
+  "whatIsEUDR": {
+    "title": "EUDR (Seera Bosona Balleessuu Gamtaa Awurooppaa) maal?",
+    "description": "EUDR seera Gamtaa Awurooppaa irraa ka'e bosona balleessuu fi miidhaa bosona oomisha qonnaa murtaa'e—bunaa fi kokoowaa dabalatee—oomishuu fi fayyadamuu irraa dhufuuf dhaabuu kan xiyyeeffatedha. Bara 2025 irraa eegalee daldalli kamiyyuu meeshaalee kana gara Gamtaa Awurooppaatti galchu oomishni isaanii:",
+    "requirements": [
+      "Bosona balleessuu irraa bilisa ta'uu",
+      "Haala seeraan oomishaman ta'uu",
+      "Gara madda isaanii sirrii ta'etti hordofamuu danda'uu"
+    ],
+    "conclusion": "Kana jechuun qonnaan bultoota bunaa, kooperaatiivotni fi ergitootni Itoophiyaa keessa jiran daataa bakka bu'iinsa ifa ta'e (kaartaa GPS), galmee midhaan fi ragaa fayyadama lafa seeraa agarsiisuu qabu."
+  },
+  "howEVCHelps": {
+    "title": "EVC Ulaagaalee EUDR Guutuuf Akkamitti Si Gargaara",
+    "items": [
+      "Meeshaalee kaartaa-jiiyoo qonnaa fi bakka qubataaf",
+      "Seenaa abbummaa lafa fi oomishaa of keessaa qabu dijitaalaa qonnaa",
+      "Galmee midhaan qonnaan bultoota dhuunfaa waliin walqabsiifame",
+      "Hordoffii sarba dhiyeessii lafa qonnaa irraa hanga ergaatti",
+      "Amaloota galmeessuu fi qooddachuu"
+    ],
+    "conclusion": "Oomishtootni sarba dhiyeessii ifa ta'e bitootaa EU abdii guutan akka ijaarani dandeessina—namoota naannoo sanaaf gatii dhugaa uumuun."
+  },
+  "ecopiaCertification": {
+    "title": "Ragaa Ecopia",
+    "tagline": " – Hordofamuu Danda'u. Hammachaa. Itti Fufiinsa Qabu",
+    "description": "Ulaagaaleen addunyaa hedduun jiraatan iyyuu, yeroo baayyee qonnaan bultoota xixiqqoo fi kooperaatiivota haaraa ta'aniif qaala'aa fi hin argaman. Kanaaf Ecopia Ragaa Ecopia uume—sirna qabatamaa, naannoo irratti hundaa'e galma itti fufiinsaa addunyaa ijoo waliin walsimu garuu haala Itoophiyaa waliin walsimu.",
+    "features": {
+      "title": "Ragaan Ecopia Maal Haguuga?",
+      "traceability": {
+        "title": "Hordoffii fi sirrii ta'uu daataa",
+        "description": "Oomishni qonnaa irraa hanga bitaa dhumaatti meeshaalee walqabsiisuu daataa yeroo qabatamaa fi kaartaa fayyadamuun hordofamuu akka danda'u mirkaneessuu."
+      },
+      "inclusion": {
+        "title": "Hammachuu hawaasaa",
+        "description": "Qonnaan bultootaa fi dargaggoota (Bulchitootni Loojistiksii Daataa) kaffaltii haqa qabeessa, hammachuu koorniyaa fi argama meeshaalee dijitaalaa guddisuun."
+      },
+      "sustainability": {
+        "title": "Itti fufiinsa naannoo",
+        "description": "Qonnaa haala qilleensaa-sammuu jajjabeessuu, bosona balleessuu irraa fagaachuu fi gocha agro-iikooloojii deeggaruu."
+      },
+      "ethics": {
+        "title": "Gocha hojjetaa naamusaa",
+        "description": "Hojii dirqamaa ykn ijoollee tokkollee akka hin hirmaanne fi haalli hojii nageenya qabu akka raawwatamu mirkaneessuu."
+      },
+      "transparency": {
+        "title": "Ifa ta'uu maallaqaa",
+        "description": "Galmee kaffaltii dijitaalaa, raabsa bonaasii haqa qabeessa fi hordoffii galii oomishtootaaf cimsuu."
+      }
+    },
+    "howToGetCertified": {
+      "title": "Akkamitti Ragaa Argachuu Dandeessa?",
+      "steps": [
+        "Waltajjii EVC irratti galmaa'i",
+        "Leenjii bu'uura dijitaalaa fi leenjiitti hirmaadhu",
+        "Daataan kee yeroo hunda fi sirritti akka eegamu mirkaneessi",
+        "Adeemsa gamaaggama dijitaalaa garee ragaa keenyaan deeggaramu darbi",
+        "Haala ragaa keetii seenaa dijitaalaa kee irratti agarsiisi"
+      ],
+      "conclusion": "oomishtota hamma kamiyyuu baasii gadi aanaa, hammachaa fi argamaa ta'etti qophaa'ee—amanamummaa fi ifa ta'uu bitootni barbaadan dhiyeessuun."
+    }
+  },
+  "whyCompliance": {
+    "title": "Ajajamuu Maaliif Barbaachisaa",
+    "benefits": [
+      {
+        "title": "Argama Gabaa",
+        "description": "Bitootni addunyaa hordoffii mirkaneeffamee fi daataa itti fufiinsaa barbaadu",
+        "number": "01"
+      },
+      {
+        "title": "Gatii Olaanaa",
+        "description": "Oomishni ragaa qabu fi hordofamuu danda'u gatii gabaa olaanaa ajaja",
+        "number": "02"
+      },
+      {
+        "title": "Amanamummaa Investeraa",
+        "description": "Daataan ifa ta'e dhaabbilee maallaqaa fi michootaa misoomaa hawwata",
+        "number": "03"
+      },
+      {
+        "title": "Faayidaa Hojii",
+        "description": "Meeshaaleen dijitaalaa karoora, to'annoo fi qindoomina fooyyessa",
+        "number": "04"
+      }
+    ],
+    "conclusion": "EVC waliin, ajajamuu baad'aa miti—faayidaa tarsiimoo ta'a."
+  }
+},
+
+"socialResponsibility": {
+  "title": "Kutannoo Itti Gaafatamummaa Hawaasaa Keenya",
+  "subtitle": "Ecopia keessatti, egeree kalaqaa fi hammachuun walqabatanii deeman amanna.",
+  "missionStatement": {
+    "paragraph1": "Waltajjiin Dijitaalaa Ecopia Value Chain hordoffii fi ajajamuu qofaaf meeshaa ta'etti osoo hin ijaaramin—dhaloota itti aanu Itoophiyaa hojii uumtootaa humneessuu fi qonnaan bultoota biyyattii tajaajiluu akka ergaa hawaasaatti ijaarame.",
+    "paragraph2": "Yeroo dheeraa, jalqabtoota hojii yunivarsiitii Itoophiyaa keessatti qophaa'an hawaasa baadiyyaa waliin walqunnamuuf fi qonnaan bultootaaf kallattiin gatii kennuuf riqicha dhabanii turan. Ecopia kana jijjiirachaa jira."
+  },
+  "innovation": {
+    "paragraph1": "Waltajjii Ecopia Value Chain qabaachuu fi bulchuudhaan, barattootaa fi kalaqtoota dargaggootaaf jalqabtoota hojii dijitaalaa isaaniif waltajjii jalqabaa kennina, maddoota galii haaraa, muuxannoo addunyaa dhugaa fi carraa hojii uumna—qonnaan bultoota osoo hin kaffalin.",
+    "paragraph2": "Qonnaan bultoota Itoophiyaa argama gabaa isaanii fooyyessuu fi jireenya isaanii guddisuuf jiru waltajjii dijitaalaa irratti hammachuuf gonkumaa kaffaltii gochuu akka hin qabne cimsee amanna."
+  },
+  "impact": {
+    "title": "Sirna Itti Gaafatamummaa Hawaasaa Qabu Uumuu",
+    "features": [
+      {
+        "title": "Kalaqaa dargaggoota hoogganamu humneessa",
+        "description": "Hojii uumtoota dargaggootaaf daldala itti fufiinsa qabu ijaaruuf carraa uumuu"
+      },
+      {
+        "title": "Tattaaffii barnootaa dhiibbaa addunyaa dhugaa waliin walqabsiisa",
+        "description": "Qorannoo yunivarsiitii fi furmaata qonnaa qabatamaa gidduu jiru riqicha guutuu"
+      },
+      {
+        "title": "Qonnaan bultoota baad'aa maallaqaa malee deeggaruu",
+        "description": "Qonnaan bultoota baasii dabalataa malee teknooloojii irraa fayyadamuu akka danda'an mirkaneessuu"
+      },
+      {
+        "title": "Dinagdee qonnaa Itoophiyaa cimsuu",
+        "description": "Sarba gatii qonnaa cimaa fi walqabataa ta'e ijaaruu"
+      }
+    ]
+  },
+  "finalStatement": {
+    "paragraph": "Kun waltajjii qofa miti. Sochii haqummaa, itti fufiinsaa fi badhaadhinaa waliif—teknooloojiin hawaasa waliin wal arguu fi barnoonni jijjiirama fiduu.",
+    "conclusion": "Ecopia – Kalaqaa Humneessuu. Hawaasa Cimsuu."
+  }
+},
+
+
+"partnerships": {
+  "title": "Tumsa Tarsiimoo Keenya",
+  "subtitle": "Akkaademiiyaa, teeknoloojii, misooma fi daldalaa keessatti sirna qonnaa itti fufiinsa qabu tumsuun ijaaruu.",
+  "categoriesTitle": "Gosa Tumsaa",
+  "categories": {
+    "academic": {
+      "title": "Dhaabbilee Barnootaa",
+      "description": "Yunivarsiitii fi wiirtuu qorannoo kalaqaa teeknoloojii qonnaa keessatti kakaasan",
+      "count": "3+"
+    },
+    "technology": {
+      "title": "Michootni Teeknoloojii",
+      "description": "Dhaabbilee teeknoloojii bu'uura dijitaalaa fi furmaata kalaqaa dhiyeessan",
+      "count": "5+"
+    },
+    "government": {
+      "title": "Mootummaa fi Addunyaa",
+      "description": "Ministeera mootummaa fi dhaabbilee addunyaa",
+      "count": "4+"
+    },
+    "development": {
+      "title": "Dhaabbilee Misoomaa",
+      "description": "Faawundeeshinii fi dhaabbilee miti-mootummaa galma misooma itti fufiinsa qabu deggaran",
+      "count": "5+"
+    }
+  },
+  "trustedPartnersTitle": "Michootni Keenya Amanamoo",
+  "trustedPartnersDescription": "Kalaqaa qonnaa fi misooma itti fufiinsa qabuuf sirna guutuu uumuuf dhaabbilee gurguddoo kutaalee hedduu keessaa waliin hojjenna.",
+  "partnershipCTA": {
+    "title": "Nu Waliin Tumsa Gochuu Barbaadduu?",
+    "description": "Neetworkii michootaa guddachaa jiru kalaqaa dijitaalaa fi gocha itti fufiinsa qabu karaa qonnaa Afrikaa jijjiiruuf kutannoo qaban keessatti makamaa.",
+    "buttonText": "Nu Quunnamaa"
+  }
+},
+
+
+
+
+"contact": {
+  "title": "Nu Quunnamaa",
+  "subtitle": "Hojii qonnaa keessan jijjiiruuf qophii? Kallattiin imeelii admin@ecopiavaluechain.com tiin nu quunnamaa ykn unka quunnamtii armaan gadii fayyadamaa.",
+  "formTitle": "Unka Quunnamtii",
+  "formSubtitle": "Unka armaan gadii guutaa fi akka danda'amutti dafnee isin quunnamna.",
+  "firstName": "Maqaa Duraa",
+  "lastName": "Maqaa Abbaa",
+  "email": "your.email@example.com",
+  "organization": "Dhaabbata (filannoo)",
+  "inquiryType": "Gaaffii Waliigalaa",
+  "inquiryOptions": {
+    "general": "Gaaffii Waliigalaa",
+    "partnership": "Carraa Tumsa",
+    "technical": "Deeggarsa Teeknikaa",
+    "dlm": "Iyyannoo DLM",
+    "producer": "Galmee Omishaa",
+    "buyer": "Fedhii Bitaa/Galchaa"
+  },
+  "message": "Waa'ee fedhii keessanii, gaaffii keessanii, ykn akkamitti isin gargaaruu akka dandeenyu nu himaa...",
+  "sendMessage": "Ergaa Erguu"
+},
+
+
+
+  "marketplace": {
+    "title": "Gabaa Qonnaa",
+    "subtitle": "Oomishtota mirkaneeffaman waliin walqabsiisuu, galtee qulqullina qabu argachuu fi tajaajila ogummaa argachuu—hundi waltajjii amanamaa tokko keessatti.",
+    "searchPlaceholder": "Qooda bunaa, tajaajila ykn galtee barbaadi...",
+    "filters": {
+      "allProducts": "Oomisha Hunda",
+      "coffee": "Bunaa",
+      "inputs": "Galteewwan",
+      "services": "Tajaajiloota",
+      "certifications": "Ragaalee Mirkaneessaa",
+      "organic": "Orgaanikii",
+      "fairtrade": "Daldala Haqaa",
+      "eudr": "EUDR Ajajamaa",
+      "ecopia": "Ecopia Mirkaneeffame",
+      "regions": "Naannoolee",
+      "sidamo": "Sidaamoo",
+      "yirgacheffe": "Yirgaacheffee",
+      "harar": "Hararii",
+      "jimma": "Jimmaa",
+      "kaffa": "Kaffaa"
+    },
+    "sections": {
+      "coffeeLots": "Qooda Bunaa",
+      "professionalServices": "Tajaajila Ogummaa",
+      "agriculturalInputs": "Galteewwan Qonnaa"
+    },
+
+    "services": {
+    "farmMapping": {
+      "title": "Kaartaa Qonnaa GPS fi Galmeessuu",
+      "provider": "Garee Teeknikaa EVC",
+      "unit": "qonna tokkoof",
+      "description": "Tajaajila kaartaa GPS ogeeyyii ajajamuu EUDR galmeessuu qonnaa bal'aa fi koordineetii jiiyoo waliin."
+    },
+    "certificationSupport": {
+      "title": "Deeggarsa Ragaa Mirkaneessaa fi Qophii Sakatta'aa",
+      "provider": "Ragaa Mirkaneessaa Ecopia",
+      "unit": "kooperaatiivii tokkoof",
+      "description": "Deeggarsa ragaa mirkaneessaa guutuu galmeessuu, qophii sakatta'aa fi mirkaneessaa ajajamuu ulaagaalee addunyaatiif dabalatee."
+    }
+  },
+  "labels": {
+    "provider": "Dhiyeessaa",
+    "delivery": "Geejjiba",
+    "deliveryTime": "torban 2-3",
+    "verifiedProvider": "Dhiyeessaa Mirkaneeffame"
+
+},
+    "buttons": {
+      "viewAll": "Hunda Ilaali",
+      "requestQuote": "Gatii Gaafadhu",
+      "bookService": "Tajaajila Buusi",
+      "addToCart": "Gara Gaarii Dabali"
+    },
+    "noResults": {
+      "coffee": "Qoodni bunaa gingilchaa ammaa keessan waliin walsimu hin jiru.",
+      "services": "Tajaajilli gingilchaa ammaa keessan waliin walsimu hin jiru.",
+      "inputs": "Galteewwan gingilchaa ammaa keessan waliin walsimu hin jiran."
+    },
+    "comingSoon": {
+      "title": "Dhiyootti",
+      "description": "Filannoo oomishaa fi tajaajila gaarii isiniif dhiyeessuuf cimsinee hojjechaa jirra. Dhiyootti deebi'aa!"
+    }
+  },
+
+
+ "theTeam": {
+  "title": "Garee Hogganaa Keenya",
+  "subtitle": "Garee hogganaa muuxannoo qabu kan Ecopia Value Chain, kalaqaa dijitaalaa fi gocha itti fufiinsa qabu fayyadamuun qonnaa Afrikaa jijjiiruuf kutate dubbisi.",
+  "lemlem": {
+    "description": "waggaa 10 ol herregaa Ecopia taatee, muuxannoo gatii qabu kan yeroo ishee dhaabbilee mootummaa Itoophiyaa keessaa fiddee jirti. Hogganaa isheetiin, galmeessuu keenya yeroo duraan dijitaalaayizii gochuu jalqabne, ajandaa jijjiirama dijitaalaa mootummaa waliin haala salphaan walsimnee jirra. Har'a, galmeen keenya hundi dijitaalaa dha fi dhiyootti duumessa keessatti nagaan kuufama. Jijjiiramni kun bu'a qabeessummaa, iftoomina, fi itti gaafatamummaa hedduu fooyyesseera. Ecopia keessatti, dijitaalaayizeeshiniin dhaabbilee uummataa keessatti malaammaltummaaf dawaa bu'a qabeessa akka ta'e amanna. Hojii harkaan hojjetamu hir'isuun fi hordoffii dabaluun, hundee Itoophiyaa dhugaa, bu'a qabeessa, fi gara fuulduraatti qophaa'e ta'e kaa'a."
+  },
+  "felix": {
+    "description": "Itoophiyaa fi Jarmanii keessatti guddatee, maatii siyaasaa keessatti hirmaannaa qabu keessatti dhalate, Felix walgahiiwwan AU Addis Ababaa fi walgahiiwwan murtii ariifachiisaa walitti dhufeenya alaa Barliin keessatti guddateera. Umrii xiqqoo irraa kaasee Felix dandeettii hogganaa fi dandeettii walitti dhufeenya qaamolee dhimmi isaan ilaalamu hawaasa sivilii, mootummaa fi kutaa dhuunfaa gidduutti taasisu agarsiiseera. Mul'ata tarsiimoo yeroo dheeraa fi mala furmaata rakkoo hin aadaa kalaqaa agarsiisuu, kan isa Hogganaa Tarsiimoo Ol'aanaa keenya taasisu."
+  },
+  "mitslal": {
+    "description": "Muuxannoo waggaa 30 ol qabaachuun, mootummoota, fi dhaabbilee addunyaa waliin hojjechuu, miseensota kaabinee biyyoota adda addaa kontinentii Afrikaa keessatti gorsuun. Dhaabbilee hedduu milkaa'inaan ijaaruun, qonnaan bultoota 15,000 ol oomishuu fi waliigaltee daldaalaa dhaabbilee gurguddoo addunyaa waliin taasisuuf leenjii kennuun, muuxannoo fi mul'ata dhaabbata kana gara milkaa'ina yeroo dheeraaf geessu qabdi."
+  },
+  "hayridi": {
+    "description": "Garee Leenjii fi Hojiiwwan Ecopia boona dha. Kutannoo isaa waliin, sagantaalee leenjii qonnaan bultootaa kan nyaata, kosmeetikii, fi biqiltoota qoricha aadaa irratti xiyyeeffatan jalqabne. Waggoota keessa, Hayrdi qonnaan bultoota 4,000 ol bakka adda addaa 14 keessatti leenjisee ragaa kenneeraaf. Dandeettiin isaa addaa kan formuleeshinii walfakkaataa taasisuu—kan Dr. Mitslal Kifleyesus-Matschie fi ogeessota biroo tiin qophaa'e—bu'uura beekumsa Ecopia waliin seera nyaataa 50 ol, formuleeshinii kosmeetikii 70, fi oomisha biqiltoota qoricha irratti hundaa'an 150 ol tiin badhaaseera. Hojiin isaa beekumsa naannoo cimsuuf, carraa diinagdee uumuuf, fi oomisha uumamaa qulqullina qabu kan Afrikaa keessatti hojjetame kan saayinsii fi aadaa irratti hundaa'e cimsuuf itti fufa."
+  }
+}
+  
+}
+
+
+
+
+
+

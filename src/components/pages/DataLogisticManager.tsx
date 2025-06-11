@@ -2,12 +2,16 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { CheckCircle, Users, Smartphone, TrendingUp, Award } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 interface DataLogisticManagerProps {
   onNavigate: (page: string) => void
 }
 
 export default function DataLogisticManager({ onNavigate }: DataLogisticManagerProps) {
+  const { t } = useTranslation()
+
   const handleApplyNow = () => {
     window.open(
       "https://docs.google.com/forms/d/e/1FAIpQLSdHY6eRAGHRjcb154z2nFstqvey49E_XK525SSK3-acwN8LVw/viewform",
@@ -16,293 +20,319 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
   }
 
   return (
-    <div className="min-h-screen bg-[#E5E0D8]">
-      <section className="py-20 px-8 flex items-center justify-center min-h-[400px]">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-8">
-            <h1
-              className="text-3xl text-[#725C3A]"
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: "300",
-                letterSpacing: "0.01em",
-              }}
-            >
-              How Data Logistic Managers Use the Platform
-            </h1>
-          </div>
-        </div>
-      </section>
-
-      {/* DLM Workflow Section */}
-      <section className="py-20 px-8 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2
-              className="text-2xl text-[#725C3A] mb-8"
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: "300",
-                letterSpacing: "0.01em",
-              }}
-            >
-              DLM Workflow
-            </h2>
-            <div className="flex justify-center">
-              <p
-                className="text-lg text-[#725C3A] leading-relaxed max-w-5xl"
-                style={{
-                  fontFamily: "Source Sans Pro, sans-serif",
-                  fontWeight: "300",
-                  lineHeight: "1.7",
-                }}
-              >
-                Data Logistic Managers (DLMs) are young professionals who bridge the digital gap between smallholder
-                producers and technology. Typically university graduates or vocational trainees, DLMs undergo basic
-                training in agricultural data collection, app usage, compliance protocols, and cooperative structures.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: "1",
-                title: "Apply",
-                description: "Apply to become a DLM through the platform.",
-                bgColor: "bg-white",
-                shadow: "shadow-xl",
-              },
-              {
-                step: "2",
-                title: "Training",
-                description: "Complete onboarding training modules.",
-                bgColor: "bg-[#809671]",
-                textColor: "text-white",
-                shadow: "shadow-2xl",
-              },
-              {
-                step: "3",
-                title: "Agreement",
-                description: "Sign a service agreement with Ecopia and/or a cooperative.",
-                bgColor: "bg-white",
-                shadow: "shadow-xl",
-              },
-              {
-                step: "4",
-                title: "Begin Service",
-                description: "Begin offering data entry, monitoring, and logistics support to producers.",
-                bgColor: "bg-[#B3B792]",
-                textColor: "text-white",
-                shadow: "shadow-2xl",
-              },
-            ].map((item, index) => (
-              <Card
-                key={index}
-                className={`border-0 rounded-2xl ${item.bgColor} ${item.shadow} hover:shadow-2xl transition-all duration-300 ${item.title === "Apply" ? "cursor-pointer" : ""
-                  }`}
-                onClick={
-                  item.title === "Apply"
-                    ? () =>
-                      window.open(
-                        "https://docs.google.com/forms/d/e/1FAIpQLSfDol1Ffh9pYTcrk5bz-yAjcZWLwUh34cp16_Dj1rHQVbDCHw/viewform",
-                        "_blank",
-                      )
-                    : undefined
-                }
-              >
-                <CardContent className="p-10 text-center">
-                  <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-6 ${item.textColor ? "bg-white/20" : "bg-[#809671]"
-                      }`}
-                  >
-                    <span
-                      className={`font-bold text-lg ${item.textColor ? "text-white" : "text-white"}`}
-                      style={{ fontFamily: "Poppins, sans-serif" }}
-                    >
-                      {item.step}
-                    </span>
-                  </div>
-                  <h3
-                    className={`text-xl mb-6 ${item.textColor ? item.textColor : "text-[#725C3A]"}`}
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    className={`leading-relaxed text-base ${item.textColor ? "text-white/90" : "text-[#725C3A]/80"}`}
-                    style={{
-                      fontFamily: "Source Sans Pro, sans-serif",
-                      fontWeight: "350",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    {item.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What DLMs Do Section - Background Image with Text Overlay - Original Colors */}
-      <section className="relative py-32 px-0">
-        <div className="absolute right-0 top-0 bottom-0 w-1/2">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Full background image with text and Apply Now button */}
+      <section className="relative h-screen">
+        <div className="absolute inset-0">
           <img
-            src="/images/african-farmer-tech.jpeg"
+            src="/images/african-farmer-tech.webp"
             alt="African farmer using technology"
-            className="w-full h-full object-cover object-right"
+            className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
+        <div className="relative z-10 h-full flex items-center justify-center px-4 sm:px-8">
+          <div className="text-center text-white space-y-6 md:space-y-8 max-w-4xl">
+            <h1
+              className="text-3xl sm:text-4xl md:text-5xl leading-tight"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "300",
+                letterSpacing: "0.01em",
+              }}
+            >
+              {t("dataLogisticManager.title")}
+            </h1>
+            <p
+              className="text-lg sm:text-xl leading-relaxed text-white/90 max-w-3xl mx-auto"
+              style={{
+                fontFamily: "Source Sans Pro, sans-serif",
+                fontWeight: "300",
+                lineHeight: "1.7",
+              }}
+            >
+              {t("dataLogisticManager.subtitle")}
+            </p>
+            <Button
+              onClick={handleApplyNow}
+              size="lg"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#725C3A] rounded-full px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl shadow-2xl"
+              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+            >
+              {t("dataLogisticManager.applyNow")}
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* What is a DLM Section - Responsive layout */}
+      <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-[#E5E0D8]"></div>
+        <div className="absolute top-0 right-0 w-full md:w-1/2 h-full">
+          <img src="/images/field-documentation.png" alt="Field documentation" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-white/10"></div>
         </div>
 
-        <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 items-start">
-            {/* Content Side - Takes up left half and positioned left */}
-            <div className="px-8 space-y-12">
+        <div className="container mx-auto max-w-6xl relative z-10 px-4 sm:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="space-y-6 md:space-y-8 bg-white/90 md:bg-transparent p-6 md:p-0 rounded-2xl md:rounded-none">
               <h2
-                className="text-2xl text-[#725C3A] mb-12"
+                className="text-2xl sm:text-3xl md:text-4xl text-[#725C3A] leading-tight"
                 style={{
                   fontFamily: "Poppins, sans-serif",
                   fontWeight: "300",
                   letterSpacing: "0.01em",
                 }}
               >
-                What DLMs Do:
+                {t("dataLogisticManager.whatIsDLM.title")}
               </h2>
+              <p
+                className="text-lg sm:text-xl text-[#725C3A] leading-relaxed"
+                style={{
+                  fontFamily: "Source Sans Pro, sans-serif",
+                  fontWeight: "300",
+                  lineHeight: "1.7",
+                }}
+              >
+                {t("dataLogisticManager.whatIsDLM.description")}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                {((t("dataLogisticManager.whatIsDLM.features", { returnObjects: true }) as any[]) || []).map(
+                  (item: any, index: number) => {
+                    const IconComponent = [Users, Smartphone, TrendingUp, Award][index]
+                    return (
+                      <div key={index} className="flex items-center space-x-3">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#725C3A] rounded-xl flex items-center justify-center flex-shrink-0">
+                          <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                        </div>
+                        <div>
+                          <h4
+                            className="text-base sm:text-lg text-[#725C3A] font-medium"
+                            style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                          >
+                            {item.title}
+                          </h4>
+                          <p
+                            className="text-sm text-[#725C3A]/80"
+                            style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300" }}
+                          >
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                    )
+                  },
+                )}
+              </div>
+            </div>
+            <div className="hidden lg:block"></div> {/* Empty space for image on desktop */}
+          </div>
+        </div>
+      </section>
 
-              <div className="space-y-8">
-                {[
-                  "Register farmers and GPS-locate plots",
-                  "Support cooperatives during audits and inspections",
-                  "Input harvest, training, and input usage data",
-                  "Help manage farm records and reports",
-                  "Facilitate digital payments and certification documentation",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-6">
-                    <div className="w-1.5 h-1.5 bg-[#725C3A]/80 rounded-full mt-3 flex-shrink-0"></div>
+      {/* Journey Steps - Responsive card design */}
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-8 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12 md:mb-20">
+            <h2
+              className="text-2xl sm:text-3xl md:text-4xl text-[#725C3A] mb-4 md:mb-6"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "300",
+                letterSpacing: "0.01em",
+              }}
+            >
+              {t("dataLogisticManager.journey.title")}
+            </h2>
+            <p
+              className="text-lg sm:text-xl text-[#725C3A]/80 max-w-3xl mx-auto"
+              style={{
+                fontFamily: "Source Sans Pro, sans-serif",
+                fontWeight: "300",
+                lineHeight: "1.6",
+              }}
+            >
+              {t("dataLogisticManager.journey.subtitle")}
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Connection line - hidden on mobile */}
+            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-[#E5D2B8] transform -translate-y-1/2 hidden lg:block"></div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              {((t("dataLogisticManager.journey.steps", { returnObjects: true }) as any[]) || []).map(
+                (item: any, index: number) => {
+                  const colors = [
+                    { bg: "bg-[#725C3A]", text: "text-white" },
+                    { bg: "bg-[#809671]", text: "text-white" },
+                    { bg: "bg-[#B3B792]", text: "text-white" },
+                    { bg: "bg-[#E5D2B8]", text: "text-[#725C3A]" },
+                  ]
+                  const color = colors[index]
+
+                  return (
+                    <div key={index} className="relative">
+                      <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <CardContent className={`${color.bg} p-6 md:p-8 text-center rounded-lg`}>
+                          <div className="space-y-4 md:space-y-6">
+                            <div className="w-12 h-12 md:w-16 md:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto">
+                              <span
+                                className={`text-xl md:text-2xl font-bold ${color.text}`}
+                                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "600" }}
+                              >
+                                {item.step}
+                              </span>
+                            </div>
+                            <h3
+                              className={`text-lg md:text-xl ${color.text}`}
+                              style={{
+                                fontFamily: "Poppins, sans-serif",
+                                fontWeight: "500",
+                              }}
+                            >
+                              {item.title}
+                            </h3>
+                            <p
+                              className={`${color.text === "text-white" ? "text-white/90" : "text-[#725C3A]/80"} leading-relaxed text-sm md:text-base`}
+                              style={{
+                                fontFamily: "Source Sans Pro, sans-serif",
+                                fontWeight: "300",
+                                lineHeight: "1.6",
+                              }}
+                            >
+                              {item.description}
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  )
+                },
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Responsibilities Section - Responsive with overlay */}
+      <section className="relative py-16 sm:py-24 md:py-32">
+        <div className="absolute inset-0">
+          <img src="/images/farmfield.webp" alt="Youth working with technology" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#725C3A]/30"></div>
+        </div>
+
+        <div className="container mx-auto max-w-6xl relative z-10 px-4 sm:px-8">
+          <div className="text-center text-white mb-12 md:mb-16">
+            <h2
+              className="text-2xl sm:text-3xl md:text-4xl mb-4 md:mb-6"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "300",
+                letterSpacing: "0.01em",
+              }}
+            >
+              {t("dataLogisticManager.responsibilities.title")}
+            </h2>
+            <p
+              className="text-lg sm:text-xl text-white"
+              style={{
+                fontFamily: "Source Sans Pro, sans-serif",
+                fontWeight: "400",
+                lineHeight: "1.7",
+              }}
+            >
+              {t("dataLogisticManager.responsibilities.subtitle")}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {((t("dataLogisticManager.responsibilities.list", { returnObjects: true }) as string[]) || []).map(
+              (responsibility: string, index: number) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 hover:bg-white/20 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-3 md:space-x-4">
+                    <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-[#E5D2B8] flex-shrink-0 mt-1" />
                     <p
-                      className="text-lg text-[#725C3A] leading-relaxed"
+                      className="text-base md:text-lg text-white leading-relaxed"
                       style={{
                         fontFamily: "Source Sans Pro, sans-serif",
-                        fontWeight: "375",
+                        fontWeight: "300",
                         lineHeight: "1.6",
                       }}
                     >
-                      {item}
+                      {responsibility}
                     </p>
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section - Text on Right, Image on Left - Show Full Image */}
-      <section className="py-0 px-0 bg-[#E5E0D8] relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1/2">
-          <img
-            src="/images/field-documentation.png"
-            alt="Field documentation and training"
-            className="w-full h-full object-cover object-left"
-          />
-        </div>
-
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 items-stretch min-h-[600px]">
-            {/* Empty div for image space */}
-            <div className=""></div>
-
-            {/* Content on Right */}
-            <div className="flex items-center py-32 px-8">
-              <div className="space-y-12">
-                <h2
-                  className="text-2xl text-[#725C3A] mb-12"
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: "300",
-                    letterSpacing: "0.01em",
-                  }}
-                >
-                  Benefits for DLMs:
-                </h2>
-
-                <div className="space-y-8">
-                  {[
-                    "Paid service contracts and performance bonuses",
-                    "Field experience in agritech and digital tools",
-                    "Career pathways in agri-business and entrepreneurship",
-                    "Mentorship from Ecopia and affiliated universities",
-                  ].map((benefit, index) => (
-                    <div key={index} className="flex items-start space-x-6">
-                      <div className="w-1.5 h-1.5 bg-[#725C3A]/80 rounded-full mt-3 flex-shrink-0"></div>
-                      <p
-                        className="text-lg text-[#725C3A] leading-relaxed"
-                        style={{
-                          fontFamily: "Source Sans Pro, sans-serif",
-                          fontWeight: "375",
-                          lineHeight: "1.6",
-                        }}
-                      >
-                        {benefit}
-                      </p>
-                    </div>
-                  ))}
                 </div>
-              </div>
-            </div>
+              ),
+            )}
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 px-8 bg-[#725C3A] text-white">
-        <div className="container mx-auto text-center max-w-5xl">
-          <h2
-            className="text-2xl mb-8"
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: "300",
-              letterSpacing: "0.01em",
-            }}
-          >
-            Ready to Join Our DLM Network?
-          </h2>
-          <p
-            className="text-xl text-white/90 mb-8 leading-relaxed mx-auto max-w-4xl"
-            style={{
-              fontFamily: "Source Sans Pro, sans-serif",
-              fontWeight: "300",
-              lineHeight: "1.7",
-            }}
-          >
-            Become part of a growing network of young professionals making a real impact in agricultural development
-            while building your career in agritech.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={handleApplyNow}
-              size="lg"
-              className="bg-[#E5D2B8] hover:bg-[#D2AB80] text-[#725C3A] rounded-full px-8 py-4"
-              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-            >
-              Apply Now
-            </Button>
-            <Button
-              onClick={() => {
-                alert("Video: How to Start as a DLM - Coming Soon")
+      {/* Benefits Section - Responsive background */}
+      <section className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-8">
+        <div className="absolute inset-0">
+          <img src="/images/agritech.webp" alt="Youth in laboratory" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#725C3A]/50"></div>
+        </div>
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-12 md:mb-16">
+            <h2
+              className="text-2xl sm:text-3xl md:text-4xl text-white leading-tight mb-6 md:mb-8"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "300",
+                letterSpacing: "0.01em",
               }}
-              size="lg"
-              variant="outline"
-              className="border-[#725C3A] text-[#725C3A] hover:bg-[#E5D2B8] hover:text-[#725C3A] rounded-full px-8 py-4"
-              style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
             >
-              Watch Video: How to Start as DLM
-            </Button>
+              {t("dataLogisticManager.benefits.title")}
+            </h2>
+            <p
+              className="text-lg sm:text-xl text-white/90 max-w-4xl mx-auto"
+              style={{
+                fontFamily: "Source Sans Pro, sans-serif",
+                fontWeight: "400",
+                lineHeight: "1.6",
+              }}
+            >
+              {t("dataLogisticManager.benefits.subtitle")}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+            {((t("dataLogisticManager.benefits.list", { returnObjects: true }) as any[]) || []).map(
+              (benefit: any, index: number) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 hover:bg-white/20 transition-all duration-300"
+                >
+                  <h3
+                    className="text-lg md:text-xl text-white mb-2 md:mb-3"
+                    style={{
+                      fontFamily: "Poppins, sans-serif",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {benefit.title}
+                  </h3>
+                  <p
+                    className="text-white/90 leading-relaxed text-sm md:text-base"
+                    style={{
+                      fontFamily: "Source Sans Pro, sans-serif",
+                      fontWeight: "400",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    {benefit.description}
+                  </p>
+                </div>
+              ),
+            )}
           </div>
         </div>
       </section>

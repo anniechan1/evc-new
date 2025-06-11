@@ -1,130 +1,97 @@
 "use client"
 
 import { CheckCircle } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 interface ComplianceProps {
   onNavigate: (page: string) => void
 }
 
 export default function Compliance({ onNavigate }: ComplianceProps) {
+  const { t } = useTranslation()
+
   return (
     <div className="min-h-screen bg-[#E5E0D8]">
-      {/* Hero Section with Geo-Data Circle */}
-      <section className="py-16 px-8 relative flex items-center min-h-[400px]">
-        <div className="container mx-auto max-w-4xl relative z-20 flex items-center justify-start min-h-[300px]">
-          <div className="relative">
+      {/* Hero Section - Reduced overlay opacity to show more original colors */}
+      <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh]">
+        <img src="/images/geo1.webp" alt="Farmers community" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+          <div className="text-center text-white max-w-4xl px-4 sm:px-6 md:px-8">
             <h1
-              className="text-3xl text-[#725C3A] inline-block"
+              className="text-2xl sm:text-3xl md:text-4xl leading-tight mb-4 sm:mb-6 md:mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
                 letterSpacing: "0.01em",
               }}
             >
-              Building Trust Through Verified Standards
+              {t("compliance.title")}
             </h1>
-            {/* Geo-Data Circle Image - Positioned right after text ends */}
-            <div className="absolute top-1/2 -translate-y-1/2 -right-80 w-96 h-96 rounded-full overflow-hidden opacity-70">
-              <img src="/images/booth.png" alt="GPS mapping and geo-data" className="w-full h-full object-cover" />
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-20 px-8 bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="space-y-8">
+      {/* Introduction Section - Mobile responsive */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-white">
+        <div className="container mx-auto max-w-5xl">
+          <div className="space-y-6 md:space-y-8">
             <p
-              className="text-lg text-[#725C3A] leading-relaxed"
+              className="text-base sm:text-lg text-[#725C3A] leading-relaxed"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
                 lineHeight: "1.7",
               }}
             >
-              The Ecopia Value Chain (EVC) platform is not only a digital tool for managing agricultural operations—it's
-              also designed to help producers, cooperatives, and buyers meet increasingly strict international
-              compliance standards. We help users navigate both public regulations, like the EU Deforestation Regulation
-              (EUDR), and private sustainability standards, including our own{" "}
-              <a
-                href="https://ecocertification.eu/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#809671] font-semibold hover:text-[#725C3A] underline decoration-2 underline-offset-2 transition-colors"
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "600",
-                }}
-              >
-                Ecopia Certification
-              </a>{" "}
-              program.
+              {t("compliance.introduction.paragraph1")}
             </p>
 
             <p
-              className="text-xl text-[#725C3A] leading-relaxed"
+              className="text-base sm:text-lg text-[#725C3A] leading-relaxed"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
                 lineHeight: "1.7",
               }}
             >
-              Compliance is no longer optional—it is essential for reaching international markets, securing premium
-              prices, and building lasting relationships with buyers. EVC simplifies this process with embedded tools
-              that support data collection, traceability, documentation, and third-party verification.
+              {t("compliance.introduction.paragraph2")}
             </p>
           </div>
         </div>
       </section>
 
-      {/* EUDR Section */}
-      <section id="eudr-section" className="py-20 px-8 bg-[#E5D2B8]">
-        <div className="container mx-auto max-w-4xl">
-          <div className="space-y-8">
+      {/* EUDR Section - Mobile responsive */}
+      <section id="eudr-section" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-[#E5D2B8]">
+        <div className="container mx-auto max-w-5xl">
+          <div className="space-y-6 md:space-y-8">
             <h2
-              className="text-2xl text-[#725C3A] mb-8"
+              className="text-xl sm:text-2xl text-[#725C3A] mb-6 md:mb-8"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
               }}
             >
-              What is EUDR (EU Deforestation Regulation)?
+              {t("compliance.whatIsEUDR.title")}
             </h2>
 
             <p
-              className="text-xl text-[#725C3A] leading-relaxed"
+              className="text-base sm:text-lg text-[#725C3A] leading-relaxed"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
                 lineHeight: "1.7",
               }}
             >
-              The{" "}
-              <a
-                href="https://green-forum.ec.europa.eu/deforestation-regulation-implementation_en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#809671] font-semibold hover:text-[#725C3A] underline decoration-2 underline-offset-2 transition-colors"
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "600",
-                }}
-              >
-                EUDR
-              </a>{" "}
-              is a regulation from the European Union aimed at stopping deforestation and forest degradation caused by
-              the production and consumption of certain agricultural commodities— including coffee and cocoa. As of
-              2025, any company importing these goods into the EU must prove that their products:
+              {t("compliance.whatIsEUDR.description")}
             </p>
 
-            <div className="space-y-4">
-              {["Are deforestation-free", "Were legally produced", "Are traceable to their exact origin"].map(
+            <div className="space-y-3 sm:space-y-4">
+              {((t("compliance.whatIsEUDR.requirements", { returnObjects: true }) as string[]) || []).map(
                 (item, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-[#809671] flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#809671] flex-shrink-0" />
                     <span
-                      className="text-lg text-[#725C3A]"
+                      className="text-base sm:text-lg text-[#725C3A]"
                       style={{
                         fontFamily: "Source Sans Pro, sans-serif",
                         fontWeight: "300",
@@ -138,169 +105,157 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
             </div>
 
             <p
-              className="text-xl text-[#725C3A] leading-relaxed"
+              className="text-base sm:text-lg text-[#725C3A] leading-relaxed"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
                 lineHeight: "1.7",
               }}
             >
-              This means that coffee farmers, cooperatives, and exporters in Ethiopia must show clear geolocation data
-              (GPS mapping), harvest records, and proof of legal land use.
+              {t("compliance.whatIsEUDR.conclusion")}
             </p>
           </div>
         </div>
       </section>
 
-      {/* How EVC Helps with EUDR - Coffee Farmer Background */}
-      <section className="relative py-20 px-8">
+      {/* How EVC Helps with EUDR - With geo.jpg image and mobile responsive */}
+      <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
         <div className="absolute inset-0">
-          <img src="/images/farmers-community.jpeg" alt="Coffee farmer" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/30"></div>
+          <img src="/images/geo.webp" alt="GPS mapping and geo-data" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="container mx-auto max-w-6xl relative z-10">
           <h2
-            className="text-2xl text-white mb-12 text-center"
+            className="text-xl sm:text-2xl text-white mb-8 sm:mb-10 md:mb-12 text-center"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",
               letterSpacing: "0.01em",
             }}
           >
-            How EVC Helps You Meet EUDR Requirements
+            {t("compliance.howEVCHelps.title")}
           </h2>
 
-          <div className="space-y-8 text-white">
-            {[
-              "Geo-mapping tools for farms and plots",
-              "Digital farm profiles that include land ownership and production history",
-              "Harvest logs linked to individual farmers",
-              "Supply chain tracking from field to export",
-              "Documentation upload and sharing features",
-            ].map((item, index) => (
-              <div key={index} className="text-xl leading-relaxed">
-                <span className="font-medium">•</span>
-                <span
-                  className="ml-3"
-                  style={{
-                    fontFamily: "Source Sans Pro, sans-serif",
-                    fontWeight: "400",
-                  }}
-                >
-                  {item}
-                </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            {((t("compliance.howEVCHelps.items", { returnObjects: true }) as string[]) || []).map((item, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 md:p-8 hover:bg-white/15 transition-all"
+              >
+                <div className="text-base sm:text-lg md:text-xl leading-relaxed text-white">
+                  <span className="font-medium">•</span>
+                  <span
+                    className="ml-3"
+                    style={{
+                      fontFamily: "Source Sans Pro, sans-serif",
+                      fontWeight: "400",
+                    }}
+                  >
+                    {item}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 bg-white/10 backdrop-blur-sm rounded-3xl p-8 text-white text-center">
-            <div className="flex justify-center w-full"></div>
+          <div className="mt-8 sm:mt-10 md:mt-12 bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 text-white text-center max-w-6xl mx-auto">
             <p
-              className="text-xl whitespace-nowrap max-w-none"
+              className="text-base sm:text-lg md:text-xl"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "400",
               }}
             >
-              We enable producers to build transparent supply chains that meet EU buyer expectations—while creating
-              real value for local actors.
+              {t("compliance.howEVCHelps.conclusion")}
             </p>
-
           </div>
         </div>
       </section>
 
-      {/* Ecopia Certification Section - Beekeeper Background */}
-      <section className="relative py-20 px-8">
+      {/* Ecopia Certification Section - Mobile responsive */}
+      <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
         <div className="absolute inset-0">
           <img src="/images/beekeeper.webp" alt="Beekeeper" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/25"></div>
         </div>
 
         <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="text-center mb-16">
-            <div className="flex justify-center">
-              <h2
-                className="text-4xl text-white mb-8"
+          <div className="text-center mb-12 md:mb-16">
+            <h2
+              className="text-2xl sm:text-3xl md:text-4xl text-white mb-6 md:mb-8"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "300",
+                letterSpacing: "0.01em",
+              }}
+            >
+              <a
+                href="https://ecocertification.eu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#E5D2B8] hover:text-white transition-colors underline decoration-2 underline-offset-4"
                 style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "300",
-                  letterSpacing: "0.01em",
-                  whiteSpace: "nowrap",
+                  fontFamily: "Dancing Script, cursive",
+                  fontWeight: "600",
+                  fontSize: "1.1em",
                 }}
               >
-                <a
-                  href="https://ecocertification.eu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#E5D2B8] hover:text-white transition-colors underline decoration-2 underline-offset-4"
-                  style={{
-                    fontFamily: "Dancing Script, cursive",
-                    fontWeight: "600",
-                    fontSize: "1.1em",
-                  }}
-                >
-                  Ecopia Certification
-                </a>{" "}
-                – Traceable. Inclusive. Sustainable.
-              </h2>
-            </div>
+                {t("compliance.ecopiaCertification.title")}
+              </a>
+              <span className="text-white">{t("compliance.ecopiaCertification.tagline")}</span>
+            </h2>
             <p
-              className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto"
+              className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "400",
                 lineHeight: "1.7",
               }}
             >
-              While many international standards exist, they are often expensive and inaccessible to smallholder farmers
-              and emerging cooperatives. That's why Ecopia has created the Ecopia Certification —a practical, locally
-              grounded system aligned with key international sustainability goals, but adapted to the Ethiopian context.
+              {t("compliance.ecopiaCertification.description")}
             </p>
           </div>
 
           <h3
-            className="text-2xl text-white mb-8 text-center"
+            className="text-xl sm:text-2xl text-white mb-6 md:mb-8 text-center"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "400",
             }}
           >
-            What Does Ecopia Certification Cover?
+            {t("compliance.ecopiaCertification.features.title")}
           </h3>
 
-          <div className="grid md:grid-cols-2 gap-10 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-10 md:mb-12">
             {[
               {
-                title: "Traceability and data accuracy",
-                description:
-                  "Ensuring that products are trackable from farm to final buyer using real-time data collection and mapping tools.",
+                title: t("compliance.ecopiaCertification.features.traceability.title"),
+                description: t("compliance.ecopiaCertification.features.traceability.description"),
               },
               {
-                title: "Social inclusion",
-                description:
-                  "Promoting fair compensation for farmers and youth (Data Logistic Managers), gender inclusion, and access to digital tools.",
+                title: t("compliance.ecopiaCertification.features.inclusion.title"),
+                description: t("compliance.ecopiaCertification.features.inclusion.description"),
               },
               {
-                title: "Environmental sustainability",
-                description:
-                  "Encouraging climate-smart agriculture, avoiding deforestation, and supporting agroecological practices.",
+                title: t("compliance.ecopiaCertification.features.sustainability.title"),
+                description: t("compliance.ecopiaCertification.features.sustainability.description"),
               },
               {
-                title: "Ethical labor practices",
-                description:
-                  "Ensuring that no forced or child labor is involved and that safe working conditions are met.",
+                title: t("compliance.ecopiaCertification.features.ethics.title"),
+                description: t("compliance.ecopiaCertification.features.ethics.description"),
               },
               {
-                title: "Financial transparency",
-                description:
-                  "Strengthening digital payment records, equitable bonus distribution, and income tracking for producers.",
+                title: t("compliance.ecopiaCertification.features.transparency.title"),
+                description: t("compliance.ecopiaCertification.features.transparency.description"),
               },
             ].map((item, index) => (
-              <div key={index} className="space-y-3 bg-white/10 backdrop-blur-sm rounded-2xl p-10">
+              <div
+                key={index}
+                className="space-y-3 bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-10"
+              >
                 <h4
-                  className="text-xl text-white font-medium"
+                  className="text-base sm:text-lg md:text-xl text-white font-medium"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "500",
@@ -309,7 +264,7 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
                   {item.title}
                 </h4>
                 <p
-                  className="text-lg text-white/90 leading-relaxed"
+                  className="text-sm sm:text-base text-white/90 leading-relaxed"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
                     fontWeight: "400",
@@ -322,29 +277,25 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
             ))}
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-10 text-white">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 text-white">
             <h3
-              className="text-2xl mb-8 text-center"
+              className="text-xl sm:text-2xl mb-6 md:mb-8 text-center"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "400",
               }}
             >
-              How Do You Get Certified?
+              {t("compliance.ecopiaCertification.howToGetCertified.title")}
             </h3>
 
-            <div className="space-y-6">
-              {[
-                "Sign up on the EVC platform",
-                "Participate in basic digital onboarding and training",
-                "Ensure that your data is consistently and accurately maintained",
-                "Pass a digital review process, supported by our certification team",
-                "Display your certification status on your digital profile",
-              ].map((step, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="space-y-4 sm:space-y-6">
+              {(
+                (t("compliance.ecopiaCertification.howToGetCertified.steps", { returnObjects: true }) as string[]) || []
+              ).map((step, index) => (
+                <div key={index} className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <span
-                      className="text-xl text-white font-bold"
+                      className="text-sm sm:text-xl text-white font-bold"
                       style={{
                         fontFamily: "Poppins, sans-serif",
                         fontWeight: "600",
@@ -354,7 +305,7 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
                     </span>
                   </div>
                   <p
-                    className="text-xl text-white/90 leading-relaxed"
+                    className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed"
                     style={{
                       fontFamily: "Source Sans Pro, sans-serif",
                       fontWeight: "400",
@@ -367,9 +318,9 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
               ))}
             </div>
 
-            <div className="mt-8 text-center">
+            <div className="mt-6 sm:mt-8 text-center">
               <p
-                className="text-lg text-white/90 leading-relaxed"
+                className="text-base sm:text-lg text-white/90 leading-relaxed"
                 style={{
                   fontFamily: "Source Sans Pro, sans-serif",
                   fontWeight: "400",
@@ -380,127 +331,88 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
                   href="https://ecocertification.eu/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lg text-[#E5D2B8] hover:text-white transition-colors underline decoration-2 underline-offset-2"
+                  className="text-base sm:text-lg text-[#E5D2B8] hover:text-white transition-colors underline decoration-2 underline-offset-2"
                   style={{
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "600",
                   }}
                 >
-                  Ecopia Certification
+                  {t("compliance.ecopiaCertification.title")}
                 </a>{" "}
-                is designed to be low-cost, inclusive, and attainable for producers of all sizes—while delivering the
-                credibility and transparency that buyers demand.
+                {t("compliance.ecopiaCertification.howToGetCertified.conclusion")}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Compliance Matters - Redesigned with Enhanced Background */}
-      <section className="relative py-32 px-8">
+      {/* Why Compliance Matters - Mobile responsive */}
+      <section className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8">
         <div className="absolute inset-0">
-
           <img src="/images/handshake.webp" alt="Partnership handshake" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#725C3A]/60 via-[#725C3A]/40 to-[#809671]/30"></div>
         </div>
 
         <div className="container mx-auto max-w-6xl relative z-10">
           <h2
-            className="text-3xl text-white mb-16 text-center"
+            className="text-2xl sm:text-3xl text-white mb-12 sm:mb-14 md:mb-16 text-center"
             style={{
               fontFamily: "Poppins, sans-serif",
               fontWeight: "300",
               letterSpacing: "0.01em",
             }}
           >
-            Why
-
-            Compliance
-
-            Matters
+            {t("compliance.whyCompliance.title")}
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {[
-              {
-                title: "Market Access",
-                description: "International buyers require verified traceability and sustainability data",
-                number: "01",
-              },
-              {
-                title: "Premium Prices",
-                description: "Certified and traceable products command higher market prices",
-                number: "02",
-              },
-              {
-                title: "Investor Confidence",
-                description: "Transparent data attracts financial institutions and development partners",
-                number: "03",
-              },
-              {
-                title: "Operational Benefits",
-                description: "Digital tools improve planning, oversight, and coordination",
-                number: "04",
-              },
-            ].map((benefit, index) => (
-              <div key={index} className="text-center space-y-4">
-                <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span
-                    className="text-2xl text-white font-bold"
-                    style={{ fontFamily: "Poppins, sans-serif", fontWeight: "600" }}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-14 md:mb-16">
+            {((t("compliance.whyCompliance.benefits", { returnObjects: true }) as any[]) || []).map(
+              (benefit, index) => (
+                <div key={index} className="text-center space-y-3 sm:space-y-4">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <span
+                      className="text-xl sm:text-2xl text-white font-bold"
+                      style={{ fontFamily: "Poppins, sans-serif", fontWeight: "600" }}
+                    >
+                      {benefit.number}
+                    </span>
+                  </div>
+                  <h3
+                    className="text-lg sm:text-xl text-white mb-3 sm:mb-4"
+                    style={{
+                      fontFamily: "Poppins, sans-serif",
+                      fontWeight: "500",
+                    }}
                   >
-                    {benefit.number}
-                  </span>
+                    {benefit.title}
+                  </h3>
+                  <p
+                    className="text-base sm:text-lg text-white/90 leading-relaxed"
+                    style={{
+                      fontFamily: "Source Sans Pro, sans-serif",
+                      fontWeight: "400",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    {benefit.description}
+                  </p>
                 </div>
-                <h3
-                  className="text-xl text-white mb-4"
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: "500",
-                  }}
-                >
-                  {benefit.title}
-                </h3>
-                <p
-                  className="text-xl text-white/90 leading-relaxed"
-                  style={{
-                    fontFamily: "Source Sans Pro, sans-serif",
-                    fontWeight: "400",
-                    lineHeight: "1.6",
-                  }}
-                >
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
+              ),
+            )}
           </div>
 
           <div className="text-center">
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 max-w-6xl mx-auto">
-              <div className="flex justify-center">
-                <p
-                  className="text-2xl text-white leading-relaxed"
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: "300",
-                    lineHeight: "1.6",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  With EVC, compliance is not a burden—it becomes a{" "}
-                  <span
-                    style={{
-                      fontFamily: "Dancing Script, cursive",
-                      fontWeight: "600",
-                      fontSize: "1.1em",
-                      color: "#E5D2B8",
-                    }}
-                  >
-                    strategic advantage
-                  </span>
-                  .
-                </p>
-              </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 max-w-4xl mx-auto">
+              <p
+                className="text-base sm:text-lg text-white leading-relaxed"
+                style={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: "300",
+                  lineHeight: "1.6",
+                }}
+              >
+                {t("compliance.whyCompliance.conclusion")}
+              </p>
             </div>
           </div>
         </div>

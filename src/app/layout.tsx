@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
+// Remove this line: import "../i18n"
 
 export const metadata: Metadata = {
   title: "Ecopia Value Chain",
