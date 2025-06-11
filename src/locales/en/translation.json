@@ -757,5 +757,50 @@
   }
 
 
-  }}
+  },
+
+
+"exportersImporters": {
+  "title": "For International Buyers and Importers",
+  "subtitle": "Access verified, traceable agricultural products with farm-to-export transparency.",
+  "benefitsTitle": "International buyers and importers benefit through:",
+  "benefits": [
+    {
+      "title": "Instant access to verified producer data and certifications",
+      "description": "Real-time access to farmer profiles, production data, and certification status."
+    },
+    {
+      "title": "Downloads of EUDR-compliant documentation and audit-ready reports",
+      "description": "Complete EUDR compliance documentation, GPS coordinates, and audit-ready reports."
+    },
+    {
+      "title": "Verified traceability down to the farm level",
+      "description": "Track products from individual farms through the entire supply chain with QR codes."
+    },
+    {
+      "title": "Confidence in ethically sourced, certified products",
+      "description": "Products meeting international sustainability standards and ethical sourcing requirements."
+    }
+  ],
+  "cta": {
+    "title": "Transform Your Sourcing Strategy",
+    "description": "By streamlining data collection and compliance across the entire value chain, EVC gives importers peace of mind and helps producers stay competitive in regulated global markets.",
+    "features": [
+      {
+        "title": "Verified Traceability",
+        "description": "Complete farm-to-export tracking with GPS coordinates and digital documentation"
+      },
+      {
+        "title": "EUDR Compliance",
+        "description": "Ready-to-download compliance reports and audit documentation"
+      },
+      {
+        "title": "Ethical Sourcing",
+        "description": "Certified sustainable and socially responsible supply chains"
+      }
+    ],
+    "finalDescription": "Join the growing network of international buyers who trust EVC for transparent, compliant, and sustainable sourcing from Ethiopian producers.",
+    "buttonText": "Access Verified Sourcing"
+  }
+}}
   

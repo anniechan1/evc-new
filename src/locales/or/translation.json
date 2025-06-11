@@ -756,6 +756,51 @@
   "hayridi": {
     "description": "Garee Leenjii fi Hojiiwwan Ecopia boona dha. Kutannoo isaa waliin, sagantaalee leenjii qonnaan bultootaa kan nyaata, kosmeetikii, fi biqiltoota qoricha aadaa irratti xiyyeeffatan jalqabne. Waggoota keessa, Hayrdi qonnaan bultoota 4,000 ol bakka adda addaa 14 keessatti leenjisee ragaa kenneeraaf. Dandeettiin isaa addaa kan formuleeshinii walfakkaataa taasisuu—kan Dr. Mitslal Kifleyesus-Matschie fi ogeessota biroo tiin qophaa'e—bu'uura beekumsa Ecopia waliin seera nyaataa 50 ol, formuleeshinii kosmeetikii 70, fi oomisha biqiltoota qoricha irratti hundaa'an 150 ol tiin badhaaseera. Hojiin isaa beekumsa naannoo cimsuuf, carraa diinagdee uumuuf, fi oomisha uumamaa qulqullina qabu kan Afrikaa keessatti hojjetame kan saayinsii fi aadaa irratti hundaa'e cimsuuf itti fufa."
   }
+},
+
+
+"exportersImporters": {
+  "title": "Bitootaa fi Galchitootaa Addunyaatiif",
+  "subtitle": "Oomisha qonnaa mirkaneeffamee fi hordofamuu danda'u kan iftoomina qonna irraa hanga ergaatti qabu argadhaa.",
+  "benefitsTitle": "Bitootni fi galchitootni addunyaa fayyadaman:",
+  "benefits": [
+    {
+      "title": "Daataa oomishtootaa mirkaneeffamee fi ragaalee mirkaneessaa argama hatattamaa",
+      "description": "Seenaa qonnaan bultootaa, daataa oomishaa fi haala ragaa mirkaneessaa yeroo qabatamaa argachuu."
+    },
+    {
+      "title": "Ragaalee EUDR ajajamaa fi gabaasa sakatta'aaf qophaa'e buufachuu",
+      "description": "Ragaalee ajajamuu EUDR guutuu, koordineetii GPS fi gabaasa sakatta'aaf qophaa'e."
+    },
+    {
+      "title": "Hordoffii mirkaneeffame hanga sadarkaa qonnaatti",
+      "description": "Oomisha qonna dhuunfaa irraa karaa sarba dhiyeessii guutuu koodii QR'n hordofuu."
+    },
+    {
+      "title": "Oomisha naamusaan argamee, mirkaneeffame irratti amanamummaa",
+      "description": "Oomisha ulaagaalee itti fufiinsaa addunyaa fi ulaagaalee madda naamusaa guutan."
+    }
+  ],
+  "cta": {
+    "title": "Tarsiimoo Madda Keetii Jijjiiri",
+    "description": "Walqabsiisuu daataa fi ajajamuu sarba gatii guutuu keessatti salphisuudhaan, EVC galchitootaaf nagaa sammuu kenna fi oomishtootni gabaa addunyaa to'atame keessatti dorgommii akka ta'an gargaara.",
+    "features": [
+      {
+        "title": "Hordoffii Mirkaneeffame",
+        "description": "Hordoffii guutuu qonna irraa hanga ergaatti koordineetii GPS fi ragaa dijitaalaa waliin"
+      },
+      {
+        "title": "Ajajamuu EUDR",
+        "description": "Gabaasa ajajamuu fi ragaa sakatta'aa buufachuuf qophaa'e"
+      },
+      {
+        "title": "Madda Naamusaa",
+        "description": "Sarba dhiyeessii itti fufiinsa qabu fi itti gaafatamummaa hawaasaa mirkaneeffame"
+      }
+    ],
+    "finalDescription": "Neetworkii guddachaa jiru bitootaa addunyaa kan oomishtota Itoophiyaa irraa madda ifa ta'e, ajajamaa fi itti fufiinsa qabuuf EVC amananiitti makamaa.",
+    "buttonText": "Madda Mirkaneeffame Argadhaa"
+  }
 }
   
 }
