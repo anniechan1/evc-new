@@ -638,6 +638,22 @@
       "count": "5+"
     }
   },
+
+  "partnerCategories": {
+      "government": "Government",
+      "governmentTech": "Government / Technology & Innovation",
+      "agricultural": "Agricultural Organizations",
+      "retail": "Retail & Distribution",
+      "trade": "Trade & Commerce",
+      "academic": "Academic Institutions",
+      "pharmaceutical": "Pharmaceutical / Biotechnology",
+      "technology": "Technology & Innovation",
+      "technologyIncubator": "Technology & Innovation – Incubator",
+      "food": "Food & Beverage",
+      "foundations": "Foundations",
+      "international": "International Organizations",
+      "research": "Research Institutions"
+    },
   "trustedPartnersTitle": "Our Trusted Partners",
   "trustedPartnersDescription": "We collaborate with leading organizations across multiple sectors to create a comprehensive ecosystem for agricultural innovation and sustainable development.",
   "partnershipCTA": {

@@ -640,6 +640,22 @@
       "count": "5+"
     }
   },
+
+  "partnerCategories": {
+      "government": "መንግስት",
+      "governmentTech": "መንግስት / ቴክኖሎጂ እና ፈጠራ",
+      "agricultural": "የግብርና ድርጅቶች",
+      "retail": "ችርቻሮ እና ስርጭት",
+      "trade": "ንግድ እና ንግድ",
+      "academic": "የትምህርት ተቋማት",
+      "pharmaceutical": "የመድሃኒት / ባዮቴክኖሎጂ",
+      "technology": "ቴክኖሎጂ እና ፈጠራ",
+      "technologyIncubator": "ቴክኖሎጂ እና ፈጠራ – ማፋፋሚያ",
+      "food": "ምግብ እና መጠጥ",
+      "foundations": "ፋውንዴሽኖች",
+      "international": "አለም አቀፍ ድርጅቶች",
+      "research": "የምርምር ተቋማት"
+    },
   "trustedPartnersTitle": "የእኛ የታመኑ አጋሮች",
   "trustedPartnersDescription": "ለግብርና ፈጠራ እና ዘላቂ ልማት ሁሉን አቀፍ ስነ-ምህዳር ለመፍጠር በብዙ ዘርፎች ከሚገኙ ግንባር ቀደም ድርጅቶች ጋር እንተባበራለን።",
   "partnershipCTA": {

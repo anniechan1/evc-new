@@ -10,110 +10,108 @@ interface PartnershipsProps {
 export default function Partnerships({ onNavigate }: PartnershipsProps) {
   const { t } = useTranslation()
 
-  console.log("Testing translation:", t("partnerships.categories.academic.title"))
-
   const partners = [
     {
       name: "MINT",
       logo: "/images/logo/mint_logo.png",
       url: "https://www.facebook.com/MInT.Ethiopia/",
-      category: "Government / Technology & Innovation",
+      categoryKey: "governmentTech",
     },
     {
       name: "Eastern Africa Farmers Federation",
       logo: "/images/logo/eaff_logo.jpeg",
       url: "https://www.eaffu.org/",
-      category: "Agricultural Organizations",
+      categoryKey: "agricultural",
     },
     {
       name: "Lewis Retails",
       logo: "/images/logo/lewis_retails_logo.png",
       url: "https://lewisretails.com",
-      category: "Retail & Distribution",
+      categoryKey: "retail",
     },
     {
       name: "Pan African Chamber of Commerce",
       logo: "/images/logo/pacci_logo.png",
       url: "https://pacci.org",
-      category: "Trade & Commerce",
+      categoryKey: "trade",
     },
     {
       name: "Hochschule Weihenstephan-Triesdorf",
       logo: "/images/logo/hs_logo.png",
       url: "https://hswt.de",
-      category: "Academic Institutions",
+      categoryKey: "academic",
     },
     {
       name: "Repha GmbH",
       logo: "/images/logo/repha_logo.jpeg",
       url: "https://repha.de",
-      category: "Pharmaceutical / Biotechnology",
+      categoryKey: "pharmaceutical",
     },
     {
       name: "EDEKA",
       logo: "/images/logo/edeka_logo.webp",
       url: "https://edeka.de",
-      category: "Retail & Distribution",
+      categoryKey: "retail",
     },
     {
       name: "Seratera",
       logo: "/images/logo/seratera_logo.png",
       url: "https://seratera.com",
-      category: "Technology & Innovation – Incubator",
+      categoryKey: "technologyIncubator",
     },
     {
       name: "Jägermeister",
       logo: "/images/logo/jagermeister_logo.png",
       url: "https://jagermeister.com",
-      category: "Food & Beverage",
+      categoryKey: "food",
     },
     {
       name: "Heidehof Stiftung",
       logo: "/images/logo/heidehof_logo.png",
       url: "https://heidehof-stiftung.de",
-      category: "Foundations",
+      categoryKey: "foundations",
     },
     {
       name: "Mastercard Foundation",
       logo: "/images/logo/mastercard_logo.webp",
       url: "https://mastercardfdn.org",
-      category: "Foundations",
+      categoryKey: "foundations",
     },
     {
       name: "UNESCO",
       logo: "/images/logo/unesco_logo.png",
       url: "https://unesco.org",
-      category: "International Organizations",
+      categoryKey: "international",
     },
     {
       name: "Novis PLC",
       logo: "/images/logo/novis_logo.png",
       url: "https://www.novisethiopia.com/",
-      category: "Retail & Distribution / Importer",
+      categoryKey: "retail",
     },
     {
       name: "Jimma University",
       logo: "/images/logo/jimma_uni_logo.png",
       url: "https://ju.edu.et",
-      category: "Academic Institutions",
+      categoryKey: "academic",
     },
     {
       name: "Ministry of Education Ethiopia",
       logo: "/images/logo/ministry_education_logo.png",
       url: "https://moe.gov.et",
-      category: "Government",
+      categoryKey: "government",
     },
     {
       name: "Ministry of Agriculture Ethiopia",
       logo: "/images/logo/ministry_agriculture_logo.webp",
       url: "https://moa.gov.et",
-      category: "Government",
+      categoryKey: "government",
     },
     {
       name: "ICIPE",
       logo: "/images/logo/icipe_logo.png",
       url: "https://www.icipe.org/",
-      category: "Research Institutions",
+      categoryKey: "research",
     },
   ]
 
@@ -145,7 +143,7 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
       {/* Hero Section - Full screen height */}
       <section className="relative h-screen">
         <div className="absolute inset-0">
-          <img src="/images/nile.jpg" alt="Partnership background" className="w-full h-full object-cover" />
+          <img src="/images/nile.webp" alt="Partnership background" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
@@ -230,6 +228,9 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
         </div>
       </section>
 
+      {/* Call to Action - Add missing translation keys */}
+
+
       {/* Partner Logos Grid */}
       <section className="py-20 px-8 bg-white">
         <div className="container mx-auto max-w-7xl">
@@ -281,7 +282,7 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
                       fontWeight: "300",
                     }}
                   >
-                    {partner.category}
+                    {t(`partnerships.partnerCategories.${partner.categoryKey}`)}
                   </p>
                 </div>
               </a>
@@ -301,7 +302,7 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
               letterSpacing: "0.01em",
             }}
           >
-            {t("partnerships.partnershipCTA.title")}
+            {t("partnerships.partnershipCTA.title") || "Interested in Partnering with Us?"}
           </h2>
           <p
             className="text-base sm:text-lg text-[#725C3A]/80 mb-6 sm:mb-8 leading-relaxed"
@@ -311,7 +312,8 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
               lineHeight: "1.7",
             }}
           >
-            {t("partnerships.partnershipCTA.description")}
+            {t("partnerships.partnershipCTA.description") ||
+              "Join our growing network of partners committed to transforming African agriculture through digital innovation and sustainable practices."}
           </p>
           <div className="flex justify-center">
             <Button
@@ -319,7 +321,7 @@ export default function Partnerships({ onNavigate }: PartnershipsProps) {
               style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
               onClick={() => onNavigate("contact")}
             >
-              {t("partnerships.partnershipCTA.buttonText")}
+              {t("partnerships.partnershipCTA.buttonText") || "Contact Us"}
             </Button>
           </div>
         </div>

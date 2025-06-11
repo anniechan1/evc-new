@@ -639,6 +639,22 @@
       "count": "5+"
     }
   },
+
+  "partnerCategories": {
+      "government": "Mootummaa",
+      "governmentTech": "Mootummaa / Teeknoloojii fi Kalaqaa",
+      "agricultural": "Dhaabbilee Qonnaa",
+      "retail": "Bitaa fi Raabsaa",
+      "trade": "Daldalaa fi Daldalaa",
+      "academic": "Dhaabbilee Barnootaa",
+      "pharmaceutical": "Qoricha / Bayoteeknoloojii",
+      "technology": "Teeknoloojii fi Kalaqaa",
+      "technologyIncubator": "Teeknoloojii fi Kalaqaa – Guddistuu",
+      "food": "Nyaata fi Dhugaatii",
+      "foundations": "Faawundeeshinii",
+      "international": "Dhaabbilee Addunyaa",
+      "research": "Dhaabbilee Qorannoo"
+    },
   "trustedPartnersTitle": "Michootni Keenya Amanamoo",
   "trustedPartnersDescription": "Kalaqaa qonnaa fi misooma itti fufiinsa qabuuf sirna guutuu uumuuf dhaabbilee gurguddoo kutaalee hedduu keessaa waliin hojjenna.",
   "partnershipCTA": {
