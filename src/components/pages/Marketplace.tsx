@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { Search, Coffee, Leaf, Truck, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -118,20 +120,20 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
   const filteredServices = filteredItems.filter((item) => item.category === "services")
   const filteredInputs = filteredItems.filter((item) => item.category === "inputs")
 
-  const handleBookService = (service: any) => {
-    // Navigate to the contact page with service information
-    // You could store this in localStorage or pass it through URL parameters
-    localStorage.setItem(
-      "selectedService",
-      JSON.stringify({
-        title: service.title,
-        provider: service.provider,
-        type: service.type,
-      }),
-    )
-
-    // Navigate to contact page
+  const handleBookService = (e: React.MouseEvent) => {
+    // Prevent card click when button is clicked
+    e.stopPropagation()
+    // Always navigate to contact form for button clicks
     onNavigate("contact")
+  }
+
+  const handleCardClick = (service: any, index: number) => {
+    // Check if this is the Certification Support service (second card)
+    if (index === 1 || service.title.includes(t("marketplace.services.certificationSupport.title"))) {
+      // Open external link for Certification Support card
+      window.open("https://www.ecocertification.eu/", "_blank")
+    }
+    // For other cards, do nothing (or add other logic if needed)
   }
 
   return (
@@ -330,6 +332,7 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
                   <Card
                     key={index}
                     className="bg-white border border-gray-100 rounded-3xl hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+                    onClick={() => handleCardClick(service, index)}
                   >
                     <CardContent className="p-0">
                       <div className="relative">
@@ -431,7 +434,7 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
                             className="border-[#725C3A] text-[#725C3A] hover:bg-[#F5F5F0] rounded-full px-6"
                             style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
                             suppressHydrationWarning={true}
-                            onClick={() => handleBookService(service)}
+                            onClick={handleBookService}
                           >
                             {t("marketplace.buttons.bookService")}
                           </Button>
