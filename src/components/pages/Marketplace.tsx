@@ -118,6 +118,22 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
   const filteredServices = filteredItems.filter((item) => item.category === "services")
   const filteredInputs = filteredItems.filter((item) => item.category === "inputs")
 
+  const handleBookService = (service: any) => {
+    // Navigate to the contact page with service information
+    // You could store this in localStorage or pass it through URL parameters
+    localStorage.setItem(
+      "selectedService",
+      JSON.stringify({
+        title: service.title,
+        provider: service.provider,
+        type: service.type,
+      }),
+    )
+
+    // Navigate to contact page
+    onNavigate("contact")
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -318,8 +334,9 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
                     <CardContent className="p-0">
                       <div className="relative">
                         <img
-                          src={service.image}
+                          src={service.image || "/placeholder.svg"}
                           alt={service.title}
+                          loading="lazy"
                           className="w-full h-48 object-cover bg-gray-100"
                         />
                       </div>
@@ -414,6 +431,7 @@ export default function Marketplace({ onNavigate }: MarketplaceProps) {
                             className="border-[#725C3A] text-[#725C3A] hover:bg-[#F5F5F0] rounded-full px-6"
                             style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "400" }}
                             suppressHydrationWarning={true}
+                            onClick={() => handleBookService(service)}
                           >
                             {t("marketplace.buttons.bookService")}
                           </Button>

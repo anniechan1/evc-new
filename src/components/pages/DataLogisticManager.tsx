@@ -69,7 +69,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
       <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-[#E5E0D8]"></div>
         <div className="absolute top-0 right-0 w-full md:w-1/2 h-full">
-          <img src="/images/field-documentation.png" alt="Field documentation" className="w-full h-full object-cover" />
+          <img src="/images/field-documentation.png" alt="Field documentation" loading="lazy" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-white/10"></div>
         </div>
 
@@ -218,7 +218,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
       {/* Responsibilities Section - Responsive with overlay */}
       <section className="relative py-16 sm:py-24 md:py-32">
         <div className="absolute inset-0">
-          <img src="/images/farmfield.webp" alt="Youth working with technology" className="w-full h-full object-cover" />
+          <img src="/images/farmfield.webp" alt="Youth working with technology" loading="lazy" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#725C3A]/30"></div>
         </div>
 
@@ -276,7 +276,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
       {/* Benefits Section - Responsive background */}
       <section className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-8">
         <div className="absolute inset-0">
-          <img src="/images/agritech.webp" alt="Youth in laboratory" className="w-full h-full object-cover" />
+          <img src="/images/agritech.webp" alt="Youth in laboratory" loading="lazy" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#725C3A]/50"></div>
         </div>
 

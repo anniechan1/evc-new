@@ -22,10 +22,12 @@ export default function NewsOutlook({ onNavigate }: NewsOutlookProps) {
   const headerImages = [
     "/images/girl.JPG",
     "/images/field-documentation.png",
-    "/images/booth.png",
-    "/images/gathering.png",
+    "/images/booth.webp",
+    "/images/gathering.webp",
     "/images/lecture.jpg",
     "/images/lab.webp",
+
+
   ]
 
   // Update selected category when language changes to keep "All" selected
@@ -98,6 +100,7 @@ export default function NewsOutlook({ onNavigate }: NewsOutlookProps) {
                 <img
                   src={image || "/placeholder.svg"}
                   alt={`Slide ${index + 1}`}
+                  loading={index < 3 ? "eager" : "lazy"}
                   className="w-full h-full object-cover"
                 />
               </div>

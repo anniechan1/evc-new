@@ -99,7 +99,7 @@ export default function ExportersImporters({ onNavigate }: ExportersImportersPro
       <section className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden">
         {/* Background with gradient overlay */}
         <div className="absolute inset-0">
-          <img src="/images/coffee.webp" alt="Partnership handshake" className="w-full h-full object-cover" />
+          <img src="/images/coffee.webp" alt="Partnership handshake" loading="lazy" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#725C3A]/80 via-[#725C3A]/60 to-[#809671]/40"></div>
         </div>
 

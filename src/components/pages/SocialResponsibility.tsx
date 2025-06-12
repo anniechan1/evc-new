@@ -70,7 +70,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
           </div>
           {/* Large Image */}
           <div className="relative">
-            <img src="/images/gathering.png" alt="Community gathering" className="w-full h-full object-cover" />
+            <img src="/images/gathering.webp" alt="Community gathering" loading="lazy" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
         <div className="grid lg:grid-cols-2 min-h-[600px]">
           {/* Large Image */}
           <div className="relative">
-            <img src="/images/youth-processing.png" alt="Classroom learning" className="w-full h-full object-cover" />
+            <img src="/images/youth-processing.webp" alt="Classroom learning" loading="lazy" className="w-full h-full object-cover" />
           </div>
           {/* Text Content */}
           <div className="bg-white flex items-center p-16">
@@ -113,7 +113,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
       {/* Impact Section with Full-Width Image Background */}
       <section className="relative py-32">
         <div className="absolute inset-0">
-          <img src="/images/students.webp" alt="Youth processing" className="w-full h-full object-cover object-top" />
+          <img src="/images/students.webp" alt="Youth processing" loading="lazy" className="w-full h-full object-cover object-top" />
           <div className="absolute inset-0 bg-[#725C3A]/20"></div>
         </div>
         <div className="container mx-auto max-w-4xl relative z-10 px-8">
@@ -195,7 +195,7 @@ export default function SocialResponsibility({ onNavigate }: SocialResponsibilit
           </div>
           {/* Large Image */}
           <div className="relative">
-            <img src="/images/lab.webp" alt="Laboratory work" className="w-full h-full object-cover" />
+            <img src="/images/lab.webp" alt="Laboratory work" loading="lazy" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>

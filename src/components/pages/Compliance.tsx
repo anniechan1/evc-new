@@ -121,7 +121,7 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
       {/* How EVC Helps with EUDR - With geo.jpg image and mobile responsive */}
       <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
         <div className="absolute inset-0">
-          <img src="/images/geo.webp" alt="GPS mapping and geo-data" className="w-full h-full object-cover" />
+          <img src="/images/geo.webp" alt="GPS mapping and geo-data" loading="lazy" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
@@ -176,7 +176,7 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
       {/* Ecopia Certification Section - Mobile responsive */}
       <section className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
         <div className="absolute inset-0">
-          <img src="/images/beekeeper.webp" alt="Beekeeper" className="w-full h-full object-cover" />
+          <img src="/images/beekeeper.webp" alt="Beekeeper" loading="lazy" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/25"></div>
         </div>
 
@@ -349,7 +349,7 @@ export default function Compliance({ onNavigate }: ComplianceProps) {
       {/* Why Compliance Matters - Mobile responsive */}
       <section className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8">
         <div className="absolute inset-0">
-          <img src="/images/handshake.webp" alt="Partnership handshake" className="w-full h-full object-cover" />
+          <img src="/images/handshake.webp" alt="Partnership handshake" loading="lazy" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#725C3A]/60 via-[#725C3A]/40 to-[#809671]/30"></div>
         </div>
 

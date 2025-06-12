@@ -48,6 +48,7 @@ export default function TheTeam({ onNavigate }: TheTeamProps) {
               <img
                 src="/images/team.svg"
                 alt="Ecopia Value Chain Leadership Team"
+                loading="lazy"
                 className="w-full h-auto"
                 style={{
                   width: "110%",

@@ -130,6 +130,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
                   <img
                     src="/images/frame5.png"
                     alt="EVC Platform on mobile and tablet devices"
+                    loading="lazy"
                     className="w-full h-auto"
                   />
                 </div>
@@ -158,7 +159,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
             <div className="relative py-12 sm:py-16 px-4 sm:px-8 rounded-2xl sm:rounded-3xl overflow-hidden">
               {/* Background image */}
               <div className="absolute inset-0">
-                <img src="/images/location.webp" alt="Farm location" className="w-full h-full object-cover" />
+                <img src="/images/location.webp" alt="Farm location" loading="lazy" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/40"></div>
               </div>
 
@@ -244,7 +245,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
             {/* Mobile layout (stacked) */}
             <div className="block md:hidden">
               <div className="mb-6">
-                <img src="/images/app.svg" alt="Mobile app interface" className="w-full h-auto" />
+                <img src="/images/app.png" alt="Mobile app interface" loading="lazy" className="w-full h-auto" />
               </div>
 
               <div className="bg-white/90 border border-gray-100 rounded-xl p-6 space-y-6">
@@ -311,7 +312,7 @@ export default function ForProducers({ onNavigate }: ForProducersProps) {
             <div className="hidden md:block relative">
               {/* Image positioned to the left */}
               <div className="w-full" style={{ marginLeft: "-18rem" }}>
-                <img src="/images/app.svg" alt="Mobile app interface" className="w-full h-auto" />
+                <img src="/images/app.png" alt="Mobile app interface" loading="lazy" className="w-full h-auto" />
               </div>
 
               {/* Text Content - Positioned on the right side */}

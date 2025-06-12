@@ -191,7 +191,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           {/* First Hero - With 15% Black Overlay */}
           <div className="w-full h-full flex-shrink-0 relative">
             <div className="absolute inset-0">
-              <img src="/images/mockup1.png" alt="African farming community" className="w-full h-full object-cover" />
+              <img src="/images/mockup1.webp" alt="African farming community" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/15"></div>
             </div>
 
@@ -249,7 +249,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           {/* Second Hero - Simplified Compliance (KEEPS BLACK OVERLAY) */}
           <div className="w-full h-full flex-shrink-0 relative">
             <div className="absolute inset-0">
-              <img src="/images/beekeeper.webp" alt="Beekeeper working" className="w-full h-full object-cover" />
+              <img src="/images/beekeeper.webp" alt="Beekeeper working" loading="lazy" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/50"></div>
             </div>
 
@@ -297,6 +297,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coffee%20export-TVu3hfmbh5LTDAK5H5hIHEFsehrLUl.webp"
                 alt="Coffee export bags"
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/40"></div>
@@ -517,6 +518,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   <img
                     src="/images/coffee-farmers.webp"
                     alt="Coffee farmers with their harvest"
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
@@ -549,8 +551,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="h-48 sm:h-64 overflow-hidden">
                   <img
-                    src="/images/youth-tech.png"
+                    src="/images/youth-tech.webp"
                     alt="Youth working with technology"
+                    loading="lazy"
                     className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
                     style={{ objectPosition: "center 20%" }}
                   />
@@ -586,6 +589,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                   <img
                     src="/images/youth-lab.webp"
                     alt="Youth in modern laboratory"
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
@@ -626,6 +630,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 <img
                   src="/images/frame11.png"
                   alt="EVC Mobile App - Digital Traceability Dashboard"
+                  loading="lazy"
                   className="w-full h-auto transform hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -709,6 +714,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <img
             src="/images/tablet-agriculture.webp"
             alt="Woman using tablet in agricultural field"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/30"></div>

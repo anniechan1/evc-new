@@ -16,9 +16,19 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
       "_blank",
     )
   }
+
+  const plans = (t("subscriptions.stakeholderPlans", { returnObjects: true }) as any[]) || []
+
   const handleButtonClick = (plan: any, index: number) => {
+    // Check if this is the last card
+    if (index === plans.length - 1) {
+      window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSeOw-QZKn4RvMEgRxPo8hLSYpnuWElE-hfvNOIigY4jS_1W5w/viewform",
+        "_blank",
+      )
+    }
     // Check if this is the producer card (first card) with Register button
-    if (index === 0 && plan.buttonText === "Register") {
+    else if (index === 0 && plan.buttonText === "Register") {
       window.open(
         "https://docs.google.com/forms/d/e/1FAIpQLSeQPRZV4bcFpwxNbqPvhnTJV_dv-wYzPKAY5uQ4UQOECT8RoA/viewform",
         "_blank",
@@ -27,7 +37,6 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
       handleLearnMore()
     }
   }
-
 
   return (
     <div className="min-h-screen relative">
@@ -69,98 +78,96 @@ export default function Subscriptions({ onNavigate }: SubscriptionsProps) {
         <section className="pt-4 sm:pt-6 md:pt-8 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 md:px-8">
           <div className="container mx-auto max-w-[1100px]">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-              {((t("subscriptions.stakeholderPlans", { returnObjects: true }) as any[]) || []).map(
-                (plan: any, index: number) => (
-                  <Card
-                    key={index}
-                    className="bg-white border border-[#E5D2B8] rounded-2xl hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm"
-                  >
-                    <CardContent className="p-4 sm:p-5 md:p-6">
-                      {/* Header */}
-                      <div className="text-center mb-3 sm:mb-4">
-                        <h3
-                          className="text-lg sm:text-xl md:text-2xl mb-2 text-[#725C3A]"
-                          style={{
-                            fontFamily: "Poppins, sans-serif",
-                            fontWeight: "500",
-                          }}
+              {plans.map((plan: any, index: number) => (
+                <Card
+                  key={index}
+                  className="bg-white border border-[#E5D2B8] rounded-2xl hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                >
+                  <CardContent className="p-4 sm:p-5 md:p-6">
+                    {/* Header */}
+                    <div className="text-center mb-3 sm:mb-4">
+                      <h3
+                        className="text-lg sm:text-xl md:text-2xl mb-2 text-[#725C3A]"
+                        style={{
+                          fontFamily: "Poppins, sans-serif",
+                          fontWeight: "500",
+                        }}
+                      >
+                        {plan.stakeholder}
+                      </h3>
+                      <p
+                        className="text-sm sm:text-base mb-2 sm:mb-3 text-[#725C3A]/80"
+                        style={{
+                          fontFamily: "Source Sans Pro, sans-serif",
+                          fontWeight: "400",
+                        }}
+                      >
+                        {plan.feeType}
+                      </p>
+                      <div className="mb-2 sm:mb-3">
+                        <span
+                          className="text-2xl sm:text-3xl text-[#725C3A]"
+                          style={{ fontFamily: "Poppins, sans-serif", fontWeight: "400" }}
                         >
-                          {plan.stakeholder}
-                        </h3>
-                        <p
-                          className="text-sm sm:text-base mb-2 sm:mb-3 text-[#725C3A]/80"
-                          style={{
-                            fontFamily: "Source Sans Pro, sans-serif",
-                            fontWeight: "400",
-                          }}
-                        >
-                          {plan.feeType}
-                        </p>
-                        <div className="mb-2 sm:mb-3">
+                          {plan.price}
+                        </span>
+                        {plan.priceUnit && (
                           <span
-                            className="text-2xl sm:text-3xl text-[#725C3A]"
+                            className="text-sm sm:text-base text-[#725C3A]/80"
                             style={{ fontFamily: "Poppins, sans-serif", fontWeight: "400" }}
                           >
-                            {plan.price}
+                            {plan.priceUnit}
                           </span>
-                          {plan.priceUnit && (
-                            <span
-                              className="text-sm sm:text-base text-[#725C3A]/80"
-                              style={{ fontFamily: "Poppins, sans-serif", fontWeight: "400" }}
-                            >
-                              {plan.priceUnit}
-                            </span>
-                          )}
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Access Description */}
+                    <div className="bg-[#E5E0D8]/90 rounded-xl p-3 sm:p-4 mb-4 sm:mb-5">
+                      <p
+                        className="text-center text-[#725C3A] text-xs sm:text-sm"
+                        style={{
+                          fontFamily: "Source Sans Pro, sans-serif",
+                          fontWeight: "400",
+                          lineHeight: "1.5",
+                        }}
+                      >
+                        {plan.accessDescription}
+                      </p>
+                    </div>
+
+                    {/* Features */}
+                    <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5">
+                      {((plan.features as string[]) || []).map((feature: string, featureIndex: number) => (
+                        <div key={featureIndex} className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 rounded-full mt-1.5 sm:mt-2 flex-shrink-0 bg-[#725C3A]/80"></div>
+                          <span
+                            className="text-[#725C3A]/80 text-xs sm:text-sm"
+                            style={{
+                              fontFamily: "Source Sans Pro, sans-serif",
+                              fontWeight: "300",
+                              lineHeight: "1.5",
+                            }}
+                          >
+                            {feature}
+                          </span>
                         </div>
-                      </div>
+                      ))}
+                    </div>
 
-                      {/* Access Description */}
-                      <div className="bg-[#E5E0D8]/90 rounded-xl p-3 sm:p-4 mb-4 sm:mb-5">
-                        <p
-                          className="text-center text-[#725C3A] text-xs sm:text-sm"
-                          style={{
-                            fontFamily: "Source Sans Pro, sans-serif",
-                            fontWeight: "400",
-                            lineHeight: "1.5",
-                          }}
-                        >
-                          {plan.accessDescription}
-                        </p>
-                      </div>
-
-                      {/* Features */}
-                      <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5">
-                        {((plan.features as string[]) || []).map((feature: string, featureIndex: number) => (
-                          <div key={featureIndex} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 rounded-full mt-1.5 sm:mt-2 flex-shrink-0 bg-[#725C3A]/80"></div>
-                            <span
-                              className="text-[#725C3A]/80 text-xs sm:text-sm"
-                              style={{
-                                fontFamily: "Source Sans Pro, sans-serif",
-                                fontWeight: "300",
-                                lineHeight: "1.5",
-                              }}
-                            >
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Button */}
-                      <div className="flex justify-center">
-                        <Button
-                          onClick={() => handleButtonClick(plan, index)}
-                          className="bg-[#725C3A] hover:bg-[#725C3A]/90 text-white rounded-full py-1.5 px-4 sm:px-5 text-xs sm:text-sm"
-                          style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-                        >
-                          {plan.buttonText}
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ),
-              )}
+                    {/* Button */}
+                    <div className="flex justify-center">
+                      <Button
+                        onClick={() => handleButtonClick(plan, index)}
+                        className="bg-[#725C3A] hover:bg-[#725C3A]/90 text-white rounded-full py-1.5 px-4 sm:px-5 text-xs sm:text-sm"
+                        style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                      >
+                        {plan.buttonText}
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
