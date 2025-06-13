@@ -73,14 +73,15 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl text-[#725C3A] leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl text-[#725C3A] leading-tight"
               style={{
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: "300",
                 letterSpacing: "0.01em",
               }}
             >
-              What is a Data Logistic Manager?
+              {t("dataLogisticManager.whatIsDLM.title")}
+
             </h2>
           </div>
 
@@ -122,13 +123,13 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                   (item: any, index: number) => (
                     <div key={index} className="border-b border-[#725C3A]/20 pb-4 last:border-b-0 last:pb-0">
                       <h4
-                        className="text-base text-[#725C3A] font-medium mb-1"
+                        className="text-lg text-[#725C3A] font-medium mb-1"
                         style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
                       >
                         {item.title}
                       </h4>
                       <p
-                        className="text-sm text-[#725C3A]/80"
+                        className="text-base text-[#725C3A]/80"
                         style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300" }}
                       >
                         {item.desc}

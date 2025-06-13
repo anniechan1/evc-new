@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
+import VideoPlayer from "../video-player"
+
+
 
 interface NewsOutlookProps {
   onNavigate: (page: string) => void
@@ -98,7 +101,7 @@ export default function NewsOutlook({ onNavigate }: NewsOutlookProps) {
             {headerImages.map((image, index) => (
               <div key={index} className="flex-shrink-0 w-full sm:w-1/3 h-full px-0 sm:px-1">
                 <img
-                  src={image || "/placeholder.svg"}
+                  src={image}
                   alt={`Slide ${index + 1}`}
                   loading={index < 3 ? "eager" : "lazy"}
                   className="w-full h-full object-cover"
@@ -186,109 +189,24 @@ export default function NewsOutlook({ onNavigate }: NewsOutlookProps) {
         </div>
       </section>
 
-      {/* News Articles */}
-      <section className="pt-6 sm:pt-8 pb-12 sm:pb-20 px-4 sm:px-8 bg-white relative z-20">
-        <div className="container mx-auto max-w-6xl">
-          {filteredArticles.length === 0 ? (
-            <div className="text-center py-12 sm:py-20">
-              <p
-                className="text-lg sm:text-xl text-[#725C3A]/60"
-                style={{
-                  fontFamily: "Source Sans Pro, sans-serif",
-                  fontWeight: "300",
-                }}
-              >
-                {t("newsOutlook.noArticles")}
-              </p>
-            </div>
-          ) : (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {filteredArticles.map((article, index) => (
-                <Card
-                  key={index}
-                  className={`${article.bgColor} border border-gray-100 rounded-3xl hover:shadow-xl transition-all duration-300 group cursor-pointer`}
-                  onClick={article.onClick}
-                >
-                  <CardContent className="p-0">
-                    <div
-                      className="w-full h-36 sm:h-48 bg-gray-100 rounded-t-3xl"
-                      style={{
-                        backgroundImage: `url(${article.image})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    ></div>
-                    <div className="p-4 sm:p-6">
-                      <div className="flex items-center space-x-2 mb-3 sm:mb-4">
-                        <article.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#725C3A]" />
-                        <span
-                          className="text-xs sm:text-sm text-[#725C3A]/80"
-                          style={{
-                            fontFamily: "Source Sans Pro, sans-serif",
-                            fontWeight: "400",
-                          }}
-                        >
-                          {article.category}
-                        </span>
-                      </div>
 
-                      <h3
-                        className="text-lg sm:text-xl mb-2 sm:mb-3 text-[#725C3A] group-hover:text-[#5A4A2E] transition-colors"
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: "300",
-                          letterSpacing: "0.01em",
-                          lineHeight: "1.3",
-                        }}
-                      >
-                        {article.title}
-                      </h3>
+      {
+        /* Video Section - With Click-to-Play */
+      }
+      <section className="py-8 sm:py-12 px-4 sm:px-8 bg-white relative z-20">
+        <div className="container mx-auto max-w-xl">
+          <VideoPlayer
+            src="/video/coffeefarmer.mp4"
+            poster="/images/coffee-processing.jpeg"
+            caption={t("coffeeProcessingCaption.caption")}
 
-                      <p
-                        className="text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 text-[#725C3A]/80"
-                        style={{
-                          fontFamily: "Source Sans Pro, sans-serif",
-                          fontWeight: "300",
-                          lineHeight: "1.6",
-                        }}
-                      >
-                        {article.excerpt}
-                      </p>
 
-                      <div className="flex items-center justify-between text-xs sm:text-sm">
-                        <div className="flex items-center space-x-1 sm:space-x-2">
-                          <User className="w-3 h-3 sm:w-4 sm:h-4 text-[#725C3A]/60" />
-                          <span
-                            className="text-[#725C3A]/80"
-                            style={{
-                              fontFamily: "Source Sans Pro, sans-serif",
-                              fontWeight: "400",
-                            }}
-                          >
-                            {article.author}
-                          </span>
-                        </div>
-                        <div className="flex items-center space-x-1 sm:space-x-2">
-                          <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-[#725C3A]/60" />
-                          <span
-                            className="text-[#725C3A]/80"
-                            style={{
-                              fontFamily: "Source Sans Pro, sans-serif",
-                              fontWeight: "400",
-                            }}
-                          >
-                            {article.date}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          )}
+          />
         </div>
       </section>
+
+
+
     </div>
   )
 }
