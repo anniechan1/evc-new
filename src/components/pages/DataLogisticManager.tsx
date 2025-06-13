@@ -64,72 +64,97 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
           </div>
         </div>
       </section>
-
-      {/* What is a DLM Section - Responsive layout */}
-      <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
+      {/* What is a DLM Section - Clean Design with Three Columns */}
+      <section className="relative py-20 sm:py-28 md:py-32 overflow-hidden">
+        {/* Simple background */}
         <div className="absolute inset-0 bg-[#E5E0D8]"></div>
-        <div className="absolute top-0 right-0 w-full md:w-1/2 h-full">
-          <img src="/images/field-documentation.png" alt="Field documentation" loading="lazy" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-white/10"></div>
-        </div>
 
-        <div className="container mx-auto max-w-6xl relative z-10 px-4 sm:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div className="space-y-6 md:space-y-8 bg-white/90 md:bg-transparent p-6 md:p-0 rounded-2xl md:rounded-none">
-              <h2
-                className="text-2xl sm:text-3xl md:text-4xl text-[#725C3A] leading-tight"
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "300",
-                  letterSpacing: "0.01em",
-                }}
-              >
-                {t("dataLogisticManager.whatIsDLM.title")}
-              </h2>
-              <p
-                className="text-lg sm:text-xl text-[#725C3A] leading-relaxed"
-                style={{
-                  fontFamily: "Source Sans Pro, sans-serif",
-                  fontWeight: "300",
-                  lineHeight: "1.7",
-                }}
-              >
-                {t("dataLogisticManager.whatIsDLM.description")}
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+        <div className="container mx-auto max-w-7xl px-2 sm:px-4 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2
+              className="text-3xl sm:text-4xl md:text-5xl text-[#725C3A] leading-tight"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "300",
+                letterSpacing: "0.01em",
+              }}
+            >
+              What is a Data Logistic Manager?
+            </h2>
+          </div>
+
+          <div className="flex flex-col lg:flex-row gap-4 items-start">
+            {/* First Image Column - Left side */}
+            <div className="lg:w-[38%]">
+              {/* First Image - Paper Records */}
+              <div className="overflow-hidden rounded-xl shadow-lg h-full">
+                <img
+                  src="images/paper-records.jpeg"
+                  alt="Handwritten agricultural records"
+                  loading="lazy"
+                  className="w-full h-[350px] object-cover"
+                />
+                <div className="bg-[#725C3A] text-white p-3">
+                  <p className="text-sm font-medium">Manual record keeping being digitized</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Column - Middle */}
+            <div className="lg:w-[24%] space-y-6">
+              <div>
+                <p
+                  className="text-lg text-[#725C3A] leading-relaxed"
+                  style={{
+                    fontFamily: "Source Sans Pro, sans-serif",
+                    fontWeight: "300",
+                    lineHeight: "1.7",
+                  }}
+                >
+                  {t("dataLogisticManager.whatIsDLM.description")}
+                </p>
+              </div>
+
+              {/* Redesigned feature list without icons or card structure */}
+              <div className="space-y-5 border-t border-[#725C3A]/20 pt-4">
                 {((t("dataLogisticManager.whatIsDLM.features", { returnObjects: true }) as any[]) || []).map(
-                  (item: any, index: number) => {
-                    const IconComponent = [Users, Smartphone, TrendingUp, Award][index]
-                    return (
-                      <div key={index} className="flex items-center space-x-3">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#725C3A] rounded-xl flex items-center justify-center flex-shrink-0">
-                          <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                        </div>
-                        <div>
-                          <h4
-                            className="text-base sm:text-lg text-[#725C3A] font-medium"
-                            style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
-                          >
-                            {item.title}
-                          </h4>
-                          <p
-                            className="text-sm text-[#725C3A]/80"
-                            style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300" }}
-                          >
-                            {item.desc}
-                          </p>
-                        </div>
-                      </div>
-                    )
-                  },
+                  (item: any, index: number) => (
+                    <div key={index} className="border-b border-[#725C3A]/20 pb-4 last:border-b-0 last:pb-0">
+                      <h4
+                        className="text-base text-[#725C3A] font-medium mb-1"
+                        style={{ fontFamily: "Poppins, sans-serif", fontWeight: "500" }}
+                      >
+                        {item.title}
+                      </h4>
+                      <p
+                        className="text-sm text-[#725C3A]/80"
+                        style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300" }}
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  )
                 )}
               </div>
             </div>
-            <div className="hidden lg:block"></div> {/* Empty space for image on desktop */}
+
+            {/* Second Image Column - Right side */}
+            <div className="lg:w-[38%]">
+              {/* Second Image - Coffee Processing */}
+              <div className="overflow-hidden rounded-xl shadow-lg h-full">
+                <img
+                  src="images/digital.jpeg"
+                  alt="digitalized version"
+                  loading="lazy"
+                  className="w-full h-[350px] object-cover"
+                />
+
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
       {/* Journey Steps - Responsive card design */}
       <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-8 bg-white">
         <div className="container mx-auto max-w-6xl">
@@ -214,125 +239,132 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
           </div>
         </div>
       </section>
+      {/* What You'll Do as a DLM - Responsibilities Section */}
+      <section className="py-0">
+        <div className="grid lg:grid-cols-[50%_50%]">
+          {/* Text Content - Reduced padding and spacing */}
+          <div className="bg-[#E5E0D8] flex items-center p-6 sm:p-10 md:p-14">
+            <div className="space-y-4 md:space-y-6">
+              <h2
+                className="text-xl sm:text-2xl md:text-3xl text-[#725C3A]"
+                style={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: "300",
+                  letterSpacing: "0.01em",
+                }}
+              >
+                {t("dataLogisticManager.responsibilities.title")}
+              </h2>
+              <p
+                className="text-base md:text-lg text-[#725C3A] leading-relaxed"
+                style={{
+                  fontFamily: "Source Sans Pro, sans-serif",
+                  fontWeight: "300",
+                  lineHeight: "1.7",
+                }}
+              >
+                {t("dataLogisticManager.responsibilities.subtitle")}
+              </p>
 
-      {/* Responsibilities Section - Responsive with overlay */}
-      <section className="relative py-16 sm:py-24 md:py-32">
-        <div className="absolute inset-0">
-          <img src="/images/farmfield.webp" alt="Youth working with technology" loading="lazy" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#725C3A]/30"></div>
-        </div>
-
-        <div className="container mx-auto max-w-6xl relative z-10 px-4 sm:px-8">
-          <div className="text-center text-white mb-12 md:mb-16">
-            <h2
-              className="text-2xl sm:text-3xl md:text-4xl mb-4 md:mb-6"
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: "300",
-                letterSpacing: "0.01em",
-              }}
-            >
-              {t("dataLogisticManager.responsibilities.title")}
-            </h2>
-            <p
-              className="text-lg sm:text-xl text-white"
-              style={{
-                fontFamily: "Source Sans Pro, sans-serif",
-                fontWeight: "400",
-                lineHeight: "1.7",
-              }}
-            >
-              {t("dataLogisticManager.responsibilities.subtitle")}
-            </p>
+              <div className="space-y-2 md:space-y-3">
+                {((t("dataLogisticManager.responsibilities.list", { returnObjects: true }) as string[]) || []).map(
+                  (responsibility: string, index: number) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 text-[#725C3A] flex-shrink-0 mt-0.5" />
+                      <p
+                        className="text-sm md:text-base text-[#725C3A] leading-relaxed"
+                        style={{
+                          fontFamily: "Source Sans Pro, sans-serif",
+                          fontWeight: "300",
+                          lineHeight: "1.5",
+                        }}
+                      >
+                        {responsibility}
+                      </p>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {((t("dataLogisticManager.responsibilities.list", { returnObjects: true }) as string[]) || []).map(
-              (responsibility: string, index: number) => (
-                <div
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 hover:bg-white/20 transition-all duration-300"
-                >
-                  <div className="flex items-start space-x-3 md:space-x-4">
-                    <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-[#E5D2B8] flex-shrink-0 mt-1" />
-                    <p
-                      className="text-base md:text-lg text-white leading-relaxed"
-                      style={{
-                        fontFamily: "Source Sans Pro, sans-serif",
-                        fontWeight: "300",
-                        lineHeight: "1.6",
-                      }}
-                    >
-                      {responsibility}
-                    </p>
-                  </div>
-                </div>
-              ),
-            )}
+          {/* Large Image - Coffee Processing */}
+          <div className="relative">
+            <img
+              src="/images/coffee-processing.jpeg"
+              alt="Coffee processing by local farmer"
+              loading="lazy"
+              className="w-full h-full object-cover object-center"
+            />
           </div>
         </div>
       </section>
 
-      {/* Benefits Section - Responsive background */}
-      <section className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-8">
-        <div className="absolute inset-0">
-          <img src="/images/agritech.webp" alt="Youth in laboratory" loading="lazy" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#725C3A]/50"></div>
-        </div>
-
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-12 md:mb-16">
-            <h2
-              className="text-2xl sm:text-3xl md:text-4xl text-white leading-tight mb-6 md:mb-8"
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontWeight: "300",
-                letterSpacing: "0.01em",
-              }}
-            >
-              {t("dataLogisticManager.benefits.title")}
-            </h2>
-            <p
-              className="text-lg sm:text-xl text-white/90 max-w-4xl mx-auto"
-              style={{
-                fontFamily: "Source Sans Pro, sans-serif",
-                fontWeight: "400",
-                lineHeight: "1.6",
-              }}
-            >
-              {t("dataLogisticManager.benefits.subtitle")}
-            </p>
+      {/* Why Become a DLM? - Benefits Section with switched layout */}
+      <section className="py-0 mt-[-1px] mb-[-2px]">
+        <div className="grid lg:grid-cols-[50%_50%]">
+          {/* Large Image - Coffee Farmer - Changed to show all content */}
+          <div className="relative bg-[#f5f5f5]">
+            <img
+              src="/images/coffee-farmers.jpeg"
+              alt="Coffee farmer with harvested cherries"
+              loading="lazy"
+              className="w-full h-auto object-contain"
+            />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-            {((t("dataLogisticManager.benefits.list", { returnObjects: true }) as any[]) || []).map(
-              (benefit: any, index: number) => (
-                <div
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 hover:bg-white/20 transition-all duration-300"
-                >
-                  <h3
-                    className="text-lg md:text-xl text-white mb-2 md:mb-3"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {benefit.title}
-                  </h3>
-                  <p
-                    className="text-white/90 leading-relaxed text-sm md:text-base"
-                    style={{
-                      fontFamily: "Source Sans Pro, sans-serif",
-                      fontWeight: "400",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    {benefit.description}
-                  </p>
-                </div>
-              ),
-            )}
+          {/* Text Content - Reduced padding and spacing */}
+          <div className="bg-white flex items-center p-6 sm:p-10 md:p-14">
+            <div className="space-y-4 md:space-y-6">
+              <h2
+                className="text-xl sm:text-2xl md:text-3xl text-[#725C3A]"
+                style={{
+                  fontFamily: "Poppins, sans-serif",
+                  fontWeight: "300",
+                  letterSpacing: "0.01em",
+                }}
+              >
+                {t("dataLogisticManager.benefits.title")}
+              </h2>
+              <p
+                className="text-base md:text-lg text-[#725C3A] leading-relaxed"
+                style={{
+                  fontFamily: "Source Sans Pro, sans-serif",
+                  fontWeight: "300",
+                  lineHeight: "1.7",
+                }}
+              >
+                {t("dataLogisticManager.benefits.subtitle")}
+              </p>
+
+              <div className="space-y-3 md:space-y-4">
+                {((t("dataLogisticManager.benefits.list", { returnObjects: true }) as any[]) || []).map(
+                  (benefit: any, index: number) => (
+                    <div key={index} className="space-y-0.5 md:space-y-1">
+                      <h3
+                        className="text-base md:text-lg text-[#725C3A]"
+                        style={{
+                          fontFamily: "Poppins, sans-serif",
+                          fontWeight: "400",
+                        }}
+                      >
+                        {benefit.title}
+                      </h3>
+                      <p
+                        className="text-sm md:text-base text-[#725C3A]/80 leading-relaxed"
+                        style={{
+                          fontFamily: "Source Sans Pro, sans-serif",
+                          fontWeight: "300",
+                          lineHeight: "1.5",
+                        }}
+                      >
+                        {benefit.description}
+                      </p>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </section>
