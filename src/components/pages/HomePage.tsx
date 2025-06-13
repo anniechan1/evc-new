@@ -110,23 +110,6 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </section>
 
-        {/* Simplified Placeholder Stakeholders Section */}
-        <section className="py-12 md:py-20 px-4 sm:px-8 bg-gradient-to-br from-[#809671]/10 to-[#B3B792]/10">
-          <div className="container mx-auto">
-            <div className="text-center mb-10 md:mb-16">
-              <div className="h-8 bg-gray-100 rounded-md w-1/3 mx-auto mb-3"></div>
-              <div className="h-5 bg-gray-100 rounded-md w-2/3 mx-auto"></div>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-              {[...Array(3)].map((_, index) => (
-                <div key={index} className="relative overflow-hidden rounded-2xl shadow-lg">
-                  <div className="h-48 sm:h-64 bg-gray-200"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Simplified Placeholder Mobile App Section */}
         <section className="py-12 md:py-16 px-4 sm:px-8 bg-white overflow-hidden">
           <div className="container mx-auto max-w-7xl">
@@ -249,7 +232,12 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           {/* Second Hero - Simplified Compliance (KEEPS BLACK OVERLAY) */}
           <div className="w-full h-full flex-shrink-0 relative">
             <div className="absolute inset-0">
-              <img src="/images/beekeeper.webp" alt="Beekeeper working" loading="lazy" className="w-full h-full object-cover" />
+              <img
+                src="/images/beekeeper.webp"
+                alt="Beekeeper working"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-black/50"></div>
             </div>
 
@@ -295,7 +283,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <div className="w-full h-full flex-shrink-0 relative">
             <div className="absolute inset-0">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/coffee%20export-TVu3hfmbh5LTDAK5H5hIHEFsehrLUl.webp"
+                src="images/coffee export.webp"
                 alt="Coffee export bags"
                 loading="lazy"
                 className="w-full h-full object-cover"
@@ -355,9 +343,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      {/* Welcome Section */}
+      {/* Redesigned Welcome Section with only one image */}
       <section id="welcome-section" className="py-12 md:py-20 px-4 sm:px-8 bg-white">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8 md:mb-12">
             <h2
               className="text-2xl md:text-3xl text-[#725C3A] mb-6 md:mb-8"
@@ -371,107 +359,122 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </h2>
           </div>
 
-          <div className="space-y-6 md:space-y-8">
-            <p
-              className="text-base md:text-lg text-[#725C3A] leading-relaxed"
-              style={{
-                fontFamily: "Source Sans Pro, sans-serif",
-                fontWeight: "300",
-                lineHeight: "1.7",
-              }}
-            >
-              {t("welcome.description1")}
-            </p>
-
-            <p
-              className="text-base md:text-lg text-[#725C3A] leading-relaxed"
-              style={{
-                fontFamily: "Source Sans Pro, sans-serif",
-                fontWeight: "300",
-                lineHeight: "1.7",
-              }}
-            >
-              {t("welcome.description2")}
-            </p>
-
-            <div className="bg-[#E5E0D8] rounded-2xl p-6 md:p-10">
-              <h3
-                className="text-lg md:text-xl text-[#725C3A] mb-4 md:mb-6"
+          {/* First row with image and text */}
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12">
+            <div className="order-2 md:order-1">
+              <p
+                className="text-base md:text-lg text-[#725C3A] leading-relaxed mb-6"
                 style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: "500",
+                  fontFamily: "Source Sans Pro, sans-serif",
+                  fontWeight: "300",
+                  lineHeight: "1.7",
                 }}
               >
-                {t("welcome.empowersTitle")}
-              </h3>
-
-              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                {[
-                  {
-                    title: t("welcome.stakeholders.smallholderFarmers"),
-                    description: t("welcome.stakeholders.smallholderFarmersDesc"),
-                    clickable: true,
-                  },
-                  {
-                    title: t("welcome.stakeholders.cooperativesUnions"),
-                    description: t("welcome.stakeholders.cooperativesUnionsDesc"),
-                    clickable: true,
-                  },
-                  {
-                    title: t("welcome.stakeholders.youthStartups"),
-                    description: t("welcome.stakeholders.youthStartupsDesc"),
-                    clickable: true,
-                  },
-                  {
-                    title: t("welcome.stakeholders.exportersImporters"),
-                    description: t("welcome.stakeholders.exportersImportersDesc"),
-                    clickable: true,
-                  },
-                  {
-                    title: t("welcome.stakeholders.academicInstitutions"),
-                    description: t("welcome.stakeholders.academicInstitutionsDesc"),
-                    clickable: true,
-                  },
-                  {
-                    title: t("welcome.stakeholders.financialInstitutions"),
-                    description: t("welcome.stakeholders.financialInstitutionsDesc"),
-                    clickable: true,
-                  },
-                ].map((stakeholder, index) => (
-                  <div
-                    key={index}
-                    className={`flex space-x-3 ${stakeholder.clickable ? "cursor-pointer hover:bg-white/50 rounded-lg transition-colors" : ""} p-4`}
-                    onClick={() => stakeholder.clickable && handleStakeholderClick(stakeholder.title)}
-                  >
-                    <div className="w-1.5 h-1.5 bg-[#725C3A] rounded-full mt-2.5 flex-shrink-0"></div>
-                    <div>
-                      <span
-                        className={`font-medium text-base md:text-lg text-[#725C3A] leading-normal ${stakeholder.clickable ? "hover:text-[#809671] underline" : ""}`}
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: "300",
-                        }}
-                      >
-                        {stakeholder.title}
-                      </span>
-                      <span
-                        className="text-sm md:text-base text-[#725C3A]"
-                        style={{
-                          fontFamily: "Source Sans Pro, sans-serif",
-                          fontWeight: "300",
-                        }}
-                      >
-                        {" "}
-                        {stakeholder.description}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                {t("welcome.description1")}
+              </p>
+              <p
+                className="text-base md:text-lg text-[#725C3A] leading-relaxed"
+                style={{
+                  fontFamily: "Source Sans Pro, sans-serif",
+                  fontWeight: "300",
+                  lineHeight: "1.7",
+                }}
+              >
+                {t("welcome.description2")}
+              </p>
             </div>
+            <div className="order-1 md:order-2 overflow-hidden rounded-xl transform transition-transform hover:scale-105 duration-500">
+              <img
+                src="images/coffee-harvest.jpeg"
+                alt="Coffee harvest"
+                loading="lazy"
+                className="w-full h-auto max-w-[80%] mx-auto"
+              />
+            </div>
+          </div>
 
+
+          {/* Stakeholder information */}
+
+          <div className="bg-[#E5E0D8] rounded-2xl p-6 md:p-10 max-w-5xl mx-auto mb-12">
+            <h3
+              className="text-lg md:text-xl text-[#725C3A] mb-4 md:mb-6"
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontWeight: "500",
+              }}
+            >
+              {t("welcome.empowersTitle")}
+            </h3>
+
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              {[
+                {
+                  title: t("welcome.stakeholders.smallholderFarmers"),
+                  description: t("welcome.stakeholders.smallholderFarmersDesc"),
+                  clickable: true,
+                },
+                {
+                  title: t("welcome.stakeholders.cooperativesUnions"),
+                  description: t("welcome.stakeholders.cooperativesUnionsDesc"),
+                  clickable: true,
+                },
+                {
+                  title: t("welcome.stakeholders.youthStartups"),
+                  description: t("welcome.stakeholders.youthStartupsDesc"),
+                  clickable: true,
+                },
+                {
+                  title: t("welcome.stakeholders.exportersImporters"),
+                  description: t("welcome.stakeholders.exportersImportersDesc"),
+                  clickable: true,
+                },
+                {
+                  title: t("welcome.stakeholders.academicInstitutions"),
+                  description: t("welcome.stakeholders.academicInstitutionsDesc"),
+                  clickable: true,
+                },
+                {
+                  title: t("welcome.stakeholders.financialInstitutions"),
+                  description: t("welcome.stakeholders.financialInstitutionsDesc"),
+                  clickable: true,
+                },
+              ].map((stakeholder, index) => (
+                <div
+                  key={index}
+                  className={`flex space-x-3 ${stakeholder.clickable ? "cursor-pointer hover:bg-white/50 rounded-lg transition-colors" : ""} p-4`}
+                  onClick={() => stakeholder.clickable && handleStakeholderClick(stakeholder.title)}
+                >
+                  <div className="w-1.5 h-1.5 bg-[#725C3A] rounded-full mt-2.5 flex-shrink-0"></div>
+                  <div>
+                    <span
+                      className={`font-medium text-base md:text-lg text-[#725C3A] leading-normal ${stakeholder.clickable ? "hover:text-[#809671] underline" : ""}`}
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "300",
+                      }}
+                    >
+                      {stakeholder.title}
+                    </span>
+                    <span
+                      className="text-sm md:text-base text-[#725C3A]"
+                      style={{
+                        fontFamily: "Source Sans Pro, sans-serif",
+                        fontWeight: "300",
+                      }}
+                    >
+                      {" "}
+                      {stakeholder.description}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center">
             <p
-              className="text-base md:text-lg text-[#725C3A] leading-relaxed text-center"
+              className="text-base md:text-lg text-[#725C3A] leading-relaxed"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
@@ -484,149 +487,74 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      {/* Stakeholders Showcase Section */}
-      <section className="py-12 md:py-20 px-4 sm:px-8 bg-gradient-to-br from-[#809671]/10 to-[#B3B792]/10">
-        <div className="container mx-auto">
-          <div className="text-center mb-10 md:mb-16">
+      {/* Mobile App Section - Phone on left, paper records on right */}
+      <section className="py-12 md:py-16 px-4 sm:px-8 bg-white overflow-hidden">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-8 md:mb-12">
             <h2
-              className="text-2xl md:text-3xl text-[#725C3A] mb-3 md:mb-4"
+              className="text-2xl md:text-4xl text-[#725C3A] leading-tight"
               style={{
                 fontFamily: "Poppins, sans-serif",
-                fontWeight: "300",
+                fontWeight: "400",
                 letterSpacing: "0.01em",
               }}
             >
-              {t("stakeholdersShowcase.title")}
+              {t("mobileApp.title")}
             </h2>
             <p
-              className="text-base md:text-xl text-[#725C3A]/90 max-w-2xl mx-auto"
+              className="text-base md:text-lg text-[#725C3A]/80 leading-relaxed max-w-4xl mx-auto mt-6"
               style={{
                 fontFamily: "Source Sans Pro, sans-serif",
                 fontWeight: "300",
                 lineHeight: "1.6",
               }}
             >
-              {t("stakeholdersShowcase.subtitle")}
+              {t("mobileApp.subtitle")}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {/* Farmers Card */}
-            <div className="group">
-              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="h-48 sm:h-64 overflow-hidden">
+          <div className="grid md:grid-cols-7 gap-6 items-center">
+            {/* Paper Records - Left */}
+            <div className="md:col-span-2 order-2 md:order-1">
+              <div className="overflow-hidden rounded-xl shadow-lg transform transition-transform hover:scale-105 duration-500">
+                <div className="relative">
                   <img
-                    src="/images/coffee-farmers.webp"
-                    alt="Coffee farmers with their harvest"
+                    src="images/handwritten-data.jpeg"
+                    alt="Handwritten agricultural records"
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-auto object-cover"
                   />
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4">
+                    <p className="text-sm font-medium">Complex manual data tracking being digitized by EVC</p>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
-                  <h3
-                    className="text-lg md:text-xl mb-1 md:mb-2"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {t("stakeholdersShowcase.smallholderFarmers")}
-                  </h3>
-                  <p
-                    className="text-base md:text-lg opacity-90"
-                    style={{
-                      fontFamily: "Source Sans Pro, sans-serif",
-                      fontWeight: "400",
-                    }}
-                  >
-                    {t("stakeholdersShowcase.smallholderDescription")}
-                  </p>
-                </div>
+              </div>
+              <div className="mt-6 bg-[#F8F6F3] border border-gray-100 rounded-xl p-4 md:p-6 hover:bg-[#E5E0D8] hover:shadow-md transition-all duration-300">
+                <h3
+                  className="text-lg md:text-xl text-[#725C3A] mb-2 md:mb-3"
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "500",
+                  }}
+                >
+                  {t("mobileApp.singleApplication.title")}
+                </h3>
+                <p
+                  className="text-sm md:text-base text-[#725C3A]/90 leading-relaxed"
+                  style={{
+                    fontFamily: "Source Sans Pro, sans-serif",
+                    fontWeight: "300",
+                    lineHeight: "1.6",
+                  }}
+                >
+                  {t("mobileApp.singleApplication.description")}
+                </p>
               </div>
             </div>
 
-            {/* Youth Card */}
-            <div className="group cursor-pointer" onClick={() => onNavigate("data-logistic-manager")}>
-              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="h-48 sm:h-64 overflow-hidden">
-                  <img
-                    src="/images/youth-tech.webp"
-                    alt="Youth working with technology"
-                    loading="lazy"
-                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
-                    style={{ objectPosition: "center 20%" }}
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
-                  <h3
-                    className="text-lg md:text-xl mb-1 md:mb-2"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {t("stakeholdersShowcase.dataLogisticManagers")}
-                  </h3>
-                  <p
-                    className="text-base md:text-lg opacity-90"
-                    style={{
-                      fontFamily: "Source Sans Pro, sans-serif",
-                      fontWeight: "400",
-                    }}
-                  >
-                    {t("stakeholdersShowcase.dataLogisticDescription")}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Innovation Card */}
-            <div className="group">
-              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="h-48 sm:h-64 overflow-hidden">
-                  <img
-                    src="/images/youth-lab.webp"
-                    alt="Youth in modern laboratory"
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
-                  <h3
-                    className="text-lg md:text-xl mb-1 md:mb-2"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {t("stakeholdersShowcase.innovationResearch")}
-                  </h3>
-                  <p
-                    className="text-base md:text-lg opacity-90"
-                    style={{
-                      fontFamily: "Source Sans Pro, sans-serif",
-                      fontWeight: "400",
-                    }}
-                  >
-                    {t("stakeholdersShowcase.innovationDescription")}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mobile App Section - Phone on left, text on right */}
-      <section className="py-12 md:py-16 px-4 sm:px-8 bg-white overflow-hidden">
-        <div className="container mx-auto max-w-7xl">
-          <div className="flex flex-col lg:flex-row items-center gap-6">
-            {/* Phone Mockups - On the left, bigger */}
-            <div className="lg:w-3/5 flex justify-center">
-              <div className="relative w-full max-w-4xl">
+            {/* Phone Mockup - Center - MADE LARGER */}
+            <div className="md:col-span-3 order-1 md:order-2 flex justify-center">
+              <div className="relative w-full transform scale-125 md:scale-140 lg:scale-150 z-10">
                 <img
                   src="/images/frame11.png"
                   alt="EVC Mobile App - Digital Traceability Dashboard"
@@ -636,71 +564,50 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </div>
 
-            {/* Content - On the right */}
-            <div className="lg:w-2/5 space-y-6 md:space-y-10">
-              <div className="space-y-4 md:space-y-6">
-                <h2
-                  className="text-2xl md:text-4xl text-[#725C3A] leading-tight"
+            {/* Features - Right */}
+            <div className="md:col-span-2 order-3 space-y-4 md:space-y-6">
+              <div className="bg-[#F8F6F3] border border-gray-100 rounded-xl p-4 md:p-6 hover:bg-[#E5E0D8] hover:shadow-md transition-all duration-300">
+                <h3
+                  className="text-lg md:text-xl text-[#725C3A] mb-2 md:mb-3"
                   style={{
                     fontFamily: "Poppins, sans-serif",
-                    fontWeight: "400",
-                    letterSpacing: "0.01em",
+                    fontWeight: "500",
                   }}
                 >
-                  {t("mobileApp.title")}
-                </h2>
+                  {t("mobileApp.simplifiedCompliance.title")}
+                </h3>
                 <p
-                  className="text-base md:text-lg text-[#725C3A]/80 leading-relaxed"
+                  className="text-sm md:text-base text-[#725C3A]/90 leading-relaxed"
                   style={{
                     fontFamily: "Source Sans Pro, sans-serif",
                     fontWeight: "300",
                     lineHeight: "1.6",
                   }}
                 >
-                  {t("mobileApp.subtitle")}
+                  {t("mobileApp.simplifiedCompliance.description")}
                 </p>
               </div>
 
-              <div className="space-y-4 md:space-y-6">
-                {[
-                  {
-                    title: t("mobileApp.singleApplication.title"),
-                    description: t("mobileApp.singleApplication.description"),
-                  },
-                  {
-                    title: t("mobileApp.simplifiedCompliance.title"),
-                    description: t("mobileApp.simplifiedCompliance.description"),
-                  },
-                  {
-                    title: t("mobileApp.panAfricanMarket.title"),
-                    description: t("mobileApp.panAfricanMarket.description"),
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="bg-[#F8F6F3] border border-gray-100 rounded-xl p-4 md:p-6 hover:bg-[#E5E0D8] hover:shadow-md transition-all duration-300"
-                  >
-                    <h3
-                      className="text-lg md:text-xl text-[#725C3A] mb-2 md:mb-3"
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontWeight: "500",
-                      }}
-                    >
-                      {item.title}
-                    </h3>
-                    <p
-                      className="text-sm md:text-base text-[#725C3A]/90 leading-relaxed"
-                      style={{
-                        fontFamily: "Source Sans Pro, sans-serif",
-                        fontWeight: "300",
-                        lineHeight: "1.6",
-                      }}
-                    >
-                      {item.description}
-                    </p>
-                  </div>
-                ))}
+              <div className="bg-[#F8F6F3] border border-gray-100 rounded-xl p-4 md:p-6 hover:bg-[#E5E0D8] hover:shadow-md transition-all duration-300">
+                <h3
+                  className="text-lg md:text-xl text-[#725C3A] mb-2 md:mb-3"
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontWeight: "500",
+                  }}
+                >
+                  {t("mobileApp.panAfricanMarket.title")}
+                </h3>
+                <p
+                  className="text-sm md:text-base text-[#725C3A]/90 leading-relaxed"
+                  style={{
+                    fontFamily: "Source Sans Pro, sans-serif",
+                    fontWeight: "300",
+                    lineHeight: "1.6",
+                  }}
+                >
+                  {t("mobileApp.panAfricanMarket.description")}
+                </p>
               </div>
             </div>
           </div>
