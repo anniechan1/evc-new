@@ -1,8 +1,9 @@
 "use client"
 
-import { ChevronDown, Menu, X } from "lucide-react"
+import { ChevronDown, Menu, X, Building2 } from "lucide-react"
 import { useState, useRef, useEffect } from "react"
 import { useTranslation } from "react-i18next"
+import { Button } from "@/components/ui/button"
 
 interface HeaderProps {
   currentPage?: string
@@ -22,12 +23,13 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
     [t("header.platformHelp")]: [t("header.usingPlatform"), t("header.subscriptions")],
     [t("header.resources")]: [t("header.newsOutlook"), t("header.compliance"), t("header.successStories")],
     [t("header.about")]: [t("header.theTeam"), t("header.socialResponsibility"), t("header.partnerships")],
+    [t("header.dataLogisticManager")]: ["Become DLM", "Browse Jobs"],
   }
 
   const languages = [
-    { code: "en", name: "English", flag: "/images/en.png" },
-    { code: "am", name: "አማርኛ", flag: "/images/am.webp" },
-    { code: "or", name: "Oromoo", flag: "/images/or.png" },
+    { code: "en", name: "EN", flag: "/images/en.png" },
+    { code: "am", name: "AM", flag: "/images/am.webp" },
+    { code: "or", name: "OR", flag: "/images/or.png" },
   ]
 
   const currentLanguage = languages.find((lang) => lang.code === i18n.language) || languages[0]
@@ -87,6 +89,8 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
       [t("header.subscriptions")]: "subscriptions",
       [t("header.contact")]: "contact",
       [t("header.theTeam")]: "the-team",
+      "Become DLM": "data-logistic-manager",
+      "Browse Jobs": "public-jobs",
     }
 
     const navigationKey = navigationMap[item]
@@ -123,6 +127,11 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         }, 100)
       }
     }
+  }
+
+  const handleCooperativeLogin = () => {
+    // Navigate to cooperative login page
+    window.location.href = "/cooperative/login"
   }
 
   // Handle clicks outside the language dropdown
@@ -191,117 +200,141 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
       `}</style>
 
       <header className="bg-white border-b border-[#E5D2B8] sticky top-0 z-40">
-        <div className="container mx-auto px-4 sm:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <button
-              onClick={() => onNavigate("home")}
-              className="flex items-center bg-transparent border-none cursor-pointer"
-            >
-              <img src="/images/evc-company-logo.png" alt="EVC Digital Traceability" className="h-10 sm:h-14 w-auto" />
-            </button>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-4 lg:space-x-8">
-              {[
-                t("header.marketplace"),
-                t("header.forProducers"),
-                t("header.dataLogisticManager"),
-                t("header.platformHelp"),
-                t("header.resources"),
-                t("header.about"),
-                t("header.contact"),
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter(item)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <button
-                    onClick={() => handleNavClick(item)}
-                    className={`transition-colors relative group bg-transparent border-none cursor-pointer flex items-center ${currentPage === item.toLowerCase().replace(/\s+/g, "-")
-                      ? "text-[#809671] font-medium"
-                      : "text-[#725C3A] hover:text-[#809671]"
-                      }`}
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: "300",
-                      fontSize: "0.95rem",
-                      letterSpacing: "0.01em",
-                    }}
-                  >
-                    {item}
-                    {dropdownItems[item as keyof typeof dropdownItems] && <ChevronDown className="w-4 h-4 ml-1" />}
-                  </button>
-
-                  {dropdownItems[item as keyof typeof dropdownItems] && hoveredDropdown === item && (
-                    <div
-                      className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-[#E5D2B8] py-2 min-w-48 z-50"
-                      onMouseEnter={handleDropdownMouseEnter}
-                      onMouseLeave={handleDropdownMouseLeave}
-                    >
-                      {dropdownItems[item as keyof typeof dropdownItems].map((subItem) => (
-                        <button
-                          key={subItem}
-                          onClick={() => handleNavClick(subItem)}
-                          className="block w-full text-left px-4 py-3 text-[#725C3A] hover:bg-[#E5E0D8] transition-colors bg-transparent border-none cursor-pointer"
-                          style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300" }}
-                        >
-                          {subItem}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </nav>
-
-            {/* Language Switcher - Desktop - Fixed to behave like other buttons */}
-            <div className="hidden md:block relative" ref={languageDropdownRef}>
+        <div className="container mx-auto px-2 sm:px-4 py-4">
+          <div className="flex items-center justify-between w-full">
+            {/* Logo - Left */}
+            <div className="flex-shrink-0">
               <button
-                className="flex items-center space-x-2 cursor-pointer px-3 py-2 rounded-lg hover:bg-[#E5E0D8] transition-colors bg-transparent border-none"
-                onClick={() => setHoveredDropdown(hoveredDropdown === "language" ? null : "language")}
-                onMouseEnter={() => handleMouseEnter("language")}
-                onMouseLeave={handleMouseLeave}
-                style={{ fontFamily: "Poppins, sans-serif", fontWeight: "400", fontSize: "0.95rem" }}
+                onClick={() => onNavigate("home")}
+                className="flex items-center bg-transparent border-none cursor-pointer"
               >
                 <img
-                  src={currentLanguage.flag || "/placeholder.svg"}
-                  alt={`${currentLanguage.name} flag`}
-                  className="w-5 h-4 object-cover rounded-sm mr-1"
+                  src="/images/evc-company-logo.png"
+                  alt="EVC Digital Traceability"
+                  className="h-10 sm:h-14 w-auto"
                 />
-                <span className="text-[#725C3A]">{currentLanguage.name}</span>
-                <ChevronDown className="w-4 h-4 text-[#725C3A]" />
               </button>
+            </div>
 
-              {hoveredDropdown === "language" && (
-                <div
-                  className="absolute top-full right-0 mt-1 bg-white rounded-lg shadow-lg border border-[#E5D2B8] py-2 min-w-32 z-50"
-                  onMouseEnter={handleDropdownMouseEnter}
-                  onMouseLeave={handleDropdownMouseLeave}
-                >
-                  {languages.map((lang) => (
+            {/* Desktop Navigation - Center */}
+            <nav className="hidden md:flex flex-1 justify-center">
+              <div className="flex items-center space-x-6 lg:space-x-8">
+                {[
+                  t("header.marketplace"),
+                  t("header.forProducers"),
+                  t("header.dataLogisticManager"),
+                  t("header.platformHelp"),
+                  t("header.resources"),
+                  t("header.about"),
+                  t("header.contact"),
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="relative"
+                    onMouseEnter={() => handleMouseEnter(item)}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <button
-                      key={lang.code}
-                      onClick={() => changeLanguage(lang.code)}
-                      className={`block w-full text-left px-4 py-2 transition-colors bg-transparent border-none cursor-pointer ${currentLanguage.code === lang.code
-                        ? "text-[#809671] bg-[#E5E0D8]"
-                        : "text-[#725C3A] hover:bg-[#E5E0D8]"
+                      onClick={() => handleNavClick(item)}
+                      className={`transition-colors relative group bg-transparent border-none cursor-pointer flex items-center whitespace-nowrap ${currentPage === item.toLowerCase().replace(/\s+/g, "-")
+                          ? "text-[#809671] font-medium"
+                          : "text-[#725C3A] hover:text-[#809671]"
                         }`}
-                      style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300" }}
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontWeight: "300",
+                        fontSize: "0.8rem",
+                        letterSpacing: "0.01em",
+                      }}
                     >
-                      <div className="flex items-center">
-                        <img
-                          src={lang.flag || "/placeholder.svg"}
-                          alt={`${lang.name} flag`}
-                          className="w-5 h-4 object-cover rounded-sm mr-2"
-                        />
-                        {lang.name}
-                      </div>
+                      {item}
+                      {dropdownItems[item as keyof typeof dropdownItems] && <ChevronDown className="w-4 h-4 ml-1" />}
                     </button>
-                  ))}
-                </div>
-              )}
+
+                    {dropdownItems[item as keyof typeof dropdownItems] && hoveredDropdown === item && (
+                      <div
+                        className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-[#E5D2B8] py-2 min-w-48 z-50"
+                        onMouseEnter={handleDropdownMouseEnter}
+                        onMouseLeave={handleDropdownMouseLeave}
+                      >
+                        {dropdownItems[item as keyof typeof dropdownItems].map((subItem) => (
+                          <button
+                            key={subItem}
+                            onClick={() => handleNavClick(subItem)}
+                            className="block w-full text-left px-4 py-3 text-[#725C3A] hover:bg-[#E5E0D8] transition-colors bg-transparent border-none cursor-pointer"
+                            style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300" }}
+                          >
+                            {subItem}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </nav>
+
+            {/* Right side controls */}
+            <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
+              {/* Cooperative Login Button */}
+              <Button
+                onClick={handleCooperativeLogin}
+                variant="outline"
+                size="sm"
+                className="border-[#725C3A] text-[#725C3A] hover:bg-[#725C3A] hover:text-white bg-transparent whitespace-nowrap"
+                style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+              >
+                <Building2 className="w-4 h-4 mr-2" />
+                Cooperative Portal
+              </Button>
+
+              {/* Language Switcher - Desktop */}
+              <div className="relative ml-6" ref={languageDropdownRef}>
+                <button
+                  className="flex items-center space-x-2 cursor-pointer px-3 py-2 rounded-lg hover:bg-[#E5E0D8] transition-colors bg-transparent border-none"
+                  onClick={() => setHoveredDropdown(hoveredDropdown === "language" ? null : "language")}
+                  onMouseEnter={() => handleMouseEnter("language")}
+                  onMouseLeave={handleMouseLeave}
+                  style={{ fontFamily: "Poppins, sans-serif", fontWeight: "400", fontSize: "0.95rem" }}
+                >
+                  <img
+                    src={currentLanguage.flag || "/placeholder.svg"}
+                    alt={`${currentLanguage.name} flag`}
+                    className="w-5 h-4 object-cover rounded-sm mr-1"
+                  />
+                  <span className="text-[#725C3A]">{currentLanguage.name}</span>
+                  <ChevronDown className="w-4 h-4 text-[#725C3A]" />
+                </button>
+
+                {hoveredDropdown === "language" && (
+                  <div
+                    className="absolute top-full right-0 mt-1 bg-white rounded-lg shadow-lg border border-[#E5D2B8] py-2 min-w-32 z-50"
+                    onMouseEnter={handleDropdownMouseEnter}
+                    onMouseLeave={handleDropdownMouseLeave}
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => changeLanguage(lang.code)}
+                        className={`block w-full text-left px-4 py-2 transition-colors bg-transparent border-none cursor-pointer ${currentLanguage.code === lang.code
+                            ? "text-[#809671] bg-[#E5E0D8]"
+                            : "text-[#725C3A] hover:bg-[#E5E0D8]"
+                          }`}
+                        style={{ fontFamily: "Source Sans Pro, sans-serif", fontWeight: "300" }}
+                      >
+                        <div className="flex items-center">
+                          <img
+                            src={lang.flag || "/placeholder.svg"}
+                            alt={`${lang.name} flag`}
+                            className="w-5 h-4 object-cover rounded-sm mr-2"
+                          />
+                          {lang.name}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -388,6 +421,18 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
                     )}
                   </div>
                 ))}
+
+                {/* Mobile Cooperative Login Button */}
+                <div className="pt-4 border-t border-gray-100">
+                  <Button
+                    onClick={handleCooperativeLogin}
+                    className="w-full bg-[#725C3A] hover:bg-[#809671] text-white"
+                    style={{ fontFamily: "Source Sans Pro, sans-serif" }}
+                  >
+                    <Building2 className="w-4 h-4 mr-2" />
+                    Cooperative Portal
+                  </Button>
+                </div>
               </nav>
 
               {/* Mobile Language Switcher */}
@@ -406,7 +451,8 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
                       className={`text-left py-2 ${currentLanguage.code === lang.code ? "text-[#809671] font-medium" : "text-[#725C3A]"
                         }`}
                       style={{ fontFamily: "Poppins, sans-serif", fontWeight: "400" }}
-                    ><div className="flex items-center">
+                    >
+                      <div className="flex items-center">
                         <img
                           src={lang.flag || "/placeholder.svg"}
                           alt={`${lang.name} flag`}

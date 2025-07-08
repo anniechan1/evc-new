@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import HomePage from "@/components/pages/HomePage"
 import ForProducers from "@/components/pages/ForProducers"
 import DataLogisticManager from "@/components/pages/DataLogisticManager"
+import PublicJobs from "@/components/pages/PublicJobs"
 import Compliance from "@/components/pages/Compliance"
 import SocialResponsibility from "@/components/pages/SocialResponsibility"
 import Marketplace from "@/components/pages/Marketplace"
@@ -16,6 +17,7 @@ import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import TheTeam from "@/components/pages/TheTeam"
 import EUDRCompliance from "@/components/pages/EUDRCompliance"
+import DLMSearch from "@/components/pages/DLMSearch"
 
 // Import i18n here
 import "../i18n"
@@ -40,6 +42,10 @@ export default function App() {
         return <ForProducers {...pageProps} />
       case "data-logistic-manager":
         return <DataLogisticManager {...pageProps} />
+      case "dlm-search":
+      case "public-jobs":
+        return <PublicJobs {...pageProps} />
+        return <DLMSearch {...pageProps} />
       case "exporters-importers":
         return <ExportersImporters {...pageProps} />
       case "compliance":

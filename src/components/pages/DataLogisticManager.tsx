@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle, Users, Smartphone, TrendingUp, Award } from "lucide-react"
+import { CheckCircle } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
 interface DataLogisticManagerProps {
@@ -17,6 +17,13 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
       "https://docs.google.com/forms/d/e/1FAIpQLSdHY6eRAGHRjcb154z2nFstqvey49E_XK525SSK3-acwN8LVw/viewform",
       "_blank",
     )
+  }
+
+  const handleStepClick = (stepIndex: number) => {
+    // Only make the first step (Apply Online) clickable
+    if (stepIndex === 0) {
+      handleApplyNow()
+    }
   }
 
   return (
@@ -81,7 +88,6 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
               }}
             >
               {t("dataLogisticManager.whatIsDLM.title")}
-
             </h2>
           </div>
 
@@ -135,7 +141,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                         {item.desc}
                       </p>
                     </div>
-                  )
+                  ),
                 )}
               </div>
             </div>
@@ -150,7 +156,6 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                   loading="lazy"
                   className="w-full h-[350px] object-cover"
                 />
-
               </div>
             </div>
           </div>
@@ -196,11 +201,24 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                     { bg: "bg-[#E5D2B8]", text: "text-[#725C3A]" },
                   ]
                   const color = colors[index]
+                  const isClickable = index === 0 // Only first step is clickable
 
                   return (
                     <div key={index} className="relative">
-                      <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                        <CardContent className={`${color.bg} p-6 md:p-8 text-center rounded-lg`}>
+                      <Card
+                        className={`border-0 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${isClickable ? "cursor-pointer hover:scale-105" : ""
+                          }`}
+                        onClick={() => handleStepClick(index)}
+                      >
+                        <CardContent
+                          className={`${color.bg} p-6 md:p-8 text-center rounded-lg relative ${isClickable ? "hover:brightness-110" : ""
+                            }`}
+                        >
+                          {isClickable && (
+                            <div className="absolute top-2 right-2">
+                              <div className="w-3 h-3 bg-white/30 rounded-full animate-pulse"></div>
+                            </div>
+                          )}
                           <div className="space-y-4 md:space-y-6">
                             <div className="w-12 h-12 md:w-16 md:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto">
                               <span
@@ -211,7 +229,8 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                               </span>
                             </div>
                             <h3
-                              className={`text-lg md:text-xl ${color.text}`}
+                              className={`text-lg md:text-xl ${color.text}
+                                `}
                               style={{
                                 fontFamily: "Poppins, sans-serif",
                                 fontWeight: "500",
@@ -229,6 +248,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                             >
                               {item.description}
                             </p>
+                            {isClickable}
                           </div>
                         </CardContent>
                       </Card>
@@ -283,7 +303,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                         {responsibility}
                       </p>
                     </div>
-                  )
+                  ),
                 )}
               </div>
             </div>
@@ -362,7 +382,7 @@ export default function DataLogisticManager({ onNavigate }: DataLogisticManagerP
                         {benefit.description}
                       </p>
                     </div>
-                  )
+                  ),
                 )}
               </div>
             </div>
